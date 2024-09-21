@@ -213,23 +213,33 @@ public:
 
 class Players {
 private:
-    int x, y;
+    float x, y;
     int score;
     Texture texture;
     Sprite sprite;
+    int state;
+public:
+    void setState(int state) {
+        this->state = state;
+    }
+
+public:
+    int getState() const {
+        return state;
+    }
 
 
 public:
-    Players(int x, int y, int score) : x(x), y(y), score(score) {
+    Players(float x, float y, int score) : x(x), y(y), score(score) {
 
     }
 
-    void setInitialization(String pathOfPicture, IntRect rect, float position_X, float position_Y) {
+    void setInitialization(String pathOfPicture, IntRect rect) {
 
         texture.loadFromFile(pathOfPicture);
         sprite.setTexture(texture);
         sprite.setTextureRect(rect);
-        sprite.setPosition(position_X, position_Y);
+        sprite.setPosition(x, y);
 
     }
 
@@ -304,13 +314,13 @@ int main() {
 //TODO: ------------------------------------
     Players player1(100, 400, 0);
     player1.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank2.png",
-                              IntRect(100, 0, 100, 100), 100, 400);
+                              IntRect(100, 0, 100, 100));
 
 
     Players player2(1400, 400, 0); //Инициализация игрока который по клавишам
 
     player2.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png",
-                              IntRect(300, 0, 100, 100), 1400, 400);
+                              IntRect(300, 0, 100, 100));
 
 
 
@@ -351,8 +361,6 @@ int main() {
     int state1 = 1;  //направление
     int state2 = 2;
     bool endgame = false;
-    int p1score = 0;   //Счет игроков
-    int p2score = 0;
 
     Clock clock;
 
@@ -499,8 +507,8 @@ int main() {
         for (it = bullets.begin(); it != bullets.end();) {
             Bullet *b = *it;
             if (b->p1life == false) {  //#Игрок умер
-                p2score++;
-                if (p2score > 4) {
+                player1.setScore(player1.getScore()  +1);
+                if (player1.getScore() > 4) {
                     endgame = true;
                     //#закнчиваем игру
                 }
@@ -520,8 +528,8 @@ int main() {
         for (it = bullets.begin(); it != bullets.end();) {//Проверка жизни игрока 2
             Bullet *b = *it;
             if (b->p2life == false) {
-                p1score++;
-                if (p1score > 4) {
+                player2.setScore(player2.getScore()+1);  //увеличение счета
+                if (player2.getScore() > 4) {
                     endgame = true;
                 }
                 it = bullets.erase(it);
@@ -544,8 +552,8 @@ int main() {
 
 
         //#изменение счета
-        std::string scoreString = std::to_string(p1score);
-        std::string scoreString1 = std::to_string(p2score);
+        std::string scoreString = std::to_string(player2.getScore());
+        std::string scoreString1 = std::to_string(player1.getScore());
         scoreText.setString(scoreString);
         scoreText1.setString(scoreString1);
         scoreText.setPosition(862, 0);
@@ -601,7 +609,7 @@ int main() {
         if (Keyboard::isKeyPressed(Keyboard::Escape)) window2.close();
         window2.clear();
 
-        if (p1score > p2score) {
+        if (player2.getScore() > player1.getScore()) {
             // window2.draw("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p1won.png");
         } else {
             // window2.draw("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p2won.png");

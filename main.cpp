@@ -32,108 +32,96 @@ String TileMap[H] = {
         "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
 };
 
+#include <string>
 
-String TileMaps[H] = {
-        "BBBBBBBBBBBBBB0BB0BBBBBBBBBBBBBB",
-        "B    B                  B      B",
-        "B    B                  B      B",
-        "B    B                         B",
-        "B              B               B",
-        "B              B               B",
-        "B        B     B   BBBB        B",
-        "B        B            B        B",
-        "B        B            B        B",
-        "B        B            B        B",
-        "B        B            B        B",
-        "B        BBBB    B    B        B",
-        "B                B             B",
-        "B                B             B",
-        "B                         B    B",
-        "B      B                  B    B",
-        "B      B                  B    B",
-        "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+using namespace std;
+
+class CollisionUtils {
+public:
+    // Размер клетки
+    static const int CELL_SIZE = 50;
+
+    // Коллиция при движении влево по OX
+    static bool collXL(int dx, int dy, int w, String TileMap[], int H) {
+        for (int i = (dy + 1) / CELL_SIZE; i < (dy + w - 2) / CELL_SIZE && i < H; i++) {
+            if (TileMap[i][dx / CELL_SIZE] == 'B') {
+                return true;
+            } else {
+                if (i + 1 < H && TileMap[i + 1][dx / CELL_SIZE] == 'B') {
+                    return true;
+                } else {
+                    if (i + 2 < H && TileMap[i + 2][dx / CELL_SIZE] == 'B') {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+        return false; // Если ничего не найдено
+    }
+
+    // Коллиция при движении вправо по OX
+    static bool collXR(int dx, int dy, int w, String TileMap[], int H) {
+        for (int i = (dy + 1) / CELL_SIZE; i < (dy + w - 2) / CELL_SIZE && i < H; i++) {
+            if (TileMap[i][(dx + 100) / CELL_SIZE] == 'B') {
+                return true;
+            } else {
+                if (i + 1 < H && TileMap[i + 1][(dx + 100) / CELL_SIZE] == 'B') {
+                    return true;
+                } else {
+                    if (i + 2 < H && TileMap[i + 2][(dx + 100) / CELL_SIZE] == 'B') {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+        return false; // Если ничего не найдено
+    }
+
+    // Коллиция при движении вверх OY
+    static bool collYU(int dx, int dy, int w, String TileMap[], int H) {
+        for (int j = (dx + 1) / CELL_SIZE; j < (dx + w) / CELL_SIZE; j++) {
+            if (dy / CELL_SIZE < H && TileMap[dy / CELL_SIZE][j] == 'B') {
+                return true;
+            } else {
+                if (dy / CELL_SIZE < H && j + 1 < TileMap[dy / CELL_SIZE].getSize() &&
+                    TileMap[dy / CELL_SIZE][j + 1] == 'B') {
+                    return true;
+                } else {
+                    if (dy / CELL_SIZE < H && j + 2 < TileMap[dy / CELL_SIZE].getSize() &&
+                        TileMap[dy / CELL_SIZE][j + 2] == 'B') {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+        return false; // Если ничего не найдено
+    }
+
+    // Коллиция при движении вниз OY
+    static bool collYD(int dx, int dy, int w, String TileMap[], int H) {
+        for (int j = (dx + 1) / CELL_SIZE; j < (dx + w) / CELL_SIZE; j++) {
+            if ((dy + 100) / CELL_SIZE < H && TileMap[(dy + 100) / CELL_SIZE][j] == 'B') {
+                return true;
+            } else {
+                if ((dy + 100) / CELL_SIZE < H && j + 1 < TileMap[(dy + 100) / CELL_SIZE].getSize() &&
+                    TileMap[(dy + 100) / CELL_SIZE][j + 1] == 'B') {
+                    return true;
+                } else {
+                    if ((dy + 100) / CELL_SIZE < H && j + 2 < TileMap[(dy + 100) / CELL_SIZE].getSize() &&
+                        TileMap[(dy + 100) / CELL_SIZE][j + 2] == 'B') {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+        return false; // Если ничего не найдено
+    }
 };
 
-
-/////////////////////////////////////////////// players collision
-//# 50 - размер клетки
-//# Коллиция при движении влево по OX
-bool collXL(int dx, int dy, int w) {
-    for (int i = (dy + 1) / 50; i < (dy + w - 2) / 50; i++) {
-        if (TileMap[i][dx / 50] == 'B') {
-            return 1;
-        } else {
-            if (TileMap[i + 1][dx / 50] == 'B') {
-                return 1;
-            } else {
-                if (TileMap[i + 2][dx / 50] == 'B') {
-                    return 1;
-                }
-                return 0;
-            }
-        }
-    }
-}
-
-//# 50 - размер клетки
-//# Коллиция при движении вправо по OX
-bool collXR(int dx, int dy, int w) {
-    for (int i = (dy + 1) / 50; i < (dy + w - 2) / 50; i++) {
-        if (TileMap[i][(dx + 100) / 50] == 'B') {
-            return 1;
-        } else {
-            if (TileMap[i + 1][(dx + 100) / 50] == 'B') {
-                return 1;
-            } else {
-                if (TileMap[i + 2][(dx + 100) / 50] == 'B') {
-                    return 1;
-                }
-                return 0;
-            }
-        }
-    }
-}
-
-//# 50 - размер клетки
-//# Коллиция при движении вверх OY
-
-bool collYU(int dx, int dy, int w) {
-    for (int j = (dx + 1) / 50; j < (dx + w) / 50; j++) {
-        if (TileMap[dy / 50][j] == 'B') {
-            return 1;
-        } else {
-            if (TileMap[dy / 50][j + 1] == 'B') {
-                return 1;
-            } else {
-                if (TileMap[dy / 50][j + 2] == 'B') {
-                    return 1;
-                }
-                return 0;
-            }
-        }
-    }
-}
-
-bool collYD(int dx, int dy, int w) {
-    for (int j = (dx + 1) / 50; j < (dx + w) / 50; j++) {
-        if (TileMap[(dy + 100) / 50][j] == 'B') {
-            return 1;
-        } else {
-            if (TileMap[(dy + 100) / 50][j + 1] == 'B') {
-                return 1;
-            } else {
-                if (TileMap[(dy + 100) / 50][j + 2] == 'B') {
-                    return 1;
-                }
-                return 0;
-            }
-        }
-    }
-    //нет явного выброса
-}
-
-/////////////////////////////////////////////// pkayers collision
-/////////////////////////////////////////////// Bullets
 
 //#Объект пули
 //#Размер поля 1600x900
@@ -223,6 +211,64 @@ public:
 };
 
 
+
+class Players {
+private:
+    int x, y;
+    int score;
+    Texture t;
+    Sprite sprite;
+
+public:
+    Players(int x, int y, int score) : x(x), y(y), score(score) {
+        t.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png");
+        sprite.setTexture(t);
+        sprite.setTextureRect(IntRect(300, 0, 100, 100));
+        sprite.setPosition(1400, 400);
+    }
+
+
+    int getX() const { return x; }
+
+    int getY() const { return y; }
+
+    int getScore() const { return score; }
+
+    const Texture &getT() const { return t; }
+
+    const Sprite &getSprite() const { return sprite; }
+
+
+    void setX(int x) { this->x = x; }
+
+    void setY(int y) { this->y = y; }
+
+    void setScore(int score) { this->score = score; }
+
+    void setT(const Texture &t) { this->t = t; }
+
+    void setSprite(const Sprite &s) { this->sprite = s; }
+
+
+    // Метод для перемещения спрайта
+    void move(float dx, float dy) {
+        sprite.move(dx, dy);
+
+        x += dx; // Обновляем координаты игрока
+        y += dy;
+    }
+    void spriteSetPosition(float x, float y){
+        sprite.setPosition(x,y);
+    }
+
+    // Метод для изменения текстурного прямоугольника
+    void setTextureRect(IntRect rect) {
+        sprite.setTextureRect(rect);
+    }
+
+
+};
+
 int main() {
     std::list<Bullet *> bullets;
     std::list<Bullet *>::iterator it;
@@ -250,12 +296,16 @@ int main() {
 //------------------
 
 //Инцилизация позиций и вида танчиков
-    Texture t;
-    t.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png");
-    Sprite s;
-    s.setTexture(t);
-    s.setTextureRect(IntRect(300, 0, 100, 100));
-    s.setPosition(1400, 400);                        // начальная позиция второго игрока
+//    Texture t;
+//    t.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png");
+//    Sprite s;
+//    s.setTexture(t);
+//    s.setTextureRect(IntRect(300, 0, 100, 100));
+//    s.setPosition(1400, 400);                        // начальная позиция второго игрока
+
+//TODO: ------------------------------------
+    Players player1(1400, 400, 0);
+//TODO: ------------------------------------
 
     Texture t2;
     t2.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank2.png"); // сама текстура
@@ -281,7 +331,7 @@ int main() {
 
 
 
-    //Окно для результата (Какой танк выиграл и тд)
+//    Окно для результата (Какой танк выиграл и тд)
 //    Texture tp1won;
 //    tp1won.loadFromFile("p1won.png");
 //    Sprite sp1won;
@@ -321,8 +371,8 @@ int main() {
             if (event.type == Event::KeyPressed) {
                 if (event.key.code == Keyboard::L) {
                     //стрельба справа
-                    bullets.push_back(new Bullet(s.getPosition().x + 43,
-                                                 s.getPosition().y + 43, state1,
+                    bullets.push_back(new Bullet(player1.getSprite().getPosition().x + 43,
+                                                 player1.getSprite().getPosition().y + 43, state1,
                                                  2));  /////// Стрельба игрок 2
 
 //                    Если была нажата клавиша L,
@@ -347,32 +397,40 @@ int main() {
 
         /////////////////////////////////////////////// Управление игрок 2
         if (Keyboard::isKeyPressed(Keyboard::Left)) {
-            if (collXL(s.getPosition().x, s.getPosition().y, ws) == 0) {
-                s.move(-0.1 * time, 0);  //0 -коллиций нет
+            if (CollisionUtils::collXL(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws, TileMap, H) == 0) {
+               // s.move();  //0 -коллиций нет
+                player1.move(-0.1 * time, 0);
             }
             //текстура для анимации
-            s.setTextureRect(IntRect(301, 0, 100, 100));
+           // s.setTextureRect(IntRect(301, 0, 100, 100));
+            player1.setTextureRect(IntRect(301, 0, 100, 100));
             state1 = 1; //направление
         } else {
             if (Keyboard::isKeyPressed(Keyboard::Right)) {
-                if (collXR(s.getPosition().x, s.getPosition().y, ws) == 0) {
-                    s.move(0.1 * time, 0);
+                if (CollisionUtils::collXR(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws, TileMap, H) == 0) {
+                  //  s.move(0.1 * time, 0);
+                    player1.move(0.1 * time, 0);
                 }
-                s.setTextureRect(IntRect(100, 0, 100, 100));
+              //  s.setTextureRect(IntRect(100, 0, 100, 100));
+                player1.setTextureRect(IntRect(100, 0, 100, 100));
                 state1 = 2;
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::Up)) {
-                    if (collYU(s.getPosition().x, s.getPosition().y, ws) == 0) {
-                        s.move(0, -0.1 * time);
+                    if (CollisionUtils::collYU(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws, TileMap, H) == 0) {
+                        //s.move();
+                        player1.move(0, -0.1 * time);
                     }
-                    s.setTextureRect(IntRect(0, 0, 100, 100));
+                    player1.setTextureRect(IntRect(0, 0, 100, 100));
+                   // s.setTextureRect(IntRect(0, 0, 100, 100));
                     state1 = 3;
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::Down)) {
-                        if (collYD(s.getPosition().x, s.getPosition().y, ws) == 0) {
-                            s.move(0, 0.1 * time);
+                        if (CollisionUtils::collYD(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws, TileMap, H) == 0) {
+                           // s.move(0, 0.1 * time);
+                           player1.move(0, 0.1 * time);
                         }
-                        s.setTextureRect(IntRect(200, 0, 100, 100));
+                       // s.setTextureRect(IntRect(200, 0, 100, 100));
+                        player1.setTextureRect(IntRect(200, 0, 100, 100));
                         state1 = 4;
                     }
                 }
@@ -380,28 +438,28 @@ int main() {
         }
         /////////////////////////////////////////////// Управление игрок 1
         if (Keyboard::isKeyPressed(Keyboard::A)) {
-            if (collXL(s2.getPosition().x, s2.getPosition().y, ws) == 0) {
+            if (CollisionUtils::collXL(s2.getPosition().x, s2.getPosition().y, ws, TileMap, H) == 0) {
                 s2.move(-0.1 * time, 0);
             }
             s2.setTextureRect(IntRect(301, 0, 100, 100));
             state2 = 1;
         } else {
             if (Keyboard::isKeyPressed(Keyboard::D)) {
-                if (collXR(s2.getPosition().x, s2.getPosition().y, ws) == 0) {
+                if (CollisionUtils::collXR(s2.getPosition().x, s2.getPosition().y, ws, TileMap, H) == 0) {
                     s2.move(0.1 * time, 0);
                 }
                 s2.setTextureRect(IntRect(100, 0, 100, 100));
                 state2 = 2;
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::W)) {
-                    if (collYU(s2.getPosition().x, s2.getPosition().y, ws) == 0) {
+                    if (CollisionUtils::collYU(s2.getPosition().x, s2.getPosition().y, ws, TileMap, H) == 0) {
                         s2.move(0, -0.1 * time);
                     }
                     s2.setTextureRect(IntRect(0, 0, 100, 100));
                     state2 = 3;
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::S)) {
-                        if (collYD(s2.getPosition().x, s2.getPosition().y, ws) == 0) {
+                        if (CollisionUtils::collYD(s2.getPosition().x, s2.getPosition().y, ws, TileMap, H) == 0) {
                             s2.move(0, 0.1 * time);
                         }
                         s2.setTextureRect(IntRect(200, 0, 100, 100));
@@ -424,8 +482,8 @@ int main() {
 
 
         //#Обновление всех пуль лежащие в векторе
-        for (it = bullets.begin(); it != bullets.end(); it++){
-            (*it)->update(time, s.getPosition().x, s.getPosition().y, s2.getPosition().x,
+        for (it = bullets.begin(); it != bullets.end(); it++) {
+            (*it)->update(time, player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, s2.getPosition().x,
                           s2.getPosition().y);
         }
 
@@ -440,10 +498,11 @@ int main() {
                     //#закнчиваем игру
                 }
                 it = bullets.erase(it);   //#удаляем пулю из вектора
-                s.setPosition(1400, 400);                 //возвращение на позиции после смерти
+                player1.spriteSetPosition(1400,400);
+             //   s.setPosition(1400, 400);                 //возвращение на позиции после смерти
                 s2.setPosition(100, 400);
                 delete b;
-            } else{
+            } else {
                 it++;
             }
 
@@ -456,11 +515,12 @@ int main() {
             Bullet *b = *it;
             if (b->p2life == false) {
                 p1score++;
-                if (p1score > 4){
+                if (p1score > 4) {
                     endgame = true;
                 }
                 it = bullets.erase(it);
-                s.setPosition(1400, 400);
+                player1.spriteSetPosition(1400,400);
+               // s.setPosition(1400, 400);
                 s2.setPosition(100, 400);
                 delete b;
             } else it++;
@@ -505,13 +565,13 @@ int main() {
         }
 
 //        //# Отрисовка пуль
-//        for (it = bullets.begin(); it != bullets.end(); it++) {
-//            (*it)->drawb(window);
-//        }
+        for (it = bullets.begin(); it != bullets.end(); it++) {
+            (*it)->drawb(window);
+        }
 
 
         //# Отрисовка игроков
-        window.draw(s);
+        window.draw(player1.getSprite());
         window.draw(s2);
         //#  отрисовка счета
         window.draw(scoreText);
@@ -537,13 +597,12 @@ int main() {
         window2.clear();
 
         if (p1score > p2score) {
-           // window2.draw("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p1won.png");
-        }else {
-           // window2.draw("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p2won.png");
+            // window2.draw("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p1won.png");
+        } else {
+            // window2.draw("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p2won.png");
         }
         window2.display();
     }
-
 
 
     return 0;

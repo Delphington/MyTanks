@@ -211,7 +211,6 @@ public:
 };
 
 
-
 class Players {
 private:
     int x, y;
@@ -219,18 +218,20 @@ private:
     Texture texture;
     Sprite sprite;
 
-    void firstInitialization(){
-        texture.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png");
-        sprite.setTexture(texture);
-        sprite.setTextureRect(IntRect(300, 0, 100, 100));
-        sprite.setPosition(1400, 400);
-    }
 
 public:
     Players(int x, int y, int score) : x(x), y(y), score(score) {
-        firstInitialization();
+
     }
 
+    void setInitialization(String pathOfPicture, IntRect rect, float position_X, float position_Y) {
+
+        texture.loadFromFile(pathOfPicture);
+        sprite.setTexture(texture);
+        sprite.setTextureRect(rect);
+        sprite.setPosition(position_X, position_Y);
+
+    }
 
     int getX() const { return x; }
 
@@ -261,8 +262,9 @@ public:
 //        x += dx; // Обновляем координаты игрока
 //        y += dy;
     }
-    void spriteSetPosition(float x, float y){
-        sprite.setPosition(x,y);
+
+    void spriteSetPosition(float x, float y) {
+        sprite.setPosition(x, y);
     }
 
     // Метод для изменения текстурного прямоугольника
@@ -300,15 +302,21 @@ int main() {
 //------------------
 
 //TODO: ------------------------------------
-    Players player2(1400, 400, 0); //Инцилизация игрока который по клавишам
+    Players player1(100, 400, 0);
+    player1.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank2.png",
+                              IntRect(100, 0, 100, 100), 100, 400);
+
+
+    Players player2(1400, 400, 0); //Инициализация игрока который по клавишам
+
+    player2.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png",
+                              IntRect(300, 0, 100, 100), 1400, 400);
+
+
+
 //TODO: ------------------------------------
 
-    Texture t2;
-    t2.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank2.png"); // сама текстура
-    Sprite s2;
-    s2.setTexture(t2);   //установка текстуры
-    s2.setTextureRect(IntRect(100, 0, 100, 100));  //размер
-    s2.setPosition(100, 400);                       // начальная позиция первого игрока
+    // начальная позиция первого игрока
 
     //--------------------------------------
     //Окружение
@@ -382,8 +390,8 @@ int main() {
             }
             if (event.type == Event::KeyPressed) {
                 if (event.key.code == Keyboard::V) {
-                    bullets.push_back(new Bullet(s2.getPosition().x + 43,
-                                                 s2.getPosition().y + 43, state2,
+                    bullets.push_back(new Bullet(player1.getSprite().getPosition().x + 43,
+                                                 player1.getSprite().getPosition().y + 43, state2,
                                                  1));/////// Стрельба игрок 1
                 }
             }
@@ -393,39 +401,35 @@ int main() {
 
         /////////////////////////////////////////////// Управление игрок 2
         if (Keyboard::isKeyPressed(Keyboard::Left)) {
-            if (CollisionUtils::collXL(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws, TileMap, H) == 0) {
-               // s.move();  //0 -коллиций нет
+            if (CollisionUtils::collXL(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
+                                       TileMap, H) == 0) {
                 player2.move(-0.1 * time, 0);
             }
             //текстура для анимации
-           // s.setTextureRect(IntRect(301, 0, 100, 100));
             player2.setTextureRect(IntRect(301, 0, 100, 100));
             state1 = 1; //направление
         } else {
             if (Keyboard::isKeyPressed(Keyboard::Right)) {
-                if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws, TileMap, H) == 0) {
-                  //  s.move(0.1 * time, 0);
+                if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
+                                           TileMap, H) == 0) {
                     player2.move(0.1 * time, 0);
                 }
-              //  s.setTextureRect(IntRect(100, 0, 100, 100));
                 player2.setTextureRect(IntRect(100, 0, 100, 100));
                 state1 = 2;
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::Up)) {
-                    if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws, TileMap, H) == 0) {
-                        //s.move();
+                    if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y,
+                                               ws, TileMap, H) == 0) {
                         player2.move(0, -0.1 * time);
                     }
                     player2.setTextureRect(IntRect(0, 0, 100, 100));
-                   // s.setTextureRect(IntRect(0, 0, 100, 100));
                     state1 = 3;
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::Down)) {
-                        if (CollisionUtils::collYD(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws, TileMap, H) == 0) {
-                           // s.move(0, 0.1 * time);
+                        if (CollisionUtils::collYD(player2.getSprite().getPosition().x,
+                                                   player2.getSprite().getPosition().y, ws, TileMap, H) == 0) {
                             player2.move(0, 0.1 * time);
                         }
-                       // s.setTextureRect(IntRect(200, 0, 100, 100));
                         player2.setTextureRect(IntRect(200, 0, 100, 100));
                         state1 = 4;
                     }
@@ -434,31 +438,37 @@ int main() {
         }
         /////////////////////////////////////////////// Управление игрок 1
         if (Keyboard::isKeyPressed(Keyboard::A)) {
-            if (CollisionUtils::collXL(s2.getPosition().x, s2.getPosition().y, ws, TileMap, H) == 0) {
-                s2.move(-0.1 * time, 0);
+            if (CollisionUtils::collXL(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
+                                       TileMap, H) == 0) {
+                player1.move(-0.1 * time, 0);
             }
-            s2.setTextureRect(IntRect(301, 0, 100, 100));
+            player1.setTextureRect(IntRect(301, 0, 100, 100));
             state2 = 1;
         } else {
             if (Keyboard::isKeyPressed(Keyboard::D)) {
-                if (CollisionUtils::collXR(s2.getPosition().x, s2.getPosition().y, ws, TileMap, H) == 0) {
-                    s2.move(0.1 * time, 0);
+                if (CollisionUtils::collXR(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
+                                           TileMap, H) == 0) {
+                    player1.move(0.1 * time, 0);
                 }
-                s2.setTextureRect(IntRect(100, 0, 100, 100));
+                player1.setTextureRect(IntRect(100, 0, 100, 100));
+
                 state2 = 2;
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::W)) {
-                    if (CollisionUtils::collYU(s2.getPosition().x, s2.getPosition().y, ws, TileMap, H) == 0) {
-                        s2.move(0, -0.1 * time);
+                    if (CollisionUtils::collYU(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y,
+                                               ws, TileMap, H) == 0) {
+                        player1.move(0, -0.1 * time);
                     }
-                    s2.setTextureRect(IntRect(0, 0, 100, 100));
+                    player1.setTextureRect(IntRect(0, 0, 100, 100));
+
                     state2 = 3;
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::S)) {
-                        if (CollisionUtils::collYD(s2.getPosition().x, s2.getPosition().y, ws, TileMap, H) == 0) {
-                            s2.move(0, 0.1 * time);
+                        if (CollisionUtils::collYD(player1.getSprite().getPosition().x,
+                                                   player1.getSprite().getPosition().y, ws, TileMap, H) == 0) {
+                            player1.move(0, 0.1 * time);
                         }
-                        s2.setTextureRect(IntRect(200, 0, 100, 100));
+                        player1.setTextureRect(IntRect(200, 0, 100, 100));
                         state2 = 4;
                     }
                 }
@@ -479,8 +489,9 @@ int main() {
 
         //#Обновление всех пуль лежащие в векторе
         for (it = bullets.begin(); it != bullets.end(); it++) {
-            (*it)->update(time, player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, s2.getPosition().x,
-                          s2.getPosition().y);
+            (*it)->update(time, player2.getSprite().getPosition().x, player2.getSprite().getPosition().y,
+                          player1.getSprite().getPosition().x,
+                          player1.getSprite().getPosition().y);
         }
 
 
@@ -494,9 +505,8 @@ int main() {
                     //#закнчиваем игру
                 }
                 it = bullets.erase(it);   //#удаляем пулю из вектора
-                player2.spriteSetPosition(1400,400);
-             //   s.setPosition(1400, 400);                 //возвращение на позиции после смерти
-                s2.setPosition(100, 400);
+                player2.spriteSetPosition(1400, 400);
+                player1.spriteSetPosition(100, 400);
                 delete b;
             } else {
                 it++;
@@ -515,9 +525,8 @@ int main() {
                     endgame = true;
                 }
                 it = bullets.erase(it);
-                player2.spriteSetPosition(1400,400);
-               // s.setPosition(1400, 400);
-                s2.setPosition(100, 400);
+                player2.spriteSetPosition(1400, 400);
+                player1.spriteSetPosition(100, 400);
                 delete b;
             } else it++;
         }
@@ -568,7 +577,7 @@ int main() {
 
         //# Отрисовка игроков
         window.draw(player2.getSprite());
-        window.draw(s2);
+        window.draw(player1.getSprite());
         //#  отрисовка счета
         window.draw(scoreText);
         window.draw(scoreText1);

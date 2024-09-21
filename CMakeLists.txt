@@ -3,7 +3,9 @@ project(MyTanks)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(MyTanks main.cpp)
+add_executable(MyTanks main.cpp
+        Config.cpp
+)
 
 
 # Укажите путь к папке с SFML

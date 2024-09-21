@@ -358,8 +358,6 @@ int main() {
 //    sp2won.setPosition(0, 0);
 
 
-    int state1 = 1;  //направление
-    int state2 = 2;
     bool endgame = false;
 
     Clock clock;
@@ -384,7 +382,7 @@ int main() {
                 if (event.key.code == Keyboard::L) {
                     //стрельба справа
                     bullets.push_back(new Bullet(player2.getSprite().getPosition().x + 43,
-                                                 player2.getSprite().getPosition().y + 43, state1,
+                                                 player2.getSprite().getPosition().y + 43, player2.getState(),
                                                  2));  /////// Стрельба игрок 2
 
 //                    Если была нажата клавиша L,
@@ -399,7 +397,7 @@ int main() {
             if (event.type == Event::KeyPressed) {
                 if (event.key.code == Keyboard::V) {
                     bullets.push_back(new Bullet(player1.getSprite().getPosition().x + 43,
-                                                 player1.getSprite().getPosition().y + 43, state2,
+                                                 player1.getSprite().getPosition().y + 43, player1.getState(),
                                                  1));/////// Стрельба игрок 1
                 }
             }
@@ -415,7 +413,8 @@ int main() {
             }
             //текстура для анимации
             player2.setTextureRect(IntRect(301, 0, 100, 100));
-            state1 = 1; //направление
+
+            player2.setState(1); //направление
         } else {
             if (Keyboard::isKeyPressed(Keyboard::Right)) {
                 if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
@@ -423,7 +422,7 @@ int main() {
                     player2.move(0.1 * time, 0);
                 }
                 player2.setTextureRect(IntRect(100, 0, 100, 100));
-                state1 = 2;
+                player2.setState(2); //направление
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::Up)) {
                     if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y,
@@ -431,7 +430,7 @@ int main() {
                         player2.move(0, -0.1 * time);
                     }
                     player2.setTextureRect(IntRect(0, 0, 100, 100));
-                    state1 = 3;
+                    player2.setState(3); //направление
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::Down)) {
                         if (CollisionUtils::collYD(player2.getSprite().getPosition().x,
@@ -439,7 +438,7 @@ int main() {
                             player2.move(0, 0.1 * time);
                         }
                         player2.setTextureRect(IntRect(200, 0, 100, 100));
-                        state1 = 4;
+                        player2.setState(4); //направление
                     }
                 }
             }
@@ -451,7 +450,7 @@ int main() {
                 player1.move(-0.1 * time, 0);
             }
             player1.setTextureRect(IntRect(301, 0, 100, 100));
-            state2 = 1;
+            player1.setState(1); //Направление
         } else {
             if (Keyboard::isKeyPressed(Keyboard::D)) {
                 if (CollisionUtils::collXR(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
@@ -460,7 +459,7 @@ int main() {
                 }
                 player1.setTextureRect(IntRect(100, 0, 100, 100));
 
-                state2 = 2;
+                player1.setState(2); //Направление
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::W)) {
                     if (CollisionUtils::collYU(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y,
@@ -469,7 +468,7 @@ int main() {
                     }
                     player1.setTextureRect(IntRect(0, 0, 100, 100));
 
-                    state2 = 3;
+                    player1.setState(3); //Направление
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::S)) {
                         if (CollisionUtils::collYD(player1.getSprite().getPosition().x,
@@ -477,7 +476,7 @@ int main() {
                             player1.move(0, 0.1 * time);
                         }
                         player1.setTextureRect(IntRect(200, 0, 100, 100));
-                        state2 = 4;
+                        player1.setState(4); //Направление
                     }
                 }
             }

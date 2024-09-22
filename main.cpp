@@ -1,4 +1,3 @@
-
 #include <SFML/Graphics.hpp>
 #include <list>
 #include <iostream>
@@ -60,14 +59,14 @@ public:
     }
 
     //#Обновлении позиции опираясь на время и проверка столкновения
-    void update(float time, int x1, int y1, int x2, int y2, Card& card) {
+    void update(float time, int x1, int y1, int x2, int y2, Card &card) {
         x += dx * time; //#смена координат
         y += dy * time;
 
 
         for (int i = y / 50; i < (y + h) / 50; i++) {
             for (int j = x / 50; j < (x + w) / 50; j++) {
-                if (card.getItemCard(i,j) == 'X') {
+                if (card.getItemCard(i, j) == 'X') {
                     //Столкновение с припятствием пуля умирает
                     dx = 0;
                     dy = 0;
@@ -102,13 +101,11 @@ public:
 };
 
 
-
-
 int main() {
     std::list<Bullet *> bullets;
     std::list<Bullet *>::iterator it;
 
-    Card  card;
+    Card card;
 
 
     Config config;
@@ -172,7 +169,7 @@ int main() {
         //Возвращаем время, после вызова/создания объекта
         float time = clock.getElapsedTime().asMicroseconds();
         clock.restart();
-        time = time / 500;
+        time /= 500;
 
         Event event;
 
@@ -181,106 +178,85 @@ int main() {
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed) {
                 window.close(); //Закрываем окно при нажатии на крестик
-            }
-            //обратботка клавиш
-            if (event.type == Event::KeyPressed) {
-                if (event.key.code == Keyboard::L) {
-                    //стрельба справа
-                    bullets.push_back(new Bullet(player2.getSprite().getPosition().x + 43,
-                                                 player2.getSprite().getPosition().y + 43, player2.getState(),
-                                                 2));  /////// Стрельба игрок 2
-
-//                 пули и игрока соответственно. Пуля добавляется в вектор bullets.
-
-                }
-            }
-            if (event.type == Event::KeyPressed) {
+            }else if (event.type == Event::KeyPressed) {//обратботка клавиш
+                //Стрельба первого танка
                 if (event.key.code == Keyboard::V) {
                     bullets.push_back(new Bullet(player1.getSprite().getPosition().x + 43,
-                                                 player1.getSprite().getPosition().y + 43, player1.getState(),
-                                                 1));/////// Стрельба игрок 1
-                }
-            }
-
-        }
-
-
-        /////////////////////////////////////////////// Управление игрок 2
-        if (Keyboard::isKeyPressed(Keyboard::Left)) {
-            if (CollisionUtils::collXL(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
-                                       card) == 0) {
-                player2.move(-0.1 * time, 0);
-            }
-            //текстура для анимации
-            player2.setTextureRect(IntRect(301, 0, 100, 100));
-
-            player2.setState(1); //направление
-        } else {
-            if (Keyboard::isKeyPressed(Keyboard::Right)) {
-                if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
-                                           card) == 0) {
-                    player2.move(0.1 * time, 0);
-                }
-                player2.setTextureRect(IntRect(100, 0, 100, 100));
-                player2.setState(2); //направление
-            } else {
-                if (Keyboard::isKeyPressed(Keyboard::Up)) {
-                    if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y,
-                                               ws, card) == 0) {
-                        player2.move(0, -0.1 * time);
-                    }
-                    player2.setTextureRect(IntRect(0, 0, 100, 100));
-                    player2.setState(3); //направление
-                } else {
-                    if (Keyboard::isKeyPressed(Keyboard::Down)) {
-                        if (CollisionUtils::collYD(player2.getSprite().getPosition().x,
-                                                   player2.getSprite().getPosition().y, ws, card) == 0) {
-                            player2.move(0, 0.1 * time);
-                        }
-                        player2.setTextureRect(IntRect(200, 0, 100, 100));
-                        player2.setState(4); //направление
-                    }
+                                                 player1.getSprite().getPosition().y + 43, player1.getState(),1));
+                }else if (event.key.code == Keyboard::L) {
+                    //стрельба второго танка
+                    bullets.push_back(new Bullet(player2.getSprite().getPosition().x + 43,
+                                                 player2.getSprite().getPosition().y + 43, player2.getState(),2));
                 }
             }
         }
-        /////////////////////////////////////////////// Управление игрок 1
+
+
+
+
+
+        // Управление игрок 1
         if (Keyboard::isKeyPressed(Keyboard::A)) {
-            if (CollisionUtils::collXL(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
-                                       card) == 0) {
+            if (CollisionUtils::collXL(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,card) == 0) {
                 player1.move(-0.1 * time, 0);
             }
             player1.setTextureRect(IntRect(301, 0, 100, 100));
             player1.setState(1); //Направление
-        } else {
-            if (Keyboard::isKeyPressed(Keyboard::D)) {
-                if (CollisionUtils::collXR(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
-                                           card) == 0) {
-                    player1.move(0.1 * time, 0);
-                }
-                player1.setTextureRect(IntRect(100, 0, 100, 100));
 
-                player1.setState(2); //Направление
-            } else {
-                if (Keyboard::isKeyPressed(Keyboard::W)) {
-                    if (CollisionUtils::collYU(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y,
-                                               ws, card) == 0) {
-                        player1.move(0, -0.1 * time);
-                    }
-                    player1.setTextureRect(IntRect(0, 0, 100, 100));
-
-                    player1.setState(3); //Направление
-                } else {
-                    if (Keyboard::isKeyPressed(Keyboard::S)) {
-                        if (CollisionUtils::collYD(player1.getSprite().getPosition().x,
-                                                   player1.getSprite().getPosition().y, ws, card) == 0) {
-                            player1.move(0, 0.1 * time);
-                        }
-                        player1.setTextureRect(IntRect(200, 0, 100, 100));
-                        player1.setState(4); //Направление
-                    }
-                }
+        } else if (Keyboard::isKeyPressed(Keyboard::D)) {
+            if (CollisionUtils::collXR(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,card) == 0) {
+                player1.move(0.1 * time, 0);
             }
+            player1.setTextureRect(IntRect(100, 0, 100, 100));
+            player1.setState(2); //Направление
+
+        } else if (Keyboard::isKeyPressed(Keyboard::W)) {
+            if (CollisionUtils::collYU(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y,ws, card) == 0) {
+                player1.move(0, -0.1 * time);
+            }
+            player1.setTextureRect(IntRect(0, 0, 100, 100));
+            player1.setState(3); //Направление
+
+        } else if (Keyboard::isKeyPressed(Keyboard::S)) {
+            if (CollisionUtils::collYD(player1.getSprite().getPosition().x,player1.getSprite().getPosition().y, ws, card) == 0) {
+                player1.move(0, 0.1 * time);
+            }
+            player1.setTextureRect(IntRect(200, 0, 100, 100));
+            player1.setState(4); //Направление
         }
+
+        //--------------------------------------------------------------------------------------------------------
+
+        // Управление игрок 2
+        if (Keyboard::isKeyPressed(Keyboard::Left)) {
+            if (CollisionUtils::collXL(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,card) == 0) {
+                player2.move(-0.1 * time, 0);
+            }
+            player2.setTextureRect(IntRect(301, 0, 100, 100));         //текстура для анимации
+            player2.setState(1); //направление
+
+        } else if (Keyboard::isKeyPressed(Keyboard::Right)) {
+            if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,card) == 0) {
+                player2.move(0.1 * time, 0);
+            }
+            player2.setTextureRect(IntRect(100, 0, 100, 100));
+            player2.setState(2); //направление
+
+        } else if (Keyboard::isKeyPressed(Keyboard::Up)) {
+            if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y,ws, card) == 0) {
+                player2.move(0, -0.1 * time);
+            }
+            player2.setTextureRect(IntRect(0, 0, 100, 100));
+            player2.setState(3); //направление
+
+        } else if (Keyboard::isKeyPressed(Keyboard::Down)) {
+            if (CollisionUtils::collYD(player2.getSprite().getPosition().x,player2.getSprite().getPosition().y, ws, card) == 0) {
+                player2.move(0, 0.1 * time);
+            }
+            player2.setTextureRect(IntRect(200, 0, 100, 100));
+            player2.setState(4); //направление
+        }
+        //----------------------------------------------------
 
 
 
@@ -318,7 +294,6 @@ int main() {
             } else {
                 it++;
             }
-
         }
 
 
@@ -349,7 +324,6 @@ int main() {
         }
 
 
-
         //#изменение счета
         score1.setString(to_string(player2.getScore()));
         score2.setString(to_string(player1.getScore()));
@@ -361,11 +335,11 @@ int main() {
         //# Отрисовка карты
         for (int i = 0; i < card.getHeight(); i++) {
             for (int j = 0; j < card.getWidth(); j++) {
-                if (card.getItemCard(i,j) == 'X') {
+                if (card.getItemCard(i, j) == 'X') {
                     wall.setPosition(j * 50, i * 50);
                     window.draw(wall.getRectangle());
                 }
-                if (card.getItemCard(i,j) == ' ') {
+                if (card.getItemCard(i, j) == ' ') {
                     backGround.setPosition(j * 50, i * 50);
                     window.draw(backGround.getRectangle());
                 }

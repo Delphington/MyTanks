@@ -6,6 +6,7 @@
 
 #include "Environment.cpp"
 #include "Score.cpp"
+#include "Player.cpp"
 
 using namespace std;
 using namespace sf;
@@ -211,52 +212,6 @@ public:
 };
 
 
-class Players {
-private:
-    float x, y;
-    int score, state;
-    Texture texture;
-    Sprite sprite;
-
-public:
-    Players(float x, float y, int score) : x(x), y(y), score(score) {}
-
-    void setInitialization(String pathOfPicture, IntRect rect) {
-        texture.loadFromFile(pathOfPicture);
-        sprite.setTexture(texture);
-        sprite.setTextureRect(rect);
-        sprite.setPosition(x, y);
-    }
-
-    int getScore() const { return score; }
-
-    int getState() const { return state; }
-
-    void setState(int state) {
-        this->state = state;
-    }
-
-    const Sprite &getSprite() const { return sprite; }
-
-    void setScore(int score) { this->score = score; }
-
-    // Метод для перемещения спрайта
-    void move(float dx, float dy) {
-        sprite.move(dx, dy);
-//
-//        x += dx; // Обновляем координаты игрока
-//        y += dy;
-    }
-
-    void spriteSetPosition(float x, float y) {
-        sprite.setPosition(x, y);
-    }
-
-    // Метод для изменения текстурного прямоугольника
-    void setTextureRect(IntRect rect) {
-        sprite.setTextureRect(rect);
-    }
-};
 
 
 
@@ -289,12 +244,12 @@ int main() {
 
 
 //TODO: ------------------------------------
-    Players player1(100, 400, 0);
+    Player player1(100, 400, 0);
     player1.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank2.png",
                               IntRect(100, 0, 100, 100));
 
 
-    Players player2(1400, 400, 0); //Инициализация игрока который по клавишам
+    Player player2(1400, 400, 0); //Инициализация игрока который по клавишам
     player2.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png",
                               IntRect(300, 0, 100, 100));
 

@@ -7,8 +7,10 @@
 #include "Environment.cpp"
 #include "Score.cpp"
 #include "Player.cpp"
-
+#include "GameMenu.h"
 #include "CollisionUtils.cpp"
+
+
 
 using namespace std;
 using namespace sf;
@@ -101,7 +103,244 @@ public:
 };
 
 
+
+
+
+
+
+
+// функция настройки текста
+void InitText(Text& mtext, float xpos, float ypos, String str, int size_font = 60,
+              Color menu_text_color = Color::White, int bord = 0, Color border_color = Color::Black);
+
+// Функция перехода к игре
+void GameStart()
+{
+    RenderWindow Play(VideoMode::getDesktopMode(), L"Уровень 1", Style::Fullscreen);
+
+
+    RectangleShape background_play(Vector2f(1920, 1080));
+
+    Texture texture_play;
+    if (!texture_play.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Menu\\menu4.jpg")) exit(1);
+    background_play.setTexture(&texture_play);
+
+    while (Play.isOpen())
+    {
+        Event event_play;
+        while (Play.pollEvent(event_play))
+        {
+            if (event_play.type == Event::KeyPressed)
+            {
+                if (event_play.key.code == Keyboard::Escape) { Play.close(); }
+            }
+        }
+        Play.clear();
+        Play.draw(background_play);
+        Play.display();
+    }
+}
+
+// Функция настройки игры
+void Options()
+{
+    RenderWindow Options(VideoMode::getDesktopMode(), L"Настройки", Style::Fullscreen);
+
+    RectangleShape background_opt(Vector2f(1920, 1080));
+    Texture texture_opt;
+    if (!texture_opt.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Menu\\menu1.jpg")) exit(2);
+
+    background_opt.setTexture(&texture_opt);
+    while (Options.isOpen())
+    {
+        Event event_opt;
+        while (Options.pollEvent(event_opt))
+        {
+            if (event_opt.type == Event::Closed) Options.close();
+            if (event_opt.type == Event::KeyPressed)
+            {
+                if (event_opt.key.code == Keyboard::Escape) Options.close();
+            }
+        }
+        Options.clear();
+        Options.draw(background_opt);
+        Options.display();
+    }
+
+}
+
+// Функция с описанием игры
+void About_Game()
+{
+    RenderWindow About(VideoMode::getDesktopMode(), L"О игре", Style::Fullscreen);
+    RectangleShape background_ab(Vector2f(VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
+    Texture texture_ab;
+    if (!texture_ab.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Menu\\menu2.jpg")) exit(3);
+    background_ab.setTexture(&texture_ab);
+
+    while (About.isOpen())
+    {
+        Event event_play;
+        while (About.pollEvent(event_play))
+        {
+            if (event_play.type == Event::Closed) About.close();
+            if (event_play.type == Event::KeyPressed)
+            {
+                if (event_play.key.code == Keyboard::Escape) About.close();
+            }
+        }
+        About.clear();
+        About.draw(background_ab);
+        About.display();
+    }
+}
+
+
+
+// функция настройки текста
+void InitText(Text& mtext, float xpos, float ypos, String str, int size_font,
+              Color menu_text_color, int bord, Color border_color)
+{
+    mtext.setCharacterSize(size_font);
+    mtext.setPosition(xpos, ypos);
+    mtext.setString(str);
+    mtext.setFillColor(menu_text_color);
+    mtext.setOutlineThickness(bord);
+    mtext.setOutlineColor(border_color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 int main() {
+
+//---------------
+
+    // Создаём окно windows
+    RenderWindow introductoryWindow;
+    // Параметры: размер окна установить согласно текущему разрешению экрана
+    // название моя игра, развернуть графическое окно на весь размер экрана
+    introductoryWindow.create(VideoMode::getDesktopMode(), L"Моя игра", Style::Fullscreen);
+
+    //отключаем видимость курсора
+    introductoryWindow.setMouseCursorVisible(false);
+
+    // получаем текущий размер экрана
+    float width = VideoMode::getDesktopMode().width;
+    float height = VideoMode::getDesktopMode().height;
+
+    // Устанавливаем фон для графического окна
+    // Создаём прямоугольник
+    RectangleShape background(Vector2f(width, height));
+    // Загружаем в прямоугольник текстуру с изображением menu9.jpg
+    Texture texture_window;
+    if (!texture_window.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Menu\\menu9.jpg")) return 4;
+    background.setTexture(&texture_window);
+
+    // Устанавливаем шрифт для названия игры
+    Font font;
+    if (!font.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Arial.ttf")) return 5;
+    Text Titul;
+    Titul.setFont(font);
+    // Текст с названием игры
+    InitText(Titul, 480, 50, L"Апокалипсис", 150, Color(237, 147, 0), 3);
+
+    // Название пунктов меню
+    String name_menu[]{ L"Старт",L"Настройки", L"О игре",L"Выход"};
+
+    // Объект игровое меню
+    game::GameMenu mymenu(introductoryWindow, 950, 350, 4, name_menu, 100, 120);
+    // Установка цвета элементов пунктов меню
+    mymenu.setColorTextMenu(Color(237, 147, 0), Color::Red, Color::Black);
+    // выравнивание по центру пунктов меню
+    mymenu.AlignMenu(2);
+
+    while (introductoryWindow.isOpen())
+    {
+        Event event;
+        while (introductoryWindow.pollEvent(event))
+        {
+            if (event.type == Event::KeyReleased)
+            {
+                // События выбра пунктов меню
+                // нажати на клавиатуре стрелки вверх
+                if (event.key.code == Keyboard::Up) { mymenu.MoveUp(); }
+                // нажати на клавиатуре стрелки вниз
+                if (event.key.code == Keyboard::Down) { mymenu.MoveDown(); }
+                // нажати на клавиатуре клавиши Enter
+                if (event.key.code == Keyboard::Return)
+                {
+                    // Переходим на выбранный пункт меню
+                    switch (mymenu.getSelectedMenuNumber())
+                    {
+                        case 0:GameStart();   break;
+                        case 1:Options();     break;
+                        case 2:About_Game();  break;
+                        case 3:introductoryWindow.close(); break;
+
+                    }
+
+                }
+            }
+        }
+
+        introductoryWindow.clear();
+        introductoryWindow.draw(background);
+        introductoryWindow.draw(Titul);
+        mymenu.draw();
+        introductoryWindow.display();
+    }
+
+
+
+//-----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     std::list<Bullet *> bullets;
     std::list<Bullet *>::iterator it;
 
@@ -111,8 +350,8 @@ int main() {
     Config config;
     RenderWindow window(VideoMode(1600, 900), config.nameGame); // Игровое окно
 
-    Font font;
-    if (!font.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Arial.ttf")) {
+    Font fonts;
+    if (!fonts.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Arial.ttf")) {
         // Обработка ошибки загрузки шрифта
         cerr << "dont found font";
     }
@@ -127,8 +366,8 @@ int main() {
 
     const unsigned int SIZE_OF_SCORE = 50;
 
-    Score score1(font, SIZE_OF_SCORE, Color::Green, position_1_x, position_1_y); //Первый игрок, красный
-    Score score2(font, SIZE_OF_SCORE, Color::Red, position_2_x, position_2_y); //Первый игрок, красный
+    Score score1(fonts, SIZE_OF_SCORE, Color::Green, position_1_x, position_1_y); //Первый игрок, красный
+    Score score2(fonts, SIZE_OF_SCORE, Color::Red, position_2_x, position_2_y); //Первый игрок, красный
 
 
 //TODO: ------------------------------------

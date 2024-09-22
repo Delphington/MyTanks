@@ -11,34 +11,38 @@
 using namespace std;
 using namespace sf;
 
-//карты с координтами
-const int H = 18;
-const int W = 32;
-
-//String TileMap[H] = {
-//        "BBBBBBBBBBBBBB0BB0BBBBBBBBBBBBBB",
-//        "B                              B",
-//        "B                              B",
-//        "B                              B",
-//        "B                              B",
-//        "B             B                B",
-//        "B                              B",
-//        "B            B                 B",
-//        "B                              B",
-//        "B                              B",
-//        "B                              B",
-//        "B                              B",
-//        "B                              B",
-//        "B                              B",
-//        "B                              B",
-//        "B                              B",
-//        "B                              B",
-//        "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-//};
+////карты с координтами
 //const int H = 18;
 //const int W = 32;
-char Card[H][W] = {
-        {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', '0', 'B', 'B', '0', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'},
+//
+//
+//    char Card[H][W] = {
+//        {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', '0', 'B', 'B', '0', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+//        {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'}
+//};
+
+class Cards{
+private:
+    static const int H = 18;
+    static const int W = 32;
+    char card[H][W] = {
+            {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', '0', 'B', 'B', '0', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'},
         {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
         {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
         {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
@@ -56,6 +60,43 @@ char Card[H][W] = {
         {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
         {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
         {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'}
+    };
+
+public:
+
+    Cards() {
+
+       // setInitialization(); // Инициализация при создании объекта
+    }
+
+
+    static const int getH() { return H; }
+    static const int getW() { return W; }
+
+//    void setInitialization() {
+//        for (int i = 0; i < H; i++) {
+//            for (int j = 0; j < W; j++) {
+//                if (i == 0 || j == 0 || i == H - 1 || j == W - 1) {
+//                    card[i][j] = 'B';
+//                } else {
+//                    card[i][j] = ' ';
+//                }
+//            }
+//        }
+//    }
+
+    char getItemCard(int i, int j) {
+        if ((i >= 0 && i < H) && (j >= 0 && j < W)) {
+            return card[i][j];
+        }
+        return '\0'; // Возвращаем нулевой символ в случае ошибки
+    }
+
+    void setItemCard(int i, int j, char value) {
+        if ((i >= 0 && i < H) && (j >= 0 && j < W)) {
+            card[i][j] = value;
+        }
+    }
 };
 
 
@@ -64,23 +105,17 @@ public:
     // Размер клетки
     static const int CELL_SIZE = 50;
 
-
-
-
-
-
-
-
     // Коллизия при движении влево по OX
-    static bool collXL(int dx, int dy, int w, char TileMap[H][W]) {
-        for (int i = dy / CELL_SIZE; i < (dy + w) / CELL_SIZE && i < H; i++) {
-            if (TileMap[i][dx / CELL_SIZE] == 'B') {
+    static bool collXL(int dx, int dy, int w, Cards& cards) {
+        for (int i = dy / CELL_SIZE; i < (dy + w) / CELL_SIZE && i < cards.getH(); i++) {
+            if (cards.getItemCard(i,dx / CELL_SIZE) ==  'B' ){
                 return true;
             }
-            if (i + 1 < H && TileMap[i + 1][dx / CELL_SIZE] == 'B') {
+
+            if (i + 1 < cards.getH() && cards.getItemCard(i+1, dx / CELL_SIZE) == 'B') {
                 return true;
             }
-            if (i + 2 < H && TileMap[i + 2][dx / CELL_SIZE] == 'B') {
+            if (i + 2 < cards.getH() &&  cards.getItemCard(i+2, dx / CELL_SIZE) == 'B') {
                 return true;
             }
         }
@@ -88,15 +123,16 @@ public:
     }
 
     // Коллизия при движении вправо по OX
-    static bool collXR(int dx, int dy, int w, char TileMap[H][W]) {
-        for (int i = dy / CELL_SIZE; i < (dy + w) / CELL_SIZE && i < H; i++) {
-            if (TileMap[i][(dx + w) / CELL_SIZE] == 'B') {
+    static bool collXR(int dx, int dy, int w, Cards& cards) {
+        for (int i = dy / CELL_SIZE; i < (dy + w) / CELL_SIZE && i < cards.getH(); i++) {
+            if (cards.getItemCard(i, (dx + w) / CELL_SIZE) == 'B') {
                 return true;
             }
-            if (i + 1 < H && TileMap[i + 1][(dx + w) / CELL_SIZE] == 'B') {
+
+            if (i + 1 < cards.getH() && cards.getItemCard(i + 1, (dx + w) / CELL_SIZE) == 'B') {
                 return true;
             }
-            if (i + 2 < H && TileMap[i + 2][(dx + w) / CELL_SIZE] == 'B') {
+            if (i + 2 < cards.getH() && cards.getItemCard(i + 2, (dx + w) / CELL_SIZE) == 'B') {
                 return true;
             }
         }
@@ -105,17 +141,18 @@ public:
 
 
     // Коллиция при движении вверх OY
-    static bool collYU(int dx, int dy, int w, char TileMap[H][W]) {
+    static bool collYU(int dx, int dy, int w, Cards& cards) {
         for (int j = (dx + 1) / CELL_SIZE; j < (dx + w) / CELL_SIZE; j++) {
             // Проверяем, что мы не выходим за границы массива
-            if (dy / CELL_SIZE > 0 && dy / CELL_SIZE < H) {
-                if (TileMap[dy / CELL_SIZE - 1][j] == 'B') {
+            if (dy / CELL_SIZE > 0 && dy / CELL_SIZE < cards.getH()) {
+                if (cards.getItemCard(dy / CELL_SIZE - 1,j) == 'B') {
                     return true;
                 }
-                if (j + 1 < W && TileMap[dy / CELL_SIZE - 1][j + 1] == 'B') {
+
+                if (j + 1 < cards.getW() &&  cards.getItemCard(dy / CELL_SIZE - 1 ,j+1)== 'B') {
                     return true;
                 }
-                if (j + 2 < W && TileMap[dy / CELL_SIZE - 1][j + 2] == 'B') {
+                if (j + 2 < cards.getW() && cards.getItemCard(dy / CELL_SIZE - 1 ,j+2) == 'B') {
                     return true;
                 }
             }
@@ -124,17 +161,18 @@ public:
     }
 
     // Коллиция при движении вниз OY
-    static bool collYD(int dx, int dy, int w, char TileMap[H][W]) {
+    static bool collYD(int dx, int dy, int w, Cards& cards) {
         for (int j = (dx + 1) / CELL_SIZE; j < (dx + w) / CELL_SIZE; j++) {
             // Проверяем границы массива и наличие 'B' в нужной позиции
-            if ((dy + 100) / CELL_SIZE < H) {
-                if (TileMap[(dy + 100) / CELL_SIZE][j] == 'B') {
+            if ((dy + 100) / CELL_SIZE < cards.getH()) {
+                if (cards.getItemCard((dy + 100) / CELL_SIZE, j) == 'B') {
                     return true;
                 }
-                if (j + 1 < 32 && TileMap[(dy + 100) / CELL_SIZE][j + 1] == 'B') {
+
+                if (j + 1 < 32 && cards.getItemCard((dy + 100) / CELL_SIZE, j+1) == 'B') {
                     return true;
                 }
-                if (j + 2 < 32 && TileMap[(dy + 100) / CELL_SIZE][j + 2] == 'B') {
+                if (j + 2 < 32 && cards.getItemCard((dy + 100) / CELL_SIZE, j+2) == 'B') {
                     return true;
                 }
             }
@@ -190,14 +228,14 @@ public:
     }
 
     //#Обновлении позиции опираясь на время и проверка столкновения
-    void update(float time, int x1, int y1, int x2, int y2) {
+    void update(float time, int x1, int y1, int x2, int y2, Cards& cards) {
         x += dx * time; //#смена координат
         y += dy * time;
 
 
         for (int i = y / 50; i < (y + h) / 50; i++) {
             for (int j = x / 50; j < (x + w) / 50; j++) {
-                if (Card[i][j] == 'B') {
+                if (cards.getItemCard(i,j) == 'B') {
                     //Столкновение с припятствием пуля умирает
                     dx = 0;
                     dy = 0;
@@ -234,11 +272,12 @@ public:
 
 
 
-
-
 int main() {
     std::list<Bullet *> bullets;
     std::list<Bullet *>::iterator it;
+
+    Cards  cards;
+
 
     Config config;
     RenderWindow window(VideoMode(1600, 900), config.nameGame); // Игровое окно
@@ -337,7 +376,7 @@ int main() {
         /////////////////////////////////////////////// Управление игрок 2
         if (Keyboard::isKeyPressed(Keyboard::Left)) {
             if (CollisionUtils::collXL(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
-                                       Card) == 0) {
+                                       cards) == 0) {
                 player2.move(-0.1 * time, 0);
             }
             //текстура для анимации
@@ -347,7 +386,7 @@ int main() {
         } else {
             if (Keyboard::isKeyPressed(Keyboard::Right)) {
                 if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
-                                           Card) == 0) {
+                                           cards) == 0) {
                     player2.move(0.1 * time, 0);
                 }
                 player2.setTextureRect(IntRect(100, 0, 100, 100));
@@ -355,7 +394,7 @@ int main() {
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::Up)) {
                     if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y,
-                                               ws, Card) == 0) {
+                                               ws, cards) == 0) {
                         player2.move(0, -0.1 * time);
                     }
                     player2.setTextureRect(IntRect(0, 0, 100, 100));
@@ -363,7 +402,7 @@ int main() {
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::Down)) {
                         if (CollisionUtils::collYD(player2.getSprite().getPosition().x,
-                                                   player2.getSprite().getPosition().y, ws, Card) == 0) {
+                                                   player2.getSprite().getPosition().y, ws, cards) == 0) {
                             player2.move(0, 0.1 * time);
                         }
                         player2.setTextureRect(IntRect(200, 0, 100, 100));
@@ -375,7 +414,7 @@ int main() {
         /////////////////////////////////////////////// Управление игрок 1
         if (Keyboard::isKeyPressed(Keyboard::A)) {
             if (CollisionUtils::collXL(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
-                                       Card) == 0) {
+                                       cards) == 0) {
                 player1.move(-0.1 * time, 0);
             }
             player1.setTextureRect(IntRect(301, 0, 100, 100));
@@ -383,7 +422,7 @@ int main() {
         } else {
             if (Keyboard::isKeyPressed(Keyboard::D)) {
                 if (CollisionUtils::collXR(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
-                                           Card) == 0) {
+                                           cards) == 0) {
                     player1.move(0.1 * time, 0);
                 }
                 player1.setTextureRect(IntRect(100, 0, 100, 100));
@@ -392,7 +431,7 @@ int main() {
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::W)) {
                     if (CollisionUtils::collYU(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y,
-                                               ws, Card) == 0) {
+                                               ws, cards) == 0) {
                         player1.move(0, -0.1 * time);
                     }
                     player1.setTextureRect(IntRect(0, 0, 100, 100));
@@ -401,7 +440,7 @@ int main() {
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::S)) {
                         if (CollisionUtils::collYD(player1.getSprite().getPosition().x,
-                                                   player1.getSprite().getPosition().y, ws, Card) == 0) {
+                                                   player1.getSprite().getPosition().y, ws, cards) == 0) {
                             player1.move(0, 0.1 * time);
                         }
                         player1.setTextureRect(IntRect(200, 0, 100, 100));
@@ -427,7 +466,7 @@ int main() {
         for (it = bullets.begin(); it != bullets.end(); it++) {
             (*it)->update(time, player2.getSprite().getPosition().x, player2.getSprite().getPosition().y,
                           player1.getSprite().getPosition().x,
-                          player1.getSprite().getPosition().y);
+                          player1.getSprite().getPosition().y, cards);
         }
 
 
@@ -488,13 +527,13 @@ int main() {
         window.clear();
 
         //# Отрисовка карты
-        for (int i = 0; i < H; i++) {
-            for (int j = 0; j < W; j++) {
-                if (Card[i][j] == 'B') {
+        for (int i = 0; i < cards.getH(); i++) {
+            for (int j = 0; j < cards.getW(); j++) {
+                if (cards.getItemCard(i,j) == 'B') {
                     wall.setPosition(j * 50, i * 50);
                     window.draw(wall.getRectangle());
                 }
-                if (Card[i][j] == ' ') {
+                if (cards.getItemCard(i,j) == ' ') {
                     backGround.setPosition(j * 50, i * 50);
                     window.draw(backGround.getRectangle());
                 }
@@ -541,4 +580,7 @@ int main() {
         window2.display();
     }
     return 0;
+
+
+
 }

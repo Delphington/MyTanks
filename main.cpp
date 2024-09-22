@@ -1,3 +1,4 @@
+
 #include <SFML/Graphics.hpp>
 #include <list>
 #include <iostream>
@@ -8,136 +9,13 @@
 #include "Score.cpp"
 #include "Player.cpp"
 
+#include "CollisionUtils.cpp"
+
 using namespace std;
 using namespace sf;
 
 
-class Card{
-private:
-    static const int HEIGHT = 18;
-    static const int WIDTH = 32;
-    char card[HEIGHT][WIDTH];
 
-    void setInitialization() {
-        for (int i = 0; i < HEIGHT; i++) {
-            for (int j = 0; j < WIDTH; j++) {
-                if (i == 0 || j == 0 || i == HEIGHT - 1 || j == WIDTH - 1) {
-                    //установка счета
-                    if((i ==0 && j ==14) ||  (i ==0 && j ==17)){
-                        card[i][j] = '0';
-                    }else{
-                        card[i][j] = 'X';
-                    }
-                } else {
-                    card[i][j] = ' ';
-                }
-            }
-        }
-    }
-
-public:
-    Card() {
-        setInitialization(); // Инициализация при создании объекта
-    }
-
-    static const int getHeight() { return HEIGHT; }
-    static const int getWidth() { return WIDTH; }
-
-    char getItemCard(int i, int j) {
-        if ((i >= 0 && i < HEIGHT) && (j >= 0 && j < WIDTH)) {
-            return card[i][j];
-        }
-        return '\0'; // Возвращаем нулевой символ в случае ошибки
-    }
-
-    void setItemCard(int i, int j, char value) {
-        if ((i >= 0 && i < HEIGHT) && (j >= 0 && j < WIDTH)) {
-            card[i][j] = value;
-        }
-    }
-};
-
-
-class CollisionUtils {
-public:
-    // Размер клетки
-    static const int CELL_SIZE = 50;
-
-    // Коллизия при движении влево по OX
-    static bool collXL(int dx, int dy, int w, Card& card) {
-        for (int i = dy / CELL_SIZE; i < (dy + w) / CELL_SIZE && i < card.getHeight(); i++) {
-            if (card.getItemCard(i,dx / CELL_SIZE) ==  'X' ){
-                return true;
-            }
-
-            if (i + 1 < card.getHeight() && card.getItemCard(i+1, dx / CELL_SIZE) == 'X') {
-                return true;
-            }
-            if (i + 2 < card.getHeight() &&  card.getItemCard(i+2, dx / CELL_SIZE) == 'X') {
-                return true;
-            }
-        }
-        return false; // Если ничего не найдено
-    }
-
-    // Коллизия при движении вправо по OX
-    static bool collXR(int dx, int dy, int w, Card& card) {
-        for (int i = dy / CELL_SIZE; i < (dy + w) / CELL_SIZE && i < card.getHeight(); i++) {
-            if (card.getItemCard(i, (dx + w) / CELL_SIZE) == 'X') {
-                return true;
-            }
-
-            if (i + 1 < card.getHeight() && card.getItemCard(i + 1, (dx + w) / CELL_SIZE) == 'X') {
-                return true;
-            }
-            if (i + 2 < card.getHeight() && card.getItemCard(i + 2, (dx + w) / CELL_SIZE) == 'X') {
-                return true;
-            }
-        }
-        return false; // Если ничего не найдено
-    }
-
-
-    // Коллиция при движении вверх OY
-    static bool collYU(int dx, int dy, int w, Card& card) {
-        for (int j = (dx + 1) / CELL_SIZE; j < (dx + w) / CELL_SIZE; j++) {
-            // Проверяем, что мы не выходим за границы массива
-            if (dy / CELL_SIZE > 0 && dy / CELL_SIZE < card.getHeight()) {
-                if (card.getItemCard(dy / CELL_SIZE - 1,j) == 'X') {
-                    return true;
-                }
-
-                if (j + 1 < card.getWidth() &&  card.getItemCard(dy / CELL_SIZE - 1 ,j+1)== 'X') {
-                    return true;
-                }
-                if (j + 2 < card.getWidth() && card.getItemCard(dy / CELL_SIZE - 1 ,j+2) == 'X') {
-                    return true;
-                }
-            }
-        }
-        return false; // Если ничего не найдено
-    }
-
-    // Коллиция при движении вниз OY
-    static bool collYD(int dx, int dy, int w, Card& card) {
-        for (int j = (dx + 1) / CELL_SIZE; j < (dx + w) / CELL_SIZE; j++) {
-            // Проверяем границы массива и наличие 'X' в нужной позиции
-            if ((dy + 100) / CELL_SIZE < card.getHeight()) {
-                if (card.getItemCard((dy + 100) / CELL_SIZE, j) == 'X') {
-                    return true;
-                }
-
-                if (j + 1 < 32 && card.getItemCard((dy + 100) / CELL_SIZE, j+1) == 'X') {
-                    return true;
-                }
-                if (j + 2 < 32 && card.getItemCard((dy + 100) / CELL_SIZE, j+2) == 'X') {
-                    return true;
-                }
-            }
-        }
-        return false; // Если ничего не найдено
-    }
-};
 
 
 //#Объект пули

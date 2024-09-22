@@ -8,6 +8,8 @@ add_executable(MyTanks main.cpp
         Environment.cpp
         Score.cpp
         Player.cpp
+        Card.cpp
+        CollisionUtils.cpp
 )
 
 

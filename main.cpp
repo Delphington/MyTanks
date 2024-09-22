@@ -1,10 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include <list>
 #include <iostream>
-
-
 #include "Config.cpp"
+#include <string>
 
+#include "Environment.cpp"
+#include "Score.cpp"
+
+using namespace std;
 using namespace sf;
 
 //карты с координтами
@@ -17,9 +20,9 @@ String TileMap[H] = {
         "B                              B",
         "B                              B",
         "B                              B",
+        "B             B                B",
         "B                              B",
-        "B                              B",
-        "B                              B",
+        "B            B                 B",
         "B                              B",
         "B                              B",
         "B                              B",
@@ -32,9 +35,6 @@ String TileMap[H] = {
         "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
 };
 
-#include <string>
-
-using namespace std;
 
 class CollisionUtils {
 public:
@@ -214,56 +214,31 @@ public:
 class Players {
 private:
     float x, y;
-    int score;
+    int score, state;
     Texture texture;
     Sprite sprite;
-    int state;
-public:
-    void setState(int state) {
-        this->state = state;
-    }
 
 public:
-    int getState() const {
-        return state;
-    }
-
-
-public:
-    Players(float x, float y, int score) : x(x), y(y), score(score) {
-
-    }
+    Players(float x, float y, int score) : x(x), y(y), score(score) {}
 
     void setInitialization(String pathOfPicture, IntRect rect) {
-
         texture.loadFromFile(pathOfPicture);
         sprite.setTexture(texture);
         sprite.setTextureRect(rect);
         sprite.setPosition(x, y);
-
     }
-
-    int getX() const { return x; }
-
-    int getY() const { return y; }
 
     int getScore() const { return score; }
 
-    const Texture &getTexture() const { return texture; }
+    int getState() const { return state; }
+
+    void setState(int state) {
+        this->state = state;
+    }
 
     const Sprite &getSprite() const { return sprite; }
 
-
-    void setX(int x) { this->x = x; }
-
-    void setY(int y) { this->y = y; }
-
     void setScore(int score) { this->score = score; }
-
-    void setT(const Texture &t) { this->texture = t; }
-
-    void setSprite(const Sprite &s) { this->sprite = s; }
-
 
     // Метод для перемещения спрайта
     void move(float dx, float dy) {
@@ -281,9 +256,10 @@ public:
     void setTextureRect(IntRect rect) {
         sprite.setTextureRect(rect);
     }
-
-
 };
+
+
+
 
 int main() {
     std::list<Bullet *> bullets;
@@ -292,24 +268,25 @@ int main() {
     Config config;
     RenderWindow window(VideoMode(1600, 900), config.nameGame); // Игровое окно
 
-
     Font font;
     if (!font.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Arial.ttf")) {
         // Обработка ошибки загрузки шрифта
-        return -1;
+        cerr << "dont found font";
     }
 
 
-//Установка счета
-    Text scoreText;
-    Text scoreText1;
-    scoreText.setFont(font);
-    scoreText1.setFont(font);
-    scoreText.setCharacterSize(50);
-    scoreText1.setCharacterSize(50);
-    scoreText.setFillColor(sf::Color::Green);
-    scoreText1.setFillColor(sf::Color::Red);
-//------------------
+//  ### Создание объектов счетов
+    int position_1_x = 862;
+    int position_1_y = 0;
+
+    int position_2_x = 712;
+    int position_2_y = 0;
+
+    const unsigned int SIZE_OF_SCORE = 50;
+
+    Score score1(font, SIZE_OF_SCORE, Color::Green, position_1_x, position_1_y); //Первый игрок, красный
+    Score score2(font, SIZE_OF_SCORE, Color::Red, position_2_x, position_2_y); //Первый игрок, красный
+
 
 //TODO: ------------------------------------
     Players player1(100, 400, 0);
@@ -318,31 +295,13 @@ int main() {
 
 
     Players player2(1400, 400, 0); //Инициализация игрока который по клавишам
-
     player2.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png",
                               IntRect(300, 0, 100, 100));
 
-
-
 //TODO: ------------------------------------
 
-    // начальная позиция первого игрока
-
-    //--------------------------------------
-    //Окружение
-    //коричнивая стена
-    Texture wall;
-    wall.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\background\\briq.png");
-    Sprite rectangle;
-    rectangle.setTexture(wall);
-
-
-    //установка серого бэекграунда
-    Texture ground;
-    ground.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\background\\ground.png");
-    Sprite rectangle2;
-    rectangle2.setTexture(ground);
-
+    Environment backGround("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\background\\ground.png");
+    Environment wall("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\background\\briq.png");
 
 
 //    Окно для результата (Какой танк выиграл и тд)
@@ -385,12 +344,7 @@ int main() {
                                                  player2.getSprite().getPosition().y + 43, player2.getState(),
                                                  2));  /////// Стрельба игрок 2
 
-//                    Если была нажата клавиша L,
-//                    создается новый объект Bullet (пуля) с координатами,
-//                    основанными на позиции объекта s (вероятно, это игрок 2).
-//                    Позиция пули смещена на 43 пикселя по X и Y.
-//                    Параметры state1 и 2 могут указывать состояние
-//                    пули и игрока соответственно. Пуля добавляется в вектор bullets.
+//                 пули и игрока соответственно. Пуля добавляется в вектор bullets.
 
                 }
             }
@@ -506,7 +460,7 @@ int main() {
         for (it = bullets.begin(); it != bullets.end();) {
             Bullet *b = *it;
             if (b->p1life == false) {  //#Игрок умер
-                player1.setScore(player1.getScore()  +1);
+                player1.setScore(player1.getScore() + 1);
                 if (player1.getScore() > 4) {
                     endgame = true;
                     //#закнчиваем игру
@@ -527,7 +481,7 @@ int main() {
         for (it = bullets.begin(); it != bullets.end();) {//Проверка жизни игрока 2
             Bullet *b = *it;
             if (b->p2life == false) {
-                player2.setScore(player2.getScore()+1);  //увеличение счета
+                player2.setScore(player2.getScore() + 1);  //увеличение счета
                 if (player2.getScore() > 4) {
                     endgame = true;
                 }
@@ -551,12 +505,8 @@ int main() {
 
 
         //#изменение счета
-        std::string scoreString = std::to_string(player2.getScore());
-        std::string scoreString1 = std::to_string(player1.getScore());
-        scoreText.setString(scoreString);
-        scoreText1.setString(scoreString1);
-        scoreText.setPosition(862, 0);
-        scoreText1.setPosition(712, 0);
+        score1.setString(to_string(player2.getScore()));
+        score2.setString(to_string(player1.getScore()));
 
 
         //#Очистка перед отрисовкой нового кадра
@@ -566,12 +516,12 @@ int main() {
         for (int i = 0; i < H; i++) {
             for (int j = 0; j < W; j++) {
                 if (TileMap[i][j] == 'B') {
-                    rectangle.setPosition(j * 50, i * 50);
-                    window.draw(rectangle);
+                    wall.setPosition(j * 50, i * 50);
+                    window.draw(wall.getRectangle());
                 }
                 if (TileMap[i][j] == ' ') {
-                    rectangle2.setPosition(j * 50, i * 50);
-                    window.draw(rectangle2);
+                    backGround.setPosition(j * 50, i * 50);
+                    window.draw(backGround.getRectangle());
                 }
             }
         }
@@ -586,8 +536,8 @@ int main() {
         window.draw(player2.getSprite());
         window.draw(player1.getSprite());
         //#  отрисовка счета
-        window.draw(scoreText);
-        window.draw(scoreText1);
+        window.draw(score1.getScoreText());
+        window.draw(score2.getScoreText());
         window.display(); //# Отображение
     }
 //

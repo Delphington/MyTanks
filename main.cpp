@@ -15,25 +15,47 @@ using namespace sf;
 const int H = 18;
 const int W = 32;
 
-String TileMap[H] = {
-        "BBBBBBBBBBBBBB0BB0BBBBBBBBBBBBBB",
-        "B                              B",
-        "B                              B",
-        "B                              B",
-        "B                              B",
-        "B             B                B",
-        "B                              B",
-        "B            B                 B",
-        "B                              B",
-        "B                              B",
-        "B                              B",
-        "B                              B",
-        "B                              B",
-        "B                              B",
-        "B                              B",
-        "B                              B",
-        "B                              B",
-        "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+//String TileMap[H] = {
+//        "BBBBBBBBBBBBBB0BB0BBBBBBBBBBBBBB",
+//        "B                              B",
+//        "B                              B",
+//        "B                              B",
+//        "B                              B",
+//        "B             B                B",
+//        "B                              B",
+//        "B            B                 B",
+//        "B                              B",
+//        "B                              B",
+//        "B                              B",
+//        "B                              B",
+//        "B                              B",
+//        "B                              B",
+//        "B                              B",
+//        "B                              B",
+//        "B                              B",
+//        "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+//};
+//const int H = 18;
+//const int W = 32;
+char Card[H][W] = {
+        {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', '0', 'B', 'B', '0', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B'},
+        {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'}
 };
 
 
@@ -42,59 +64,59 @@ public:
     // Размер клетки
     static const int CELL_SIZE = 50;
 
-    // Коллиция при движении влево по OX
-    static bool collXL(int dx, int dy, int w, String TileMap[], int H) {
-        for (int i = (dy + 1) / CELL_SIZE; i < (dy + w - 2) / CELL_SIZE && i < H; i++) {
+
+
+
+
+
+
+
+    // Коллизия при движении влево по OX
+    static bool collXL(int dx, int dy, int w, char TileMap[H][W]) {
+        for (int i = dy / CELL_SIZE; i < (dy + w) / CELL_SIZE && i < H; i++) {
             if (TileMap[i][dx / CELL_SIZE] == 'B') {
                 return true;
-            } else {
-                if (i + 1 < H && TileMap[i + 1][dx / CELL_SIZE] == 'B') {
-                    return true;
-                } else {
-                    if (i + 2 < H && TileMap[i + 2][dx / CELL_SIZE] == 'B') {
-                        return true;
-                    }
-                    return false;
-                }
+            }
+            if (i + 1 < H && TileMap[i + 1][dx / CELL_SIZE] == 'B') {
+                return true;
+            }
+            if (i + 2 < H && TileMap[i + 2][dx / CELL_SIZE] == 'B') {
+                return true;
             }
         }
         return false; // Если ничего не найдено
     }
 
-    // Коллиция при движении вправо по OX
-    static bool collXR(int dx, int dy, int w, String TileMap[], int H) {
-        for (int i = (dy + 1) / CELL_SIZE; i < (dy + w - 2) / CELL_SIZE && i < H; i++) {
-            if (TileMap[i][(dx + 100) / CELL_SIZE] == 'B') {
+    // Коллизия при движении вправо по OX
+    static bool collXR(int dx, int dy, int w, char TileMap[H][W]) {
+        for (int i = dy / CELL_SIZE; i < (dy + w) / CELL_SIZE && i < H; i++) {
+            if (TileMap[i][(dx + w) / CELL_SIZE] == 'B') {
                 return true;
-            } else {
-                if (i + 1 < H && TileMap[i + 1][(dx + 100) / CELL_SIZE] == 'B') {
-                    return true;
-                } else {
-                    if (i + 2 < H && TileMap[i + 2][(dx + 100) / CELL_SIZE] == 'B') {
-                        return true;
-                    }
-                    return false;
-                }
+            }
+            if (i + 1 < H && TileMap[i + 1][(dx + w) / CELL_SIZE] == 'B') {
+                return true;
+            }
+            if (i + 2 < H && TileMap[i + 2][(dx + w) / CELL_SIZE] == 'B') {
+                return true;
             }
         }
         return false; // Если ничего не найдено
     }
+
 
     // Коллиция при движении вверх OY
-    static bool collYU(int dx, int dy, int w, String TileMap[], int H) {
+    static bool collYU(int dx, int dy, int w, char TileMap[H][W]) {
         for (int j = (dx + 1) / CELL_SIZE; j < (dx + w) / CELL_SIZE; j++) {
-            if (dy / CELL_SIZE < H && TileMap[dy / CELL_SIZE][j] == 'B') {
-                return true;
-            } else {
-                if (dy / CELL_SIZE < H && j + 1 < TileMap[dy / CELL_SIZE].getSize() &&
-                    TileMap[dy / CELL_SIZE][j + 1] == 'B') {
+            // Проверяем, что мы не выходим за границы массива
+            if (dy / CELL_SIZE > 0 && dy / CELL_SIZE < H) {
+                if (TileMap[dy / CELL_SIZE - 1][j] == 'B') {
                     return true;
-                } else {
-                    if (dy / CELL_SIZE < H && j + 2 < TileMap[dy / CELL_SIZE].getSize() &&
-                        TileMap[dy / CELL_SIZE][j + 2] == 'B') {
-                        return true;
-                    }
-                    return false;
+                }
+                if (j + 1 < W && TileMap[dy / CELL_SIZE - 1][j + 1] == 'B') {
+                    return true;
+                }
+                if (j + 2 < W && TileMap[dy / CELL_SIZE - 1][j + 2] == 'B') {
+                    return true;
                 }
             }
         }
@@ -102,20 +124,18 @@ public:
     }
 
     // Коллиция при движении вниз OY
-    static bool collYD(int dx, int dy, int w, String TileMap[], int H) {
+    static bool collYD(int dx, int dy, int w, char TileMap[H][W]) {
         for (int j = (dx + 1) / CELL_SIZE; j < (dx + w) / CELL_SIZE; j++) {
-            if ((dy + 100) / CELL_SIZE < H && TileMap[(dy + 100) / CELL_SIZE][j] == 'B') {
-                return true;
-            } else {
-                if ((dy + 100) / CELL_SIZE < H && j + 1 < TileMap[(dy + 100) / CELL_SIZE].getSize() &&
-                    TileMap[(dy + 100) / CELL_SIZE][j + 1] == 'B') {
+            // Проверяем границы массива и наличие 'B' в нужной позиции
+            if ((dy + 100) / CELL_SIZE < H) {
+                if (TileMap[(dy + 100) / CELL_SIZE][j] == 'B') {
                     return true;
-                } else {
-                    if ((dy + 100) / CELL_SIZE < H && j + 2 < TileMap[(dy + 100) / CELL_SIZE].getSize() &&
-                        TileMap[(dy + 100) / CELL_SIZE][j + 2] == 'B') {
-                        return true;
-                    }
-                    return false;
+                }
+                if (j + 1 < 32 && TileMap[(dy + 100) / CELL_SIZE][j + 1] == 'B') {
+                    return true;
+                }
+                if (j + 2 < 32 && TileMap[(dy + 100) / CELL_SIZE][j + 2] == 'B') {
+                    return true;
                 }
             }
         }
@@ -177,7 +197,7 @@ public:
 
         for (int i = y / 50; i < (y + h) / 50; i++) {
             for (int j = x / 50; j < (x + w) / 50; j++) {
-                if (TileMap[i][j] == 'B') {
+                if (Card[i][j] == 'B') {
                     //Столкновение с припятствием пуля умирает
                     dx = 0;
                     dy = 0;
@@ -317,7 +337,7 @@ int main() {
         /////////////////////////////////////////////// Управление игрок 2
         if (Keyboard::isKeyPressed(Keyboard::Left)) {
             if (CollisionUtils::collXL(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
-                                       TileMap, H) == 0) {
+                                       Card) == 0) {
                 player2.move(-0.1 * time, 0);
             }
             //текстура для анимации
@@ -327,7 +347,7 @@ int main() {
         } else {
             if (Keyboard::isKeyPressed(Keyboard::Right)) {
                 if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
-                                           TileMap, H) == 0) {
+                                           Card) == 0) {
                     player2.move(0.1 * time, 0);
                 }
                 player2.setTextureRect(IntRect(100, 0, 100, 100));
@@ -335,7 +355,7 @@ int main() {
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::Up)) {
                     if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y,
-                                               ws, TileMap, H) == 0) {
+                                               ws, Card) == 0) {
                         player2.move(0, -0.1 * time);
                     }
                     player2.setTextureRect(IntRect(0, 0, 100, 100));
@@ -343,7 +363,7 @@ int main() {
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::Down)) {
                         if (CollisionUtils::collYD(player2.getSprite().getPosition().x,
-                                                   player2.getSprite().getPosition().y, ws, TileMap, H) == 0) {
+                                                   player2.getSprite().getPosition().y, ws, Card) == 0) {
                             player2.move(0, 0.1 * time);
                         }
                         player2.setTextureRect(IntRect(200, 0, 100, 100));
@@ -355,7 +375,7 @@ int main() {
         /////////////////////////////////////////////// Управление игрок 1
         if (Keyboard::isKeyPressed(Keyboard::A)) {
             if (CollisionUtils::collXL(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
-                                       TileMap, H) == 0) {
+                                       Card) == 0) {
                 player1.move(-0.1 * time, 0);
             }
             player1.setTextureRect(IntRect(301, 0, 100, 100));
@@ -363,7 +383,7 @@ int main() {
         } else {
             if (Keyboard::isKeyPressed(Keyboard::D)) {
                 if (CollisionUtils::collXR(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
-                                           TileMap, H) == 0) {
+                                           Card) == 0) {
                     player1.move(0.1 * time, 0);
                 }
                 player1.setTextureRect(IntRect(100, 0, 100, 100));
@@ -372,7 +392,7 @@ int main() {
             } else {
                 if (Keyboard::isKeyPressed(Keyboard::W)) {
                     if (CollisionUtils::collYU(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y,
-                                               ws, TileMap, H) == 0) {
+                                               ws, Card) == 0) {
                         player1.move(0, -0.1 * time);
                     }
                     player1.setTextureRect(IntRect(0, 0, 100, 100));
@@ -381,7 +401,7 @@ int main() {
                 } else {
                     if (Keyboard::isKeyPressed(Keyboard::S)) {
                         if (CollisionUtils::collYD(player1.getSprite().getPosition().x,
-                                                   player1.getSprite().getPosition().y, ws, TileMap, H) == 0) {
+                                                   player1.getSprite().getPosition().y, ws, Card) == 0) {
                             player1.move(0, 0.1 * time);
                         }
                         player1.setTextureRect(IntRect(200, 0, 100, 100));
@@ -470,11 +490,11 @@ int main() {
         //# Отрисовка карты
         for (int i = 0; i < H; i++) {
             for (int j = 0; j < W; j++) {
-                if (TileMap[i][j] == 'B') {
+                if (Card[i][j] == 'B') {
                     wall.setPosition(j * 50, i * 50);
                     window.draw(wall.getRectangle());
                 }
-                if (TileMap[i][j] == ' ') {
+                if (Card[i][j] == ' ') {
                     backGround.setPosition(j * 50, i * 50);
                     window.draw(backGround.getRectangle());
                 }
@@ -520,7 +540,5 @@ int main() {
         }
         window2.display();
     }
-
-
     return 0;
 }

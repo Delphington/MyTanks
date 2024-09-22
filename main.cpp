@@ -14,10 +14,6 @@
 using namespace std;
 using namespace sf;
 
-
-
-
-
 //#Объект пули
 //#Размер поля 1600x900
 //#Размер пули 15x15
@@ -416,7 +412,5 @@ int main() {
         window2.display();
     }
     return 0;
-
-
 
 }

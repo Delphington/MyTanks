@@ -5,13 +5,13 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(MyTanks main.cpp
         Config.cpp
-        Score.cpp
         Card.cpp
         GameMenu.h
         GameMenu.cpp
         Player.cpp
         Environment.cpp
         CollisionUtils.cpp
+        Score.cpp
 )
 
 

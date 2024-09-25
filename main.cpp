@@ -5,7 +5,7 @@
 #include <string>
 
 #include "Environment.h"
-#include "Score.cpp"
+#include "Score.h"
 #include "Player.h"
 #include "GameMenu.h"
 #include "CollisionUtils.h"

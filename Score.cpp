@@ -1,31 +1,24 @@
-#include <SFML/Graphics.hpp>
-#include <string>
+#include "Score.h"
 
-using namespace std;
-using namespace sf;
+// Конструктор
+Score::Score(const Font &font, unsigned int size, const Color &color, float x, float y) {
+    scoreText.setFont(font);
+    scoreText.setCharacterSize(size);
+    scoreText.setFillColor(color);
+    scoreText.setPosition(x, y);
+}
 
-class Score {
-private:
-    Text scoreText;
-    Font font;
-    float x, y;
-public:
-    Score(const Font &font, unsigned int size, const Color &color, float x, float y) {
-        scoreText.setFont(font);
-        scoreText.setCharacterSize(size);
-        scoreText.setFillColor(color);
-        scoreText.setPosition(x, y);
-    }
+// Установка строки текста
+void Score::setString(const string &str) {
+    scoreText.setString(str);
+}
 
-    void setString(const string &str) {
-        scoreText.setString(str);
-    }
+// Установка позиции текста
+void Score::setPosition(float x, float y) {
+    scoreText.setPosition(x, y);
+}
 
-    void setPosition(float x, float y) {
-        scoreText.setPosition(x, y);
-    }
-
-    const Text &getScoreText() const {
-        return scoreText;
-    }
-};
+// Получение текста счета
+const Text &Score::getScoreText() const {
+    return scoreText;
+}

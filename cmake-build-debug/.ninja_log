@@ -1,15 +1,15 @@
 # ninja log v5
-5	1840	7489933998320764	CMakeFiles/MyTanks.dir/main.cpp.obj	b3039c74b1918c79
-0	435	7489945944699721	build.ninja	27bd2ff50ffe4bc6
-1840	2454	7489934004429576	MyTanks.exe	ecc015326b9939c7
+3	839	7489945975093069	CMakeFiles/MyTanks.dir/main.cpp.obj	b3039c74b1918c79
+0	435	7489948238543491	build.ninja	27bd2ff50ffe4bc6
+840	1452	7489945981170941	MyTanks.exe	57b52d151e135a59
 43	1570	7489933995577426	CMakeFiles/MyTanks.dir/Player.cpp.obj	6f1d6d5a625a9c3c
 22	1332	7489933993173183	CMakeFiles/MyTanks.dir/Score.cpp.obj	b14d6a305f93ea78
 15	988	7489933989692483	CMakeFiles/MyTanks.dir/Config.cpp.obj	4d88f706a78d4eb9
 30	1606	7489933995967264	CMakeFiles/MyTanks.dir/Environment.cpp.obj	2bd142073e08415f
 10	80	7487224004512989	CMakeFiles/MyTanks.dir/Card.cpp.obj	a9d5806e4e4c51e0
-11	81	7487224751607615	CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj	ddb531202142555e
+14	130	7489945968009842	CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj	ddb531202142555e
 16	1026	7487227084101899	CMakeFiles/MyTanks.dir/Bullet.cpp.obj	ec32d1fd9080cda5
 11	839	7487298611713934	CMakeFiles/MyTanks.dir/GameMenu.cpp.obj	4fbd47acc437909f
-14	130	7489945968009842	CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj	ddb531202142555e
-3	839	7489945975093069	CMakeFiles/MyTanks.dir/main.cpp.obj	b3039c74b1918c79
-840	1452	7489945981170941	MyTanks.exe	57b52d151e135a59
+72	1698	7489948279230174	CMakeFiles/MyTanks.dir/Score.cpp.obj	b14d6a305f93ea78
+36	2006	7489948282334582	CMakeFiles/MyTanks.dir/main.cpp.obj	b3039c74b1918c79
+2006	2725	7489948289458453	MyTanks.exe	ef5185a6fb7a479e

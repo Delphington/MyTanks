@@ -18,31 +18,14 @@ using namespace sf;
 //#Размер поля 1600x900
 //#Размер пули 15x15
 
-void endOfGame(RenderWindow &window, Player &player1, Player &player2) {
-    //Финальное окно
+
+//Отрисовка итога, кто выиграл, финальное окно
+void gameOver(RenderWindow &window, Player &player1, Player &player2) {
     window.clear();
-    bool  flag = true;
-
-
-//    Окно для результата (Какой танк выиграл и тд)
-//    Texture tp1won;
-//    tp1won.loadFromFile("p1won.png");
-//    Sprite sp1won;
-//    sp1won.setTexture(tp1won);
-//    sp1won.setPosition(0, 0);
-//    Texture tp2won;
-//    tp2won.loadFromFile("p2won.png");
-//    Sprite sp2won;
-//    sp2won.setTexture(tp2won);
-//    sp2won.setPosition(0, 0);
+    bool flag = true;
 
     Texture texture;
-    if (!texture.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p1won.png")) {; // Обработка ошибки загрузки текстуры
-    }
-
-    Sprite sprite(texture); // Создаем спрайт из текстуры
-
-
+    Sprite sprite;
 
     while (window.isOpen() && flag) {
         Event event2;
@@ -54,23 +37,26 @@ void endOfGame(RenderWindow &window, Player &player1, Player &player2) {
             window.close();
         }
 
-//TODO: хуева
         if (player2.getScore() > player1.getScore()) {
-
-            // Основной игровой ц
-            window.draw(sprite); // Отрисовка спрайта
+            if (!texture.loadFromFile(
+                    "D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p2won.png")) { ; // Обработка ошибки загрузки текстуры
+            }
         } else {
-            window.draw(sprite); // Отрисовка спрайта
+            if (!texture.loadFromFile(
+                    "D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p1won.png")) { ; // Обработка ошибки загрузки текстуры
+            }
         }
+        sprite.setTexture(texture);
+        window.draw(sprite); // Отрисовка спрайта
         window.display();
 
+        //выход на главное меню
         if (Keyboard::isKeyPressed(Keyboard::P)) {
             window.clear();
-           flag = false;
+            flag = false;
         }
     }
 }
-
 
 
 // функция настройки текста
@@ -322,7 +308,7 @@ void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
         window.draw(score2.getScoreText());
         window.display(); //# Отображение
     }
-    endOfGame(window, player1, player2);
+    gameOver(window, player1, player2);
 }
 
 // Функция настройки игры
@@ -359,12 +345,8 @@ int main() {
 
 //TODO: ------------------------------------
 
-
-//---------------
-//TODO: ------------------------------------------------------------
 // Создаём окно windows
 
-    // RenderWindow windows(VideoMode(1600, 900), config.nameGame); // Игровое окно
 
 
     RenderWindow windows(VideoMode(1600, 900), config.nameGame); // Игровое окно

@@ -1,6 +1,3 @@
-//
-// Created by Professional on 21.09.2024.
-//
 #include <string>
 
 using namespace std;

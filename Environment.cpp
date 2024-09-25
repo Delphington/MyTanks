@@ -1,26 +1,17 @@
+#include "Environment.h"
 
-#include <SFML/Graphics.hpp>
-#include <string>
+// Конструктор
+Environment::Environment(const std::string &pathOfFile) {
+    ground.loadFromFile(pathOfFile);
+    rectangle.setTexture(ground);
+}
 
-using namespace std;
-using namespace sf;
+// Геттер для спрайта
+const sf::Sprite &Environment::getRectangle() const {
+    return rectangle;
+}
 
-class Environment {
-private:
-    Texture ground;
-    Sprite rectangle;
-
-public:
-    Environment(const string &pythOfFile) {
-        ground.loadFromFile(pythOfFile);
-        rectangle.setTexture(ground);
-    }
-
-    const Sprite &getRectangle() const {
-        return rectangle;
-    }
-
-    void setPosition(float x, float y) {
-        rectangle.setPosition(x, y);
-    }
-};
+// Метод для установки позиции спрайта
+void Environment::setPosition(float x, float y) {
+    rectangle.setPosition(x, y);
+}

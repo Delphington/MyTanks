@@ -65,14 +65,6 @@ build CMakeFiles/MyTanks.dir/Config.cpp.obj: CXX_COMPILER__MyTanks_unscanned_Deb
   OBJECT_DIR = CMakeFiles\MyTanks.dir
   OBJECT_FILE_DIR = CMakeFiles\MyTanks.dir
 
-build CMakeFiles/MyTanks.dir/Environment.cpp.obj: CXX_COMPILER__MyTanks_unscanned_Debug D$:/_DELPGINGTON/University/Sem_3/course/MyTanks/Environment.cpp || cmake_object_order_depends_target_MyTanks
-  DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\MyTanks.dir\Environment.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -ID:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML -isystem D:/_DELPGINGTON/University/Sem_3/course/SFML/include
-  OBJECT_DIR = CMakeFiles\MyTanks.dir
-  OBJECT_FILE_DIR = CMakeFiles\MyTanks.dir
-
 build CMakeFiles/MyTanks.dir/Score.cpp.obj: CXX_COMPILER__MyTanks_unscanned_Debug D$:/_DELPGINGTON/University/Sem_3/course/MyTanks/Score.cpp || cmake_object_order_depends_target_MyTanks
   DEFINES = -DSFML_STATIC
   DEP_FILE = CMakeFiles\MyTanks.dir\Score.cpp.obj.d
@@ -113,6 +105,14 @@ build CMakeFiles/MyTanks.dir/Player.cpp.obj: CXX_COMPILER__MyTanks_unscanned_Deb
   OBJECT_DIR = CMakeFiles\MyTanks.dir
   OBJECT_FILE_DIR = CMakeFiles\MyTanks.dir
 
+build CMakeFiles/MyTanks.dir/Environment.cpp.obj: CXX_COMPILER__MyTanks_unscanned_Debug D$:/_DELPGINGTON/University/Sem_3/course/MyTanks/Environment.cpp || cmake_object_order_depends_target_MyTanks
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\MyTanks.dir\Environment.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML -isystem D:/_DELPGINGTON/University/Sem_3/course/SFML/include
+  OBJECT_DIR = CMakeFiles\MyTanks.dir
+  OBJECT_FILE_DIR = CMakeFiles\MyTanks.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MyTanks
@@ -121,7 +121,7 @@ build CMakeFiles/MyTanks.dir/Player.cpp.obj: CXX_COMPILER__MyTanks_unscanned_Deb
 #############################################
 # Link the executable MyTanks.exe
 
-build MyTanks.exe: CXX_EXECUTABLE_LINKER__MyTanks_Debug CMakeFiles/MyTanks.dir/main.cpp.obj CMakeFiles/MyTanks.dir/Config.cpp.obj CMakeFiles/MyTanks.dir/Environment.cpp.obj CMakeFiles/MyTanks.dir/Score.cpp.obj CMakeFiles/MyTanks.dir/Card.cpp.obj CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj CMakeFiles/MyTanks.dir/GameMenu.cpp.obj CMakeFiles/MyTanks.dir/Player.cpp.obj | D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-system-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-window-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-graphics-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-audio-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-window-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libfreetype.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-system-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libopenal32.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libvorbisfile.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libvorbisenc.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libvorbis.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libogg.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libFLAC.a
+build MyTanks.exe: CXX_EXECUTABLE_LINKER__MyTanks_Debug CMakeFiles/MyTanks.dir/main.cpp.obj CMakeFiles/MyTanks.dir/Config.cpp.obj CMakeFiles/MyTanks.dir/Score.cpp.obj CMakeFiles/MyTanks.dir/Card.cpp.obj CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj CMakeFiles/MyTanks.dir/GameMenu.cpp.obj CMakeFiles/MyTanks.dir/Player.cpp.obj CMakeFiles/MyTanks.dir/Environment.cpp.obj | D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-system-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-window-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-graphics-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-audio-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-window-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libfreetype.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-system-s-d.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libopenal32.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libvorbisfile.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libvorbisenc.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libvorbis.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libogg.a D$:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libFLAC.a
   FLAGS = -g
   LINK_LIBRARIES = D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-system-s-d.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-window-s-d.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-graphics-s-d.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-audio-s-d.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-window-s-d.a  -lOpenGL32  -lgdi32  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libfreetype.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-system-s-d.a  -lwinmm  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libopenal32.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libvorbisfile.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libvorbisenc.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libvorbis.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libogg.a  D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libFLAC.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\MyTanks.dir

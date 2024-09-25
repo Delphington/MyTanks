@@ -4,7 +4,7 @@
 #include "Config.cpp"
 #include <string>
 
-#include "Environment.cpp"
+#include "Environment.h"
 #include "Score.cpp"
 #include "Player.h"
 #include "GameMenu.h"

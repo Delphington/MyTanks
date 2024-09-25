@@ -9,7 +9,7 @@
 #include "Player.h"
 #include "GameMenu.h"
 #include "CollisionUtils.h"
-
+#include "Bullet.h"
 
 using namespace std;
 using namespace sf;
@@ -17,89 +17,7 @@ using namespace sf;
 //#Объект пули
 //#Размер поля 1600x900
 //#Размер пули 15x15
-class Bullet {
-public:
-    float x, y; //#Начальные координаты
-    float dx, dy; //#скорость движения
-    float w, h; //#размеры пули
-    float pl; //# Ундификатор игрока
-    bool life;  //# Жива ли сама пуля
-    bool p1life, p2life;  //# жизни игроков
 
-    Texture textureBull;
-    Sprite spriteBull;
-
-    Bullet(int X, int Y, int direction, int player) {
-        x = X;
-        y = Y;
-        pl = player;
-        //#direction -   направление
-        if (direction == 1) {
-            dx = -0.3;  //#Стрельба влево
-        } else if (direction == 2) {
-            dx = 0.3;  //#Стрельба вправо
-        } else {
-            dx = 0;
-        }
-
-        if (direction == 3) {
-            dy = -0.3;  //#стрельба вверх
-        } else if (direction == 4) {
-            dy = 0.3;  //#Стрельба вниз
-        } else {
-            dy = 0;
-        }
-
-        w = h = 15;
-        p1life = true;
-        p2life = true;
-        life = true;
-        textureBull.loadFromFile(
-                "D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\background\\bullet.png");
-        spriteBull.setTexture(textureBull);
-    }
-
-    //#Обновлении позиции опираясь на время и проверка столкновения
-    void update(float time, int x1, int y1, int x2, int y2, Card &card) {
-        x += dx * time; //#смена координат
-        y += dy * time;
-
-
-        for (int i = y / 50; i < (y + h) / 50; i++) {
-            for (int j = x / 50; j < (x + w) / 50; j++) {
-                if (card.getItemCard(i, j) == 'X') {
-                    //Столкновение с припятствием пуля умирает
-                    dx = 0;
-                    dy = 0;
-                    life = false;
-                }
-            }
-        }
-
-        //#попадение в первого игрока
-        if (pl == 1) {
-            if (x > x1 && y > y1 && x < (x1 + 100) && y < (y1 + 100)) {
-                life = false;
-                p1life = false;
-            }
-        }
-
-        //#второй игрок
-        if (pl == 2)
-            if (x > x2 && y > y2 && x < (x2 + 100) && y < (y2 + 100)) {
-                life = false;
-                p2life = false;
-            }
-
-        //установка позиции пули
-        spriteBull.setPosition(x, y);
-
-    }
-
-    void drawb(RenderWindow &window) {
-        window.draw(spriteBull);
-    }
-};
 void endOfGame(RenderWindow &window, Player &player1, Player &player2) {
     //Финальное окно
     window.clear();

@@ -12,6 +12,8 @@ add_executable(MyTanks main.cpp
         CollisionUtils.cpp
         Score.cpp
         Card.cpp
+        Bullet.h
+        Bullet.cpp
 )
 
 

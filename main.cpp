@@ -11,7 +11,6 @@
 #include "CollisionUtils.cpp"
 
 
-
 using namespace std;
 using namespace sf;
 
@@ -101,13 +100,69 @@ public:
         window.draw(spriteBull);
     }
 };
+void endOfGame(RenderWindow &window, Player &player1, Player &player2) {
+    //Финальное окно
+    window.clear();
+    bool  flag = true;
+
+
+//    Окно для результата (Какой танк выиграл и тд)
+//    Texture tp1won;
+//    tp1won.loadFromFile("p1won.png");
+//    Sprite sp1won;
+//    sp1won.setTexture(tp1won);
+//    sp1won.setPosition(0, 0);
+//    Texture tp2won;
+//    tp2won.loadFromFile("p2won.png");
+//    Sprite sp2won;
+//    sp2won.setTexture(tp2won);
+//    sp2won.setPosition(0, 0);
+
+    Texture texture;
+    if (!texture.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p1won.png")) {; // Обработка ошибки загрузки текстуры
+    }
+
+    Sprite sprite(texture); // Создаем спрайт из текстуры
+
+
+
+    while (window.isOpen() && flag) {
+        Event event2;
+        while (window.pollEvent(event2)) {
+            if (event2.type == Event::Closed)
+                window.close();
+        }
+        if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+            window.close();
+        }
+
+//TODO: хуева
+        if (player2.getScore() > player1.getScore()) {
+
+            // Основной игровой ц
+            window.draw(sprite); // Отрисовка спрайта
+        } else {
+            window.draw(sprite); // Отрисовка спрайта
+        }
+        window.display();
+
+        if (Keyboard::isKeyPressed(Keyboard::P)) {
+            window.clear();
+           flag = false;
+        }
+    }
+}
+
+
 
 // функция настройки текста
-void InitText(Text& mtext, float xpos, float ypos, String str, int size_font = 60,
+void InitText(Text &mtext, float xpos, float ypos, String str, int size_font = 60,
               Color menu_text_color = Color::White, int bord = 0, Color border_color = Color::Black);
 
 // Функция перехода к игре
-void GamеStart(){
+void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
+    window.clear();
+
     Config config;
 
 
@@ -117,7 +172,7 @@ void GamеStart(){
     Card card;
 
 
-    RenderWindow window(VideoMode(1600, 900), config.nameGame); // Игровое окно
+    //RenderWindow window(VideoMode(1600, 900), config.nameGame); // Игровое окно
 
     Font fonts;
     if (!fonts.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Arial.ttf")) {
@@ -139,34 +194,8 @@ void GamеStart(){
     Score score2(fonts, SIZE_OF_SCORE, Color::Red, position_2_x, position_2_y); //Первый игрок, красный
 
 
-//TODO: ------------------------------------
-    Player player1(100, 400, 0);
-    player1.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank2.png",
-                              IntRect(100, 0, 100, 100));
-
-
-    Player player2(1400, 400, 0); //Инициализация игрока который по клавишам
-    player2.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png",
-                              IntRect(300, 0, 100, 100));
-
-//TODO: ------------------------------------
-
     Environment backGround("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\background\\ground.png");
     Environment wall("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\background\\briq.png");
-
-
-//    Окно для результата (Какой танк выиграл и тд)
-//    Texture tp1won;
-//    tp1won.loadFromFile("p1won.png");
-//    Sprite sp1won;
-//    sp1won.setTexture(tp1won);
-//    sp1won.setPosition(0, 0);
-//    Texture tp2won;
-//    tp2won.loadFromFile("p2won.png");
-//    Sprite sp2won;
-//    sp2won.setTexture(tp2won);
-//    sp2won.setPosition(0, 0);
-
 
     bool endgame = false;
 
@@ -186,15 +215,15 @@ void GamеStart(){
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed) {
                 window.close(); //Закрываем окно при нажатии на крестик
-            }else if (event.type == Event::KeyPressed) {//обратботка клавиш
+            } else if (event.type == Event::KeyPressed) {//обратботка клавиш
                 //Стрельба первого танка
                 if (event.key.code == Keyboard::V) {
                     bullets.push_back(new Bullet(player1.getSprite().getPosition().x + 43,
-                                                 player1.getSprite().getPosition().y + 43, player1.getState(),1));
-                }else if (event.key.code == Keyboard::L) {
+                                                 player1.getSprite().getPosition().y + 43, player1.getState(), 1));
+                } else if (event.key.code == Keyboard::L) {
                     //стрельба второго танка
                     bullets.push_back(new Bullet(player2.getSprite().getPosition().x + 43,
-                                                 player2.getSprite().getPosition().y + 43, player2.getState(),2));
+                                                 player2.getSprite().getPosition().y + 43, player2.getState(), 2));
                 }
             }
         }
@@ -205,28 +234,32 @@ void GamеStart(){
 
         // Управление игрок 1
         if (Keyboard::isKeyPressed(Keyboard::A)) {
-            if (CollisionUtils::collXL(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,card) == 0) {
+            if (CollisionUtils::collXL(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
+                                       card) == 0) {
                 player1.move(-0.1 * time, 0);
             }
             player1.setTextureRect(IntRect(301, 0, 100, 100));
             player1.setState(1); //Направление
 
         } else if (Keyboard::isKeyPressed(Keyboard::D)) {
-            if (CollisionUtils::collXR(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,card) == 0) {
+            if (CollisionUtils::collXR(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
+                                       card) == 0) {
                 player1.move(0.1 * time, 0);
             }
             player1.setTextureRect(IntRect(100, 0, 100, 100));
             player1.setState(2); //Направление
 
         } else if (Keyboard::isKeyPressed(Keyboard::W)) {
-            if (CollisionUtils::collYU(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y,ws, card) == 0) {
+            if (CollisionUtils::collYU(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
+                                       card) == 0) {
                 player1.move(0, -0.1 * time);
             }
             player1.setTextureRect(IntRect(0, 0, 100, 100));
             player1.setState(3); //Направление
 
         } else if (Keyboard::isKeyPressed(Keyboard::S)) {
-            if (CollisionUtils::collYD(player1.getSprite().getPosition().x,player1.getSprite().getPosition().y, ws, card) == 0) {
+            if (CollisionUtils::collYD(player1.getSprite().getPosition().x, player1.getSprite().getPosition().y, ws,
+                                       card) == 0) {
                 player1.move(0, 0.1 * time);
             }
             player1.setTextureRect(IntRect(200, 0, 100, 100));
@@ -237,28 +270,32 @@ void GamеStart(){
 
         // Управление игрок 2
         if (Keyboard::isKeyPressed(Keyboard::Left)) {
-            if (CollisionUtils::collXL(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,card) == 0) {
+            if (CollisionUtils::collXL(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
+                                       card) == 0) {
                 player2.move(-0.1 * time, 0);
             }
             player2.setTextureRect(IntRect(301, 0, 100, 100));         //текстура для анимации
             player2.setState(1); //направление
 
         } else if (Keyboard::isKeyPressed(Keyboard::Right)) {
-            if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,card) == 0) {
+            if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
+                                       card) == 0) {
                 player2.move(0.1 * time, 0);
             }
             player2.setTextureRect(IntRect(100, 0, 100, 100));
             player2.setState(2); //направление
 
         } else if (Keyboard::isKeyPressed(Keyboard::Up)) {
-            if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y,ws, card) == 0) {
+            if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
+                                       card) == 0) {
                 player2.move(0, -0.1 * time);
             }
             player2.setTextureRect(IntRect(0, 0, 100, 100));
             player2.setState(3); //направление
 
         } else if (Keyboard::isKeyPressed(Keyboard::Down)) {
-            if (CollisionUtils::collYD(player2.getSprite().getPosition().x,player2.getSprite().getPosition().y, ws, card) == 0) {
+            if (CollisionUtils::collYD(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
+                                       card) == 0) {
                 player2.move(0, 0.1 * time);
             }
             player2.setTextureRect(IntRect(200, 0, 100, 100));
@@ -359,7 +396,6 @@ void GamеStart(){
             (*it)->drawb(window);
         }
 
-
         //# Отрисовка игроков
         window.draw(player2.getSprite());
         window.draw(player1.getSprite());
@@ -368,24 +404,20 @@ void GamеStart(){
         window.draw(score2.getScoreText());
         window.display(); //# Отображение
     }
-
-
-
-
+    endOfGame(window, player1, player2);
 }
 
 // Функция настройки игры
-void Options(){}
+void Options() {}
 
 // Функция с описанием игры
-void About_Game(){
+void About_Game() {
 
 }
 
 // функция настройки текста
-void InitText(Text& mtext, float xpos, float ypos, String str, int size_font,
-              Color menu_text_color, int bord, Color border_color)
-{
+void InitText(Text &mtext, float xpos, float ypos, String str, int size_font,
+              Color menu_text_color, int bord, Color border_color) {
     mtext.setCharacterSize(size_font);
     mtext.setPosition(xpos, ypos);
     mtext.setString(str);
@@ -397,33 +429,35 @@ void InitText(Text& mtext, float xpos, float ypos, String str, int size_font,
 
 int main() {
     Config config;
+    //TODO: ------------------------------------
+    Player player1(100, 400, 0);
+    player1.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank2.png",
+                              IntRect(100, 0, 100, 100));
+
+
+    Player player2(1400, 400, 0); //Инициализация игрока который по клавишам
+    player2.setInitialization("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\tank1.png",
+                              IntRect(300, 0, 100, 100));
+
+//TODO: ------------------------------------
+
+
 //---------------
 //TODO: ------------------------------------------------------------
 // Создаём окно windows
 
-   // RenderWindow windows(VideoMode(1600, 900), config.nameGame); // Игровое окно
+    // RenderWindow windows(VideoMode(1600, 900), config.nameGame); // Игровое окно
 
 
     RenderWindow windows(VideoMode(1600, 900), config.nameGame); // Игровое окно
 
-   // RenderWindow windows;
-    // Параметры: размер окна установить согласно текущему разрешению экрана
-    // название моя игра, развернуть графическое окно на весь размер экрана
-   // windows.create(VideoMode::getDesktopMode(), L"Моя игра", Style::Fullscreen);
 
-    //отключаем видимость курсора
-    windows.setMouseCursorVisible(false);
-
-    // получаем текущий размер экрана
-    float width = config.SCREEN_WIGHT;
-    float height = config.SCREEN_HEIGHT;
-
-    // Устанавливаем фон для графического окна
-    // Создаём прямоугольник
-    RectangleShape background(Vector2f(width, height));
+    // Устанавливаем фон для графического окна // Создаём прямоугольник
+    RectangleShape background(Vector2f(config.SCREEN_WIGHT, config.SCREEN_HEIGHT));
     // Загружаем в прямоугольник текстуру с изображением menu9.jpg
     Texture texture_window;
-    if (!texture_window.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Menu\\menu9.jpg")){
+    if (!texture_window.loadFromFile(
+            "D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\Menu\\menu9.jpg")) {
         return 4;
     }
     background.setTexture(&texture_window);
@@ -434,10 +468,10 @@ int main() {
     Text Titul;
     Titul.setFont(font);
     // Текст с названием игры
-   // InitText(Titul, config.SCREEN_WIGHT/3, config.SCREEN_HEIGHT/10, config.nameGame, 150, Color(237, 147, 0), 3);
+    // InitText(Titul, config.SCREEN_WIGHT/3, config.SCREEN_HEIGHT/10, config.nameGame, 150, Color(237, 147, 0), 3);
 
     // Название пунктов меню
-    String name_menu[]{ L"Старт",L"Настройки", L"О игре",L"Выход"};
+    String name_menu[]{L"Старт", L"Настройки", L"О игре", L"Выход"};
 
     // Объект игровое меню
     game::GameMenu mymenu(windows, 950, 350, 4, name_menu, 100, 120);
@@ -446,35 +480,51 @@ int main() {
     // выравнивание по центру пунктов меню
     mymenu.AlignMenu(2);
 
-    while (windows.isOpen())
-    {
+    while (windows.isOpen()) {
         Event event;
-        while (windows.pollEvent(event)){
+        while (windows.pollEvent(event)) {
 
-            if (event.type == Event::Closed){
-
+            //закрытие через крестик
+            if (event.type == Event::Closed) {
+                windows.close();
             }
 
-            if (event.type == Event::KeyReleased){
+            //Закрытие программы через Escape
+            if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+                windows.close();
+            }
+
+
+            if (event.type == Event::KeyReleased) {
                 // События выбра пунктов меню
                 // нажати на клавиатуре стрелки вверх
                 if (event.key.code == Keyboard::Up) { mymenu.MoveUp(); }
                 // нажати на клавиатуре стрелки вниз
                 if (event.key.code == Keyboard::Down) { mymenu.MoveDown(); }
                 // нажати на клавиатуре клавиши Enter
-                if (event.key.code == Keyboard::Return){
+                if (event.key.code == Keyboard::Return) {
                     // Переходим на выбранный пункт меню
-                    switch (mymenu.getSelectedMenuNumber()){
-                        case 0:GamеStart();   break;
-                        case 1:Options();     break;
-                        case 2:About_Game();  break;
-                        case 3:windows.close(); break;
+                    switch (mymenu.getSelectedMenuNumber()) {
+                        case 0:
+                            player1.setScore(0);
+                            player2.setScore(0);
+                            GamеStart(windows, player1, player2);
+                            break;
+                        case 1:
+                            Options();
+                            break;
+                        case 2:
+                            About_Game();
+                            break;
+                        case 3: //Выход
+                            windows.close();
+                            break;
                     }
-
                 }
             }
         }
 
+        // drawMainMenu(windows, background,Titul, mymenu);
         windows.clear();
         windows.draw(background);
         windows.draw(Titul);
@@ -484,36 +534,5 @@ int main() {
 
 
 //TODO: ------------------------------------------------------------
-
-
-
-
-
-
-    /**
-    //####################################################################################################################
-    //Финальное окно
-    window.close();
-    RenderWindow window2(VideoMode(1600, 900), "Results!");
-    while (window2.isOpen()) {
-        Event event2;
-        while (window2.pollEvent(event2)) {
-            if (event2.type == Event::Closed)
-                window2.close();
-        }
-        if (Keyboard::isKeyPressed(Keyboard::Escape)) window2.close();
-        window2.clear();
-
-        if (player2.getScore() > player1.getScore()) {
-            // window2.draw("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p1won.png");
-        } else {
-            // window2.draw("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\p2won.png");
-        }
-        window2.display();
-    }
-
-
-    */
     return 0;
-
 }

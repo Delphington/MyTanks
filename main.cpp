@@ -6,7 +6,7 @@
 
 #include "Environment.cpp"
 #include "Score.cpp"
-#include "Player.cpp"
+#include "Player.h"
 #include "GameMenu.h"
 #include "CollisionUtils.cpp"
 

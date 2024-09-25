@@ -5,9 +5,14 @@
 
 using namespace std;
 
-class Config{
+class Config {
 public:
-    string nameGame = "MyTanks" ;
-    Config(){};
+    const string nameGame = "MyTanks";
+
+    Config() {};
+
+    const float SCREEN_WIGHT = 1600;
+    const float SCREEN_HEIGHT = 900;
+
 };
 // Инициализация статической переменной

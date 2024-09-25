@@ -8,7 +8,7 @@
 #include "Score.cpp"
 #include "Player.h"
 #include "GameMenu.h"
-#include "CollisionUtils.cpp"
+#include "CollisionUtils.h"
 
 
 using namespace std;

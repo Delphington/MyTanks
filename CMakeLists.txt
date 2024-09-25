@@ -7,11 +7,11 @@ add_executable(MyTanks main.cpp
         Config.cpp
         Score.cpp
         Card.cpp
-        CollisionUtils.cpp
         GameMenu.h
         GameMenu.cpp
         Player.cpp
         Environment.cpp
+        CollisionUtils.cpp
 )
 
 

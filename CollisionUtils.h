@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Card.cpp" // Предполагается, что класс Card определён в этом файле
+#include "Card.h" // Предполагается, что класс Card определён в этом файле
 
 class CollisionUtils {
 public:

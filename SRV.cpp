@@ -3,6 +3,6 @@
 //
 class SRV{
 
-public:
-    static string
+//public:
+   // static string
 };

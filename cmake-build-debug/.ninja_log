@@ -10,3 +10,7 @@
 11	107	7489949878306553	CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj	ddb531202142555e
 14	672	7489953353066832	CMakeFiles/MyTanks.dir/Bullet.cpp.obj	ec32d1fd9080cda5
 11	839	7487298611713934	CMakeFiles/MyTanks.dir/GameMenu.cpp.obj	4fbd47acc437909f
+17	492	7489971355196284	CMakeFiles/MyTanks.dir/Config.cpp.obj	4d88f706a78d4eb9
+5	1157	7489971361828826	CMakeFiles/MyTanks.dir/main.cpp.obj	b3039c74b1918c79
+2	60	7489971518819596	CMakeFiles/MyTanks.dir/SRV.cpp.obj	4928f4f03b58d0de
+60	654	7489971524700509	MyTanks.exe	bc37a305d4149a7d

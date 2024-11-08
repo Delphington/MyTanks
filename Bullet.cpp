@@ -10,21 +10,21 @@ Bullet::Bullet(int X, int Y, int direction, int player) {
     // Определение направления
     if (direction == 1) {
         dx = -0.3; // Стрельба влево
-   //     dy = 0;
+        //     dy = 0;
     } else if (direction == 2) {
         dx = 0.3; // Стрельба вправо
-     //   dy = 0;
+        //   dy = 0;
     } else {
         dx = 0;
-      //  dy = 0;
+        //  dy = 0;
     }
 
     if (direction == 3) {
         dy = -0.3; // Стрельба вверх
-     //   dx = 0;
+        //   dx = 0;
     } else if (direction == 4) {
         dy = 0.3; // Стрельба вниз
-     //   dx = 0;
+        //   dx = 0;
     }
 
     w = h = 15;
@@ -33,7 +33,7 @@ Bullet::Bullet(int X, int Y, int direction, int player) {
     life = true;
 
     // Загрузка текстуры пули
-    textureBull.loadFromFile("D:\\_DELPGINGTON\\University\\Sem_3\\course\\MyTanks\\resourse\\background\\bullet.png");
+    textureBull.loadFromFile("resourse/background/bullet.png");
     spriteBull.setTexture(textureBull);
 }
 
@@ -41,7 +41,7 @@ Bullet::Bullet(int X, int Y, int direction, int player) {
 void Bullet::update(float time, int x1, int y1, int x2, int y2, Card &card) {
     x += dx * time; // Смена координат
     y += dy * time;
-
+    spriteBull.setPosition(x, y);
     for (int i = y / 50; i < (y + h) / 50; i++) {
         for (int j = x / 50; j < (x + w) / 50; j++) {
             if (card.getItemCard(i, j) == 'X') {
@@ -70,7 +70,7 @@ void Bullet::update(float time, int x1, int y1, int x2, int y2, Card &card) {
     }
 
     // Установка позиции пули
-    spriteBull.setPosition(x, y);
+
 }
 
 // Отрисовка пули

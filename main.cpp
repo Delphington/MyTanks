@@ -316,9 +316,8 @@ void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
 }
 
 // Функция настройки игры
-void Options() {
+void Options(RenderWindow& window) {
     Config config;
-    RenderWindow window(VideoMode(1600, 900), config.nameGame);
     Environment backGround("resourse/background/ground.png");
     Environment wall("resourse/background/briq.png");
     Card card = red.get_Card();
@@ -344,7 +343,6 @@ void Options() {
                     else if(card.getItemCard(pos.y/50, pos.x/50) == 'X' && pos.y/50 != 0 && pos.x/50 != 0) card.setItemCard(pos.y/50, pos.x/50, ' ');
                 }if(but.getGlobalBounds().contains(mouse.x, mouse.y)){
                     flag = true;
-                    window.close();
                 }
             }
         }
@@ -364,6 +362,8 @@ void Options() {
         window.draw(but);
         window.draw(sr);
         window.display();
+        if(flag)
+            break;
     }
     if(flag) red.setCard(card);
     for(int i = 0;i < 18;i++){
@@ -383,7 +383,7 @@ void About_Game(RenderWindow &window, Player &player1, Player &player2) {
     Text Titul;
     Titul.setFont(font);
     Texture textr;
-    textr.loadFromFile("213.png");
+    textr.loadFromFile("resourse/213.png");
     Sprite sprt;
     sprt.setTexture(textr);
     int flag = 0;
@@ -459,7 +459,7 @@ int main() {
     String name_menu[]{L"Старт", L"Настройки", L"О игре", L"Выход"};
 
     // Объект игровое меню
-    game::GameMenu mymenu(windows, 950, 350, 4, name_menu, 100, 120);
+    game::GameMenu mymenu(windows, 750, 250, 4, name_menu, 100, 120);
     // Установка цвета элементов пунктов меню
     mymenu.setColorTextMenu(Color(237, 147, 0), Color::Red, Color::Black);
     // выравнивание по центру пунктов меню
@@ -496,7 +496,7 @@ int main() {
                             GamеStart(windows, player1, player2);
                             break;
                         case 1:
-                            Options();
+                            Options(windows);
                             break;
                         case 2:
                             About_Game(windows, player1, player2);

@@ -17,8 +17,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/MyTanks.dir/Score.cpp.obj.d"
   "CMakeFiles/MyTanks.dir/main.cpp.obj"
   "CMakeFiles/MyTanks.dir/main.cpp.obj.d"
-  "CMakeFiles/MyTanks.dir/redactor.cpp.obj"
-  "CMakeFiles/MyTanks.dir/redactor.cpp.obj.d"
   "MyTanks.exe"
   "MyTanks.exe.manifest"
   "MyTanks.pdb"

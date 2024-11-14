@@ -17,7 +17,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Player.cpp" "CMakeFiles/MyTanks.dir/Player.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/Player.cpp.obj.d"
   "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.cpp" "CMakeFiles/MyTanks.dir/Score.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/Score.cpp.obj.d"
   "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/main.cpp" "CMakeFiles/MyTanks.dir/main.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/main.cpp.obj.d"
-  "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.cpp" "CMakeFiles/MyTanks.dir/redactor.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/redactor.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

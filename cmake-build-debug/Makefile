@@ -344,30 +344,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-redactor.obj: redactor.cpp.obj
-.PHONY : redactor.obj
-
-# target to build an object file
-redactor.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/redactor.cpp.obj
-.PHONY : redactor.cpp.obj
-
-redactor.i: redactor.cpp.i
-.PHONY : redactor.i
-
-# target to preprocess a source file
-redactor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/redactor.cpp.i
-.PHONY : redactor.cpp.i
-
-redactor.s: redactor.cpp.s
-.PHONY : redactor.s
-
-# target to generate assembly for a file
-redactor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/redactor.cpp.s
-.PHONY : redactor.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -404,9 +380,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... redactor.obj
-	@echo ... redactor.i
-	@echo ... redactor.s
 .PHONY : help
 
 

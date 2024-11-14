@@ -361,6 +361,7 @@ CMakeFiles/MyTanks.dir/Config.cpp.obj
  C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl
  C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/wchar.h
+ D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.h
 
 CMakeFiles/MyTanks.dir/Environment.cpp.obj
  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Environment.cpp
@@ -1625,15 +1626,9 @@ CMakeFiles/MyTanks.dir/main.cpp.obj
  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Bullet.h
  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Card.h
  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/CollisionUtils.h
- D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.cpp
+ D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.h
  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Environment.h
  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/GameMenu.h
  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Player.h
  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.h
- D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.h
-
-CMakeFiles/MyTanks.dir/redactor.cpp.obj
- D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.cpp
- D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Card.h
- D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.h
 

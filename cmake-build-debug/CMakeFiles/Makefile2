@@ -80,12 +80,12 @@ clean: CMakeFiles/MyTanks.dir/clean
 CMakeFiles/MyTanks.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target MyTanks"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target MyTanks"
 .PHONY : CMakeFiles/MyTanks.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MyTanks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/MyTanks.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/MyTanks.dir/rule

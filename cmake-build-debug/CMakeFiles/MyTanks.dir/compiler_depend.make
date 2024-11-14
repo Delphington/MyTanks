@@ -356,7 +356,8 @@ CMakeFiles/MyTanks.dir/Config.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyT
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/stdlib.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
-  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/wchar.h
+  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/wchar.h \
+  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.h
 
 CMakeFiles/MyTanks.dir/Environment.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Environment.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
@@ -1616,16 +1617,11 @@ CMakeFiles/MyTanks.dir/main.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTan
   D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Bullet.h \
   D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Card.h \
   D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/CollisionUtils.h \
-  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.cpp \
+  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.h \
   D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Environment.h \
   D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/GameMenu.h \
   D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Player.h \
-  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.h \
-  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.h
-
-CMakeFiles/MyTanks.dir/redactor.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.cpp \
-  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Card.h \
-  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.h
+  D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.h
 
 
 C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cctype:
@@ -1655,6 +1651,8 @@ C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h:
+
+D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bit:
 
@@ -2167,7 +2165,3 @@ C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_list.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream:
-
-D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.h:
-
-D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.cpp:

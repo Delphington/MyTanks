@@ -1,40 +1,26 @@
-#include <string>
+#include "Config.h"
 
-using namespace std;
+// Определение статических переменных
+const std::string Config::nameGame = "MyTanks";
 
-class Config {
-public:
-    const string nameGame = "MyTanks";
+const float Config::SCREEN_WIDTH = 1600;
+const float Config::SCREEN_HEIGHT = 900;
 
+const int Config::DEFAULT_SCORE = 0;
+const int Config::P1_DEFAULT_LOCATE_X = 100;
+const int Config::P1_DEFAULT_LOCATE_Y = 400;
+const int Config::P2_DEFAULT_LOCATE_X = 1400;
+const int Config::P2_DEFAULT_LOCATE_Y = 400;
 
-    Config() {};
+const std::string Config::MENU_START = "Start";
+const std::string Config::MENU_SETTING = "Setting";
+const std::string Config::MENU_ABOUT = "About game";
+const std::string Config::MENU_EXIT = "Exit";
 
-    const float SCREEN_WIGHT = 1600;
-    const float SCREEN_HEIGHT = 900;
+const std::string Config::MENU_SETTING_BUTTON = "Save";
 
-    //-------------------------------
-    const int DEFAULT_SCORE = 0;
-    const int P1_DEFAULT_LOCATE_X = 100;
-    const int P1_DEFAULT_LOCATE_Y = 400;
-    const int P2_DEFAULT_LOCATE_X = 1400;
-    const int P2_DEFAULT_LOCATE_Y = 400;
-    //-------------------------------
-
-    //Menu
-    const string MENU_START = "Start";
-    const string MENU_SETTING = "Setting";
-    const string MENU_ABOUT = "About game";
-    const string MENU_EXIT = "Exit";
-
-    const int MENU_X = 750;
-    const int MENU_Y = 250;
-    const int MENU_INDEX = 4;
-    const int MENU_SIZE_FONT = 100;
-    const int MENU_FONT_STEP = 120;
-
-
-
-    // const int MENU_HOME_
-
-};
-// Инициализация статической переменной
+const int Config::MENU_X = 750;
+const int Config::MENU_Y = 250;
+const int Config::MENU_INDEX = 4;
+const int Config::MENU_SIZE_FONT = 100;
+const int Config::MENU_FONT_STEP = 120;

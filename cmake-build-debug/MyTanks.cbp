@@ -109,6 +109,9 @@
 		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.cpp">
 			<Option target="MyTanks"/>
 		</Unit>
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.h">
+			<Option target="MyTanks"/>
+		</Unit>
 		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Environment.cpp">
 			<Option target="MyTanks"/>
 		</Unit>
@@ -134,12 +137,6 @@
 			<Option target="MyTanks"/>
 		</Unit>
 		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/main.cpp">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.cpp">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.h">
 			<Option target="MyTanks"/>
 		</Unit>
 		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/CMakeLists.txt">

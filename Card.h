@@ -6,10 +6,12 @@ private:
     static const int WIDTH = 32;
     char card[HEIGHT][WIDTH];
 
-    void setInitialization();
+
 
 public:
     Card(); // Конструктор
+
+    void setInitialization();
 
     static const int getHeight(); // Получение высоты
     static const int getWidth(); // Получение ширины

@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <list>
 #include <iostream>
-#include "Config.cpp"
+#include "Config.h"
 #include <string>
 #include<vector>
 #include "Environment.h"
@@ -10,7 +10,6 @@
 #include "GameMenu.h"
 #include "CollisionUtils.h"
 #include "Bullet.h"
-#include"redactor.h"
 
 using namespace std;
 using namespace sf;
@@ -18,7 +17,7 @@ using namespace sf;
 //#Объект пули
 //#Размер поля 1600x900
 //#Размер пули 15x15
-Redactor red;
+//Redactor red;
 
 //Отрисовка итога, кто выиграл, финальное окно
 void gameOver(RenderWindow &window, Player &player1, Player &player2) {
@@ -65,18 +64,18 @@ void InitText(Text &mtext, float xpos, float ypos, String str, int size_font = 6
               Color menu_text_color = Color::White, int bord = 0, Color border_color = Color::Black);
 
 // Функция перехода к игре
-void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
+void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &card) {
     window.clear();
 
-    Config config;
+
 
 
     std::vector<Bullet *> bullets;
     std::vector<Bullet *>::iterator it;
 
-    Card card;
-    if (red.get_y() == 1)
-        card = red.get_Card();
+    //  Card card;
+//    if (red.get_y() == 1)
+//        card = red.get_Card();
 
     //RenderWindow window(VideoMode(1600, 900), config.nameGame); // Игровое окно
 
@@ -312,28 +311,27 @@ void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
         window.draw(score2.getScoreText());
         window.display(); //# Отображение
     }
+    card.setInitialization();
     gameOver(window, player1, player2);
 }
 
 // Функция настройки игры
-void settingGame(RenderWindow &window, Environment &backGround, Environment &wall) {
-
-    Card card = red.get_Card();
+void settingGame(RenderWindow &window, Environment &backGround, Environment &wall, Card &card1) {
 
     Font font;
     if (!font.loadFromFile("resourse/Arial.ttf")) {
         return;
     }
 
-    sf::Text sr("save", font);
-    sr.setPosition(0, 0);
-    sr.setFillColor(sf::Color::Black);
+    Text save(Config::MENU_SETTING_BUTTON, font);
+    save.setPosition(0, 0);
+    save.setFillColor(sf::Color::Black);
 
 
-    sf::RectangleShape but(sf::Vector2f(0, 0));
-    but.setSize(sf::Vector2f(100, 50));
+    sf::RectangleShape obstacle(sf::Vector2f(0, 0));
+    obstacle.setSize(sf::Vector2f(100, 50));
 
-    bool flag = false;
+    bool passSave = false;
 
     while (window.isOpen()) {
         Event event;
@@ -345,40 +343,45 @@ void settingGame(RenderWindow &window, Environment &backGround, Environment &wal
                 if (event.mouseButton.button == Mouse::Left) {
                     Vector2i pos;
                     pos = Mouse::getPosition(window);
-                    if (card.getItemCard(pos.y / 50, pos.x / 50) == ' ')card.setItemCard(pos.y / 50, pos.x / 50, 'X');
-                    else if (card.getItemCard(pos.y / 50, pos.x / 50) == 'X' && pos.y / 50 != 0 && pos.x / 50 != 0)
-                        card.setItemCard(pos.y / 50, pos.x / 50, ' ');
+
+                    if (card1.getItemCard(pos.y / 50, pos.x / 50) == ' ') {
+                        card1.setItemCard(pos.y / 50, pos.x / 50, 'X');
+                    } else if ((pos.y / 50 != 0 && pos.x / 50 != 0)
+                               && (card1.getItemCard(pos.y / 50, pos.x / 50) == 'X')) {
+                        card1.setItemCard(pos.y / 50, pos.x / 50, ' ');
+                    }
                 }
-                if (but.getGlobalBounds().contains(mouse.x, mouse.y)) {
-                    flag = true;
+                if (obstacle.getGlobalBounds().contains(mouse.x, mouse.y)) {
+                    passSave = true;
                 }
             }
         }
         window.clear();
-        for (int i = 0; i < card.getHeight(); i++) {
-            for (int j = 0; j < card.getWidth(); j++) {
-                if (card.getItemCard(i, j) == 'X') {
+        for (int i = 0; i < card1.getHeight(); i++) {
+            for (int j = 0; j < card1.getWidth(); j++) {
+                if (card1.getItemCard(i, j) == 'X') {
                     wall.setPosition(j * 50, i * 50);
                     window.draw(wall.getRectangle());
                 }
-                if (card.getItemCard(i, j) == ' ') {
+                if (card1.getItemCard(i, j) == ' ') {
                     backGround.setPosition(j * 50, i * 50);
                     window.draw(backGround.getRectangle());
                 }
             }
         }
-        window.draw(but);
-        window.draw(sr);
+        window.draw(obstacle);
+        window.draw(save);
         window.display();
-        if (flag)
+        if (passSave){
             break;
+        }
     }
-    if (flag) red.setCard(card);
-    for (int i = 0; i < 18; i++) {
-        for (int j = 0; j < 32; j++)
-            std::cout << card.getItemCard(i, j);
-        std::cout << "\n";
-    }
+
+//    for (int i = 0; i < 18; i++) {
+//        for (int j = 0; j < 32; j++)
+//            std::cout << card1.getItemCard(i, j);
+//        std::cout << "\n";
+//    }
 
 }
 
@@ -413,30 +416,18 @@ void aboutGame(RenderWindow &window) {
     }
 }
 
-// функция настройки текста
-void InitText(Text &mtext, float xpos, float ypos, String str, int size_font,
-              Color menu_text_color, int bord, Color border_color) {
-    mtext.setCharacterSize(size_font);
-    mtext.setPosition(xpos, ypos);
-    mtext.setString(str);
-    mtext.setFillColor(menu_text_color);
-    mtext.setOutlineThickness(bord);
-    mtext.setOutlineColor(border_color);
-}
-
-
 int main() {
 
 
-    Config config;
+
     //TODO: ------------------------------------
-    Player player1(config.P1_DEFAULT_LOCATE_X, config.P1_DEFAULT_LOCATE_Y, config.DEFAULT_SCORE);
+    Player player1(Config::P1_DEFAULT_LOCATE_X, Config::P1_DEFAULT_LOCATE_Y, Config::DEFAULT_SCORE);
     player1.setInitialization("resourse/tank2.png",
                               IntRect(100, 0, 100, 100));
 
 
-    Player player2(config.P2_DEFAULT_LOCATE_X, config.P2_DEFAULT_LOCATE_Y,
-                   config.DEFAULT_SCORE); //Инициализация игрока который по клавишам
+    Player player2(Config::P2_DEFAULT_LOCATE_X, Config::P2_DEFAULT_LOCATE_Y,
+                   Config::DEFAULT_SCORE); //Инициализация игрока который по клавишам
     player2.setInitialization("resourse/tank1.png",
                               IntRect(300, 0, 100, 100));
 
@@ -446,11 +437,11 @@ int main() {
 
 
 
-    RenderWindow windows(VideoMode(config.SCREEN_WIGHT, config.SCREEN_HEIGHT), config.nameGame); // Игровое окно
+    RenderWindow windows(VideoMode(Config::SCREEN_WIDTH,Config::SCREEN_HEIGHT), Config::nameGame); // Игровое окно
 
 
     // Устанавливаем фон для графического окна // Создаём прямоугольник
-    RectangleShape background(Vector2f(config.SCREEN_WIGHT, config.SCREEN_HEIGHT));
+    RectangleShape background(Vector2f(Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT));
     // Загружаем в прямоугольник текстуру с изображением menu9.jpg
     Texture texture_window;
     if (!texture_window.loadFromFile(
@@ -472,12 +463,12 @@ int main() {
 
     // Название пунктов меню
 
-    String name_menu[]{config.MENU_START, config.MENU_SETTING, config.MENU_ABOUT, config.MENU_EXIT};
+    String name_menu[]{Config::MENU_START, Config::MENU_SETTING, Config::MENU_ABOUT,Config::MENU_EXIT};
 
     // Объект игровое меню
 
-    game::GameMenu mymenu(windows, config.MENU_X, config.MENU_Y, config.MENU_INDEX, name_menu, config.MENU_SIZE_FONT,
-                          config.MENU_FONT_STEP);
+    game::GameMenu mymenu(windows, Config::MENU_X, Config::MENU_Y, Config::MENU_INDEX, name_menu, Config::MENU_SIZE_FONT,
+                          Config::MENU_FONT_STEP);
     // Установка цвета элементов пунктов меню
     mymenu.setColorTextMenu(Color(237, 147, 0), Color::Red, Color::Black);
     // выравнивание по центру пунктов меню
@@ -486,6 +477,7 @@ int main() {
     Environment backGroundGame("resourse/background/ground.png");
     Environment wallGame("resourse/background/briq.png");
 
+    Card card;
 
     while (windows.isOpen()) {
         Event event;
@@ -515,10 +507,10 @@ int main() {
                         case 0:
                             player1.setScore(0);
                             player2.setScore(0);
-                            GamеStart(windows, player1, player2);
+                            GameStart(windows, player1, player2, card);
                             break;
                         case 1:
-                            settingGame(windows, backGroundGame, wallGame);
+                            settingGame(windows, backGroundGame, wallGame, card);
                             break;
                         case 2:
                             aboutGame(windows);

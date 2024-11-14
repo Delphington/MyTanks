@@ -83,150 +83,150 @@ CMakeFiles/MyTanks.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/main.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\main.cpp -o CMakeFiles\MyTanks.dir\main.cpp.s
 
-CMakeFiles/MyTanks.dir/Config.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
-CMakeFiles/MyTanks.dir/Config.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
-CMakeFiles/MyTanks.dir/Config.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.cpp
-CMakeFiles/MyTanks.dir/Config.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyTanks.dir/Config.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/Config.cpp.obj -MF CMakeFiles\MyTanks.dir\Config.cpp.obj.d -o CMakeFiles\MyTanks.dir\Config.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Config.cpp
+CMakeFiles/MyTanks.dir/srv/Config.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
+CMakeFiles/MyTanks.dir/srv/Config.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
+CMakeFiles/MyTanks.dir/srv/Config.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/srv/Config.cpp
+CMakeFiles/MyTanks.dir/srv/Config.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyTanks.dir/srv/Config.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/srv/Config.cpp.obj -MF CMakeFiles\MyTanks.dir\srv\Config.cpp.obj.d -o CMakeFiles\MyTanks.dir\srv\Config.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\srv\Config.cpp
 
-CMakeFiles/MyTanks.dir/Config.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/Config.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Config.cpp > CMakeFiles\MyTanks.dir\Config.cpp.i
+CMakeFiles/MyTanks.dir/srv/Config.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/srv/Config.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\srv\Config.cpp > CMakeFiles\MyTanks.dir\srv\Config.cpp.i
 
-CMakeFiles/MyTanks.dir/Config.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/Config.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Config.cpp -o CMakeFiles\MyTanks.dir\Config.cpp.s
+CMakeFiles/MyTanks.dir/srv/Config.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/srv/Config.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\srv\Config.cpp -o CMakeFiles\MyTanks.dir\srv\Config.cpp.s
 
-CMakeFiles/MyTanks.dir/GameMenu.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
-CMakeFiles/MyTanks.dir/GameMenu.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
-CMakeFiles/MyTanks.dir/GameMenu.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/GameMenu.cpp
-CMakeFiles/MyTanks.dir/GameMenu.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MyTanks.dir/GameMenu.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/GameMenu.cpp.obj -MF CMakeFiles\MyTanks.dir\GameMenu.cpp.obj.d -o CMakeFiles\MyTanks.dir\GameMenu.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\GameMenu.cpp
+CMakeFiles/MyTanks.dir/model/GameMenu.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
+CMakeFiles/MyTanks.dir/model/GameMenu.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
+CMakeFiles/MyTanks.dir/model/GameMenu.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/model/GameMenu.cpp
+CMakeFiles/MyTanks.dir/model/GameMenu.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MyTanks.dir/model/GameMenu.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/model/GameMenu.cpp.obj -MF CMakeFiles\MyTanks.dir\model\GameMenu.cpp.obj.d -o CMakeFiles\MyTanks.dir\model\GameMenu.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\model\GameMenu.cpp
 
-CMakeFiles/MyTanks.dir/GameMenu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/GameMenu.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\GameMenu.cpp > CMakeFiles\MyTanks.dir\GameMenu.cpp.i
+CMakeFiles/MyTanks.dir/model/GameMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/model/GameMenu.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\model\GameMenu.cpp > CMakeFiles\MyTanks.dir\model\GameMenu.cpp.i
 
-CMakeFiles/MyTanks.dir/GameMenu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/GameMenu.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\GameMenu.cpp -o CMakeFiles\MyTanks.dir\GameMenu.cpp.s
+CMakeFiles/MyTanks.dir/model/GameMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/model/GameMenu.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\model\GameMenu.cpp -o CMakeFiles\MyTanks.dir\model\GameMenu.cpp.s
 
-CMakeFiles/MyTanks.dir/Player.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
-CMakeFiles/MyTanks.dir/Player.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
-CMakeFiles/MyTanks.dir/Player.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Player.cpp
-CMakeFiles/MyTanks.dir/Player.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MyTanks.dir/Player.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/Player.cpp.obj -MF CMakeFiles\MyTanks.dir\Player.cpp.obj.d -o CMakeFiles\MyTanks.dir\Player.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Player.cpp
+CMakeFiles/MyTanks.dir/item/Player.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
+CMakeFiles/MyTanks.dir/item/Player.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
+CMakeFiles/MyTanks.dir/item/Player.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Player.cpp
+CMakeFiles/MyTanks.dir/item/Player.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MyTanks.dir/item/Player.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/item/Player.cpp.obj -MF CMakeFiles\MyTanks.dir\item\Player.cpp.obj.d -o CMakeFiles\MyTanks.dir\item\Player.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Player.cpp
 
-CMakeFiles/MyTanks.dir/Player.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/Player.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Player.cpp > CMakeFiles\MyTanks.dir\Player.cpp.i
+CMakeFiles/MyTanks.dir/item/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/item/Player.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Player.cpp > CMakeFiles\MyTanks.dir\item\Player.cpp.i
 
-CMakeFiles/MyTanks.dir/Player.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/Player.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Player.cpp -o CMakeFiles\MyTanks.dir\Player.cpp.s
+CMakeFiles/MyTanks.dir/item/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/item/Player.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Player.cpp -o CMakeFiles\MyTanks.dir\item\Player.cpp.s
 
-CMakeFiles/MyTanks.dir/Environment.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
-CMakeFiles/MyTanks.dir/Environment.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
-CMakeFiles/MyTanks.dir/Environment.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Environment.cpp
-CMakeFiles/MyTanks.dir/Environment.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MyTanks.dir/Environment.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/Environment.cpp.obj -MF CMakeFiles\MyTanks.dir\Environment.cpp.obj.d -o CMakeFiles\MyTanks.dir\Environment.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Environment.cpp
+CMakeFiles/MyTanks.dir/item/Environment.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
+CMakeFiles/MyTanks.dir/item/Environment.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
+CMakeFiles/MyTanks.dir/item/Environment.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Environment.cpp
+CMakeFiles/MyTanks.dir/item/Environment.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MyTanks.dir/item/Environment.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/item/Environment.cpp.obj -MF CMakeFiles\MyTanks.dir\item\Environment.cpp.obj.d -o CMakeFiles\MyTanks.dir\item\Environment.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Environment.cpp
 
-CMakeFiles/MyTanks.dir/Environment.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/Environment.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Environment.cpp > CMakeFiles\MyTanks.dir\Environment.cpp.i
+CMakeFiles/MyTanks.dir/item/Environment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/item/Environment.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Environment.cpp > CMakeFiles\MyTanks.dir\item\Environment.cpp.i
 
-CMakeFiles/MyTanks.dir/Environment.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/Environment.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Environment.cpp -o CMakeFiles\MyTanks.dir\Environment.cpp.s
+CMakeFiles/MyTanks.dir/item/Environment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/item/Environment.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Environment.cpp -o CMakeFiles\MyTanks.dir\item\Environment.cpp.s
 
-CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
-CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
-CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/CollisionUtils.cpp
-CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj -MF CMakeFiles\MyTanks.dir\CollisionUtils.cpp.obj.d -o CMakeFiles\MyTanks.dir\CollisionUtils.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\CollisionUtils.cpp
+CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
+CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
+CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/srv/CollisionUtils.cpp
+CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.obj -MF CMakeFiles\MyTanks.dir\srv\CollisionUtils.cpp.obj.d -o CMakeFiles\MyTanks.dir\srv\CollisionUtils.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\srv\CollisionUtils.cpp
 
-CMakeFiles/MyTanks.dir/CollisionUtils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/CollisionUtils.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\CollisionUtils.cpp > CMakeFiles\MyTanks.dir\CollisionUtils.cpp.i
+CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\srv\CollisionUtils.cpp > CMakeFiles\MyTanks.dir\srv\CollisionUtils.cpp.i
 
-CMakeFiles/MyTanks.dir/CollisionUtils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/CollisionUtils.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\CollisionUtils.cpp -o CMakeFiles\MyTanks.dir\CollisionUtils.cpp.s
+CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\srv\CollisionUtils.cpp -o CMakeFiles\MyTanks.dir\srv\CollisionUtils.cpp.s
 
-CMakeFiles/MyTanks.dir/Score.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
-CMakeFiles/MyTanks.dir/Score.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
-CMakeFiles/MyTanks.dir/Score.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.cpp
-CMakeFiles/MyTanks.dir/Score.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MyTanks.dir/Score.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/Score.cpp.obj -MF CMakeFiles\MyTanks.dir\Score.cpp.obj.d -o CMakeFiles\MyTanks.dir\Score.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Score.cpp
+CMakeFiles/MyTanks.dir/item/Score.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
+CMakeFiles/MyTanks.dir/item/Score.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
+CMakeFiles/MyTanks.dir/item/Score.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Score.cpp
+CMakeFiles/MyTanks.dir/item/Score.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MyTanks.dir/item/Score.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/item/Score.cpp.obj -MF CMakeFiles\MyTanks.dir\item\Score.cpp.obj.d -o CMakeFiles\MyTanks.dir\item\Score.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Score.cpp
 
-CMakeFiles/MyTanks.dir/Score.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/Score.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Score.cpp > CMakeFiles\MyTanks.dir\Score.cpp.i
+CMakeFiles/MyTanks.dir/item/Score.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/item/Score.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Score.cpp > CMakeFiles\MyTanks.dir\item\Score.cpp.i
 
-CMakeFiles/MyTanks.dir/Score.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/Score.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Score.cpp -o CMakeFiles\MyTanks.dir\Score.cpp.s
+CMakeFiles/MyTanks.dir/item/Score.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/item/Score.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Score.cpp -o CMakeFiles\MyTanks.dir\item\Score.cpp.s
 
-CMakeFiles/MyTanks.dir/Card.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
-CMakeFiles/MyTanks.dir/Card.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
-CMakeFiles/MyTanks.dir/Card.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Card.cpp
-CMakeFiles/MyTanks.dir/Card.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MyTanks.dir/Card.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/Card.cpp.obj -MF CMakeFiles\MyTanks.dir\Card.cpp.obj.d -o CMakeFiles\MyTanks.dir\Card.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Card.cpp
+CMakeFiles/MyTanks.dir/model/Card.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
+CMakeFiles/MyTanks.dir/model/Card.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
+CMakeFiles/MyTanks.dir/model/Card.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/model/Card.cpp
+CMakeFiles/MyTanks.dir/model/Card.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MyTanks.dir/model/Card.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/model/Card.cpp.obj -MF CMakeFiles\MyTanks.dir\model\Card.cpp.obj.d -o CMakeFiles\MyTanks.dir\model\Card.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\model\Card.cpp
 
-CMakeFiles/MyTanks.dir/Card.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/Card.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Card.cpp > CMakeFiles\MyTanks.dir\Card.cpp.i
+CMakeFiles/MyTanks.dir/model/Card.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/model/Card.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\model\Card.cpp > CMakeFiles\MyTanks.dir\model\Card.cpp.i
 
-CMakeFiles/MyTanks.dir/Card.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/Card.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Card.cpp -o CMakeFiles\MyTanks.dir\Card.cpp.s
+CMakeFiles/MyTanks.dir/model/Card.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/model/Card.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\model\Card.cpp -o CMakeFiles\MyTanks.dir\model\Card.cpp.s
 
-CMakeFiles/MyTanks.dir/Bullet.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
-CMakeFiles/MyTanks.dir/Bullet.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
-CMakeFiles/MyTanks.dir/Bullet.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Bullet.cpp
-CMakeFiles/MyTanks.dir/Bullet.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MyTanks.dir/Bullet.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/Bullet.cpp.obj -MF CMakeFiles\MyTanks.dir\Bullet.cpp.obj.d -o CMakeFiles\MyTanks.dir\Bullet.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Bullet.cpp
+CMakeFiles/MyTanks.dir/item/Bullet.cpp.obj: CMakeFiles/MyTanks.dir/flags.make
+CMakeFiles/MyTanks.dir/item/Bullet.cpp.obj: CMakeFiles/MyTanks.dir/includes_CXX.rsp
+CMakeFiles/MyTanks.dir/item/Bullet.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Bullet.cpp
+CMakeFiles/MyTanks.dir/item/Bullet.cpp.obj: CMakeFiles/MyTanks.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MyTanks.dir/item/Bullet.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyTanks.dir/item/Bullet.cpp.obj -MF CMakeFiles\MyTanks.dir\item\Bullet.cpp.obj.d -o CMakeFiles\MyTanks.dir\item\Bullet.cpp.obj -c D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Bullet.cpp
 
-CMakeFiles/MyTanks.dir/Bullet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/Bullet.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Bullet.cpp > CMakeFiles\MyTanks.dir\Bullet.cpp.i
+CMakeFiles/MyTanks.dir/item/Bullet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyTanks.dir/item/Bullet.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Bullet.cpp > CMakeFiles\MyTanks.dir\item\Bullet.cpp.i
 
-CMakeFiles/MyTanks.dir/Bullet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/Bullet.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Bullet.cpp -o CMakeFiles\MyTanks.dir\Bullet.cpp.s
+CMakeFiles/MyTanks.dir/item/Bullet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyTanks.dir/item/Bullet.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item\Bullet.cpp -o CMakeFiles\MyTanks.dir\item\Bullet.cpp.s
 
 # Object files for target MyTanks
 MyTanks_OBJECTS = \
 "CMakeFiles/MyTanks.dir/main.cpp.obj" \
-"CMakeFiles/MyTanks.dir/Config.cpp.obj" \
-"CMakeFiles/MyTanks.dir/GameMenu.cpp.obj" \
-"CMakeFiles/MyTanks.dir/Player.cpp.obj" \
-"CMakeFiles/MyTanks.dir/Environment.cpp.obj" \
-"CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj" \
-"CMakeFiles/MyTanks.dir/Score.cpp.obj" \
-"CMakeFiles/MyTanks.dir/Card.cpp.obj" \
-"CMakeFiles/MyTanks.dir/Bullet.cpp.obj"
+"CMakeFiles/MyTanks.dir/srv/Config.cpp.obj" \
+"CMakeFiles/MyTanks.dir/model/GameMenu.cpp.obj" \
+"CMakeFiles/MyTanks.dir/item/Player.cpp.obj" \
+"CMakeFiles/MyTanks.dir/item/Environment.cpp.obj" \
+"CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.obj" \
+"CMakeFiles/MyTanks.dir/item/Score.cpp.obj" \
+"CMakeFiles/MyTanks.dir/model/Card.cpp.obj" \
+"CMakeFiles/MyTanks.dir/item/Bullet.cpp.obj"
 
 # External object files for target MyTanks
 MyTanks_EXTERNAL_OBJECTS =
 
 MyTanks.exe: CMakeFiles/MyTanks.dir/main.cpp.obj
-MyTanks.exe: CMakeFiles/MyTanks.dir/Config.cpp.obj
-MyTanks.exe: CMakeFiles/MyTanks.dir/GameMenu.cpp.obj
-MyTanks.exe: CMakeFiles/MyTanks.dir/Player.cpp.obj
-MyTanks.exe: CMakeFiles/MyTanks.dir/Environment.cpp.obj
-MyTanks.exe: CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj
-MyTanks.exe: CMakeFiles/MyTanks.dir/Score.cpp.obj
-MyTanks.exe: CMakeFiles/MyTanks.dir/Card.cpp.obj
-MyTanks.exe: CMakeFiles/MyTanks.dir/Bullet.cpp.obj
+MyTanks.exe: CMakeFiles/MyTanks.dir/srv/Config.cpp.obj
+MyTanks.exe: CMakeFiles/MyTanks.dir/model/GameMenu.cpp.obj
+MyTanks.exe: CMakeFiles/MyTanks.dir/item/Player.cpp.obj
+MyTanks.exe: CMakeFiles/MyTanks.dir/item/Environment.cpp.obj
+MyTanks.exe: CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.obj
+MyTanks.exe: CMakeFiles/MyTanks.dir/item/Score.cpp.obj
+MyTanks.exe: CMakeFiles/MyTanks.dir/model/Card.cpp.obj
+MyTanks.exe: CMakeFiles/MyTanks.dir/item/Bullet.cpp.obj
 MyTanks.exe: CMakeFiles/MyTanks.dir/build.make
 MyTanks.exe: D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-system-s-d.a
 MyTanks.exe: D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/libsfml-window-s-d.a

@@ -254,11 +254,11 @@ CMakeFiles/MyTanks.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
- D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Config.h \
- D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Environment.h \
- D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Score.h \
- D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Player.h \
- D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\GameMenu.h \
- D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\CollisionUtils.h \
- D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Card.h \
- D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Bullet.h
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\srv/Config.h \
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item/Environment.h \
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item/Score.h \
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item/Player.h \
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\model/GameMenu.h \
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\srv/CollisionUtils.h \
+ D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/model/Card.h \
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\item/Bullet.h

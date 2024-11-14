@@ -1,15 +1,15 @@
 #include <SFML/Graphics.hpp>
 #include <list>
 #include <iostream>
-#include "Config.h"
+#include "srv/Config.h"
 #include <string>
 #include<vector>
-#include "Environment.h"
-#include "Score.h"
-#include "Player.h"
-#include "GameMenu.h"
-#include "CollisionUtils.h"
-#include "Bullet.h"
+#include "item/Environment.h"
+#include "item/Score.h"
+#include "item/Player.h"
+#include "model/GameMenu.h"
+#include "srv/CollisionUtils.h"
+#include "item/Bullet.h"
 
 using namespace std;
 using namespace sf;

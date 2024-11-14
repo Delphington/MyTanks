@@ -128,197 +128,101 @@ MyTanks/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/build
 .PHONY : MyTanks/fast
 
-Bullet.obj: Bullet.cpp.obj
-.PHONY : Bullet.obj
+item/Bullet.obj: item/Bullet.cpp.obj
+.PHONY : item/Bullet.obj
 
 # target to build an object file
-Bullet.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Bullet.cpp.obj
-.PHONY : Bullet.cpp.obj
+item/Bullet.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Bullet.cpp.obj
+.PHONY : item/Bullet.cpp.obj
 
-Bullet.i: Bullet.cpp.i
-.PHONY : Bullet.i
+item/Bullet.i: item/Bullet.cpp.i
+.PHONY : item/Bullet.i
 
 # target to preprocess a source file
-Bullet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Bullet.cpp.i
-.PHONY : Bullet.cpp.i
+item/Bullet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Bullet.cpp.i
+.PHONY : item/Bullet.cpp.i
 
-Bullet.s: Bullet.cpp.s
-.PHONY : Bullet.s
+item/Bullet.s: item/Bullet.cpp.s
+.PHONY : item/Bullet.s
 
 # target to generate assembly for a file
-Bullet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Bullet.cpp.s
-.PHONY : Bullet.cpp.s
+item/Bullet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Bullet.cpp.s
+.PHONY : item/Bullet.cpp.s
 
-Card.obj: Card.cpp.obj
-.PHONY : Card.obj
+item/Environment.obj: item/Environment.cpp.obj
+.PHONY : item/Environment.obj
 
 # target to build an object file
-Card.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Card.cpp.obj
-.PHONY : Card.cpp.obj
+item/Environment.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Environment.cpp.obj
+.PHONY : item/Environment.cpp.obj
 
-Card.i: Card.cpp.i
-.PHONY : Card.i
+item/Environment.i: item/Environment.cpp.i
+.PHONY : item/Environment.i
 
 # target to preprocess a source file
-Card.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Card.cpp.i
-.PHONY : Card.cpp.i
+item/Environment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Environment.cpp.i
+.PHONY : item/Environment.cpp.i
 
-Card.s: Card.cpp.s
-.PHONY : Card.s
+item/Environment.s: item/Environment.cpp.s
+.PHONY : item/Environment.s
 
 # target to generate assembly for a file
-Card.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Card.cpp.s
-.PHONY : Card.cpp.s
+item/Environment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Environment.cpp.s
+.PHONY : item/Environment.cpp.s
 
-CollisionUtils.obj: CollisionUtils.cpp.obj
-.PHONY : CollisionUtils.obj
+item/Player.obj: item/Player.cpp.obj
+.PHONY : item/Player.obj
 
 # target to build an object file
-CollisionUtils.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/CollisionUtils.cpp.obj
-.PHONY : CollisionUtils.cpp.obj
+item/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Player.cpp.obj
+.PHONY : item/Player.cpp.obj
 
-CollisionUtils.i: CollisionUtils.cpp.i
-.PHONY : CollisionUtils.i
+item/Player.i: item/Player.cpp.i
+.PHONY : item/Player.i
 
 # target to preprocess a source file
-CollisionUtils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/CollisionUtils.cpp.i
-.PHONY : CollisionUtils.cpp.i
+item/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Player.cpp.i
+.PHONY : item/Player.cpp.i
 
-CollisionUtils.s: CollisionUtils.cpp.s
-.PHONY : CollisionUtils.s
+item/Player.s: item/Player.cpp.s
+.PHONY : item/Player.s
 
 # target to generate assembly for a file
-CollisionUtils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/CollisionUtils.cpp.s
-.PHONY : CollisionUtils.cpp.s
+item/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Player.cpp.s
+.PHONY : item/Player.cpp.s
 
-Config.obj: Config.cpp.obj
-.PHONY : Config.obj
+item/Score.obj: item/Score.cpp.obj
+.PHONY : item/Score.obj
 
 # target to build an object file
-Config.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Config.cpp.obj
-.PHONY : Config.cpp.obj
+item/Score.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Score.cpp.obj
+.PHONY : item/Score.cpp.obj
 
-Config.i: Config.cpp.i
-.PHONY : Config.i
-
-# target to preprocess a source file
-Config.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Config.cpp.i
-.PHONY : Config.cpp.i
-
-Config.s: Config.cpp.s
-.PHONY : Config.s
-
-# target to generate assembly for a file
-Config.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Config.cpp.s
-.PHONY : Config.cpp.s
-
-Environment.obj: Environment.cpp.obj
-.PHONY : Environment.obj
-
-# target to build an object file
-Environment.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Environment.cpp.obj
-.PHONY : Environment.cpp.obj
-
-Environment.i: Environment.cpp.i
-.PHONY : Environment.i
+item/Score.i: item/Score.cpp.i
+.PHONY : item/Score.i
 
 # target to preprocess a source file
-Environment.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Environment.cpp.i
-.PHONY : Environment.cpp.i
+item/Score.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Score.cpp.i
+.PHONY : item/Score.cpp.i
 
-Environment.s: Environment.cpp.s
-.PHONY : Environment.s
-
-# target to generate assembly for a file
-Environment.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Environment.cpp.s
-.PHONY : Environment.cpp.s
-
-GameMenu.obj: GameMenu.cpp.obj
-.PHONY : GameMenu.obj
-
-# target to build an object file
-GameMenu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/GameMenu.cpp.obj
-.PHONY : GameMenu.cpp.obj
-
-GameMenu.i: GameMenu.cpp.i
-.PHONY : GameMenu.i
-
-# target to preprocess a source file
-GameMenu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/GameMenu.cpp.i
-.PHONY : GameMenu.cpp.i
-
-GameMenu.s: GameMenu.cpp.s
-.PHONY : GameMenu.s
+item/Score.s: item/Score.cpp.s
+.PHONY : item/Score.s
 
 # target to generate assembly for a file
-GameMenu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/GameMenu.cpp.s
-.PHONY : GameMenu.cpp.s
-
-Player.obj: Player.cpp.obj
-.PHONY : Player.obj
-
-# target to build an object file
-Player.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Player.cpp.obj
-.PHONY : Player.cpp.obj
-
-Player.i: Player.cpp.i
-.PHONY : Player.i
-
-# target to preprocess a source file
-Player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Player.cpp.i
-.PHONY : Player.cpp.i
-
-Player.s: Player.cpp.s
-.PHONY : Player.s
-
-# target to generate assembly for a file
-Player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Player.cpp.s
-.PHONY : Player.cpp.s
-
-Score.obj: Score.cpp.obj
-.PHONY : Score.obj
-
-# target to build an object file
-Score.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Score.cpp.obj
-.PHONY : Score.cpp.obj
-
-Score.i: Score.cpp.i
-.PHONY : Score.i
-
-# target to preprocess a source file
-Score.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Score.cpp.i
-.PHONY : Score.cpp.i
-
-Score.s: Score.cpp.s
-.PHONY : Score.s
-
-# target to generate assembly for a file
-Score.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Score.cpp.s
-.PHONY : Score.cpp.s
+item/Score.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/item/Score.cpp.s
+.PHONY : item/Score.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -344,6 +248,102 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+model/Card.obj: model/Card.cpp.obj
+.PHONY : model/Card.obj
+
+# target to build an object file
+model/Card.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/model/Card.cpp.obj
+.PHONY : model/Card.cpp.obj
+
+model/Card.i: model/Card.cpp.i
+.PHONY : model/Card.i
+
+# target to preprocess a source file
+model/Card.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/model/Card.cpp.i
+.PHONY : model/Card.cpp.i
+
+model/Card.s: model/Card.cpp.s
+.PHONY : model/Card.s
+
+# target to generate assembly for a file
+model/Card.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/model/Card.cpp.s
+.PHONY : model/Card.cpp.s
+
+model/GameMenu.obj: model/GameMenu.cpp.obj
+.PHONY : model/GameMenu.obj
+
+# target to build an object file
+model/GameMenu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/model/GameMenu.cpp.obj
+.PHONY : model/GameMenu.cpp.obj
+
+model/GameMenu.i: model/GameMenu.cpp.i
+.PHONY : model/GameMenu.i
+
+# target to preprocess a source file
+model/GameMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/model/GameMenu.cpp.i
+.PHONY : model/GameMenu.cpp.i
+
+model/GameMenu.s: model/GameMenu.cpp.s
+.PHONY : model/GameMenu.s
+
+# target to generate assembly for a file
+model/GameMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/model/GameMenu.cpp.s
+.PHONY : model/GameMenu.cpp.s
+
+srv/CollisionUtils.obj: srv/CollisionUtils.cpp.obj
+.PHONY : srv/CollisionUtils.obj
+
+# target to build an object file
+srv/CollisionUtils.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.obj
+.PHONY : srv/CollisionUtils.cpp.obj
+
+srv/CollisionUtils.i: srv/CollisionUtils.cpp.i
+.PHONY : srv/CollisionUtils.i
+
+# target to preprocess a source file
+srv/CollisionUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.i
+.PHONY : srv/CollisionUtils.cpp.i
+
+srv/CollisionUtils.s: srv/CollisionUtils.cpp.s
+.PHONY : srv/CollisionUtils.s
+
+# target to generate assembly for a file
+srv/CollisionUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/srv/CollisionUtils.cpp.s
+.PHONY : srv/CollisionUtils.cpp.s
+
+srv/Config.obj: srv/Config.cpp.obj
+.PHONY : srv/Config.obj
+
+# target to build an object file
+srv/Config.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/srv/Config.cpp.obj
+.PHONY : srv/Config.cpp.obj
+
+srv/Config.i: srv/Config.cpp.i
+.PHONY : srv/Config.i
+
+# target to preprocess a source file
+srv/Config.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/srv/Config.cpp.i
+.PHONY : srv/Config.cpp.i
+
+srv/Config.s: srv/Config.cpp.s
+.PHONY : srv/Config.s
+
+# target to generate assembly for a file
+srv/Config.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/srv/Config.cpp.s
+.PHONY : srv/Config.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -353,33 +353,33 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MyTanks
-	@echo ... Bullet.obj
-	@echo ... Bullet.i
-	@echo ... Bullet.s
-	@echo ... Card.obj
-	@echo ... Card.i
-	@echo ... Card.s
-	@echo ... CollisionUtils.obj
-	@echo ... CollisionUtils.i
-	@echo ... CollisionUtils.s
-	@echo ... Config.obj
-	@echo ... Config.i
-	@echo ... Config.s
-	@echo ... Environment.obj
-	@echo ... Environment.i
-	@echo ... Environment.s
-	@echo ... GameMenu.obj
-	@echo ... GameMenu.i
-	@echo ... GameMenu.s
-	@echo ... Player.obj
-	@echo ... Player.i
-	@echo ... Player.s
-	@echo ... Score.obj
-	@echo ... Score.i
-	@echo ... Score.s
+	@echo ... item/Bullet.obj
+	@echo ... item/Bullet.i
+	@echo ... item/Bullet.s
+	@echo ... item/Environment.obj
+	@echo ... item/Environment.i
+	@echo ... item/Environment.s
+	@echo ... item/Player.obj
+	@echo ... item/Player.i
+	@echo ... item/Player.s
+	@echo ... item/Score.obj
+	@echo ... item/Score.i
+	@echo ... item/Score.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... model/Card.obj
+	@echo ... model/Card.i
+	@echo ... model/Card.s
+	@echo ... model/GameMenu.obj
+	@echo ... model/GameMenu.i
+	@echo ... model/GameMenu.s
+	@echo ... srv/CollisionUtils.obj
+	@echo ... srv/CollisionUtils.i
+	@echo ... srv/CollisionUtils.s
+	@echo ... srv/Config.obj
+	@echo ... srv/Config.i
+	@echo ... srv/Config.s
 .PHONY : help
 
 

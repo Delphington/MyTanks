@@ -88,55 +88,55 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Bullet.cpp">
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Bullet.cpp">
 			<Option target="MyTanks"/>
 		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Bullet.h">
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Bullet.h">
 			<Option target="MyTanks"/>
 		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Card.cpp">
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Environment.cpp">
 			<Option target="MyTanks"/>
 		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Card.h">
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Environment.h">
 			<Option target="MyTanks"/>
 		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/CollisionUtils.cpp">
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Player.cpp">
 			<Option target="MyTanks"/>
 		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/CollisionUtils.h">
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Player.h">
 			<Option target="MyTanks"/>
 		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.cpp">
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Score.cpp">
 			<Option target="MyTanks"/>
 		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Config.h">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Environment.cpp">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Environment.h">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/GameMenu.cpp">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/GameMenu.h">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Player.cpp">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Player.h">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.cpp">
-			<Option target="MyTanks"/>
-		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.h">
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/item/Score.h">
 			<Option target="MyTanks"/>
 		</Unit>
 		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/main.cpp">
+			<Option target="MyTanks"/>
+		</Unit>
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/model/Card.cpp">
+			<Option target="MyTanks"/>
+		</Unit>
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/model/Card.h">
+			<Option target="MyTanks"/>
+		</Unit>
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/model/GameMenu.cpp">
+			<Option target="MyTanks"/>
+		</Unit>
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/model/GameMenu.h">
+			<Option target="MyTanks"/>
+		</Unit>
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/srv/CollisionUtils.cpp">
+			<Option target="MyTanks"/>
+		</Unit>
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/srv/CollisionUtils.h">
+			<Option target="MyTanks"/>
+		</Unit>
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/srv/Config.cpp">
+			<Option target="MyTanks"/>
+		</Unit>
+		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/srv/Config.h">
 			<Option target="MyTanks"/>
 		</Unit>
 		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/CMakeLists.txt">

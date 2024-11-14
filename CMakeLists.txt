@@ -4,17 +4,17 @@ project(MyTanks)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(MyTanks main.cpp
-        Config.cpp
-        GameMenu.h
-        GameMenu.cpp
-        Player.cpp
-        Environment.cpp
-        CollisionUtils.cpp
-        Score.cpp
-        Card.cpp
-        Bullet.h
-        Bullet.cpp
-        Config.h
+        srv/Config.cpp
+        model/GameMenu.h
+        model/GameMenu.cpp
+        item/Player.cpp
+        item/Environment.cpp
+        srv/CollisionUtils.cpp
+        item/Score.cpp
+        model/Card.cpp
+        item/Bullet.h
+        item/Bullet.cpp
+        srv/Config.h
 )
 
 

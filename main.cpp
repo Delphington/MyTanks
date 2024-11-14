@@ -316,20 +316,25 @@ void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
 }
 
 // Функция настройки игры
-void settingGame(RenderWindow &window) {
-    Environment backGround("resourse/background/ground.png");
-    Environment wall("resourse/background/briq.png");
+void settingGame(RenderWindow &window, Environment &backGround, Environment &wall) {
+
     Card card = red.get_Card();
 
     Font font;
-    if (!font.loadFromFile("resourse/Arial.ttf")) return;
+    if (!font.loadFromFile("resourse/Arial.ttf")) {
+        return;
+    }
 
     sf::Text sr("save", font);
     sr.setPosition(0, 0);
     sr.setFillColor(sf::Color::Black);
+
+
     sf::RectangleShape but(sf::Vector2f(0, 0));
     but.setSize(sf::Vector2f(100, 50));
+
     bool flag = false;
+
     while (window.isOpen()) {
         Event event;
         sf::Vector2i mouse = sf::Mouse::getPosition(window);
@@ -459,6 +464,7 @@ int main() {
     if (!font.loadFromFile("resourse/Arial.ttf")) {
         return 5;
     }
+
     Text Titul;
     Titul.setFont(font);
     // Текст с названием игры
@@ -476,6 +482,10 @@ int main() {
     mymenu.setColorTextMenu(Color(237, 147, 0), Color::Red, Color::Black);
     // выравнивание по центру пунктов меню
     mymenu.AlignMenu(2);
+
+    Environment backGroundGame("resourse/background/ground.png");
+    Environment wallGame("resourse/background/briq.png");
+
 
     while (windows.isOpen()) {
         Event event;
@@ -508,7 +518,7 @@ int main() {
                             GamеStart(windows, player1, player2);
                             break;
                         case 1:
-                            settingGame(windows);
+                            settingGame(windows, backGroundGame, wallGame);
                             break;
                         case 2:
                             aboutGame(windows);

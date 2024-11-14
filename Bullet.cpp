@@ -1,39 +1,44 @@
+#include <iostream>
 #include "Bullet.h"
 #include "Card.h" // Включаем Card.h для работы с классом Card
 
 // Конструктор
-Bullet::Bullet(int X, int Y, int direction, int player) {
-    x = X;
-    y = Y;
-    pl = player;
+Bullet::Bullet(int X, int Y, int direction, int player)
+        : dx(0),
+          dy(0),
+          w(Config::BULLET_WIDTH),
+          h(Config::BULLET_HEIGHT),
+          p1life(true),
+          p2life(true),
+          life(true),
+          x(X),
+          y(Y),
+          pl(player){
 
-    // Определение направления
-    if (direction == 1) {
-        dx = -0.3; // Стрельба влево
-        //     dy = 0;
-    } else if (direction == 2) {
-        dx = 0.3; // Стрельба вправо
-        //   dy = 0;
-    } else {
-        dx = 0;
-        //  dy = 0;
+// Определение направления
+    switch (direction) {
+        case 1:
+            dx = -0.3; // Стрельба влево
+            break;
+        case 2:
+            dx = 0.3; // Стрельба вправо
+            break;
+        case 3:
+            dy = -0.3; // Стрельба вверх
+            break;
+        case 4:
+            dy = 0.3; // Стрельба вниз
+            break;
+        default:
+            break;
     }
-
-    if (direction == 3) {
-        dy = -0.3; // Стрельба вверх
-        //   dx = 0;
-    } else if (direction == 4) {
-        dy = 0.3; // Стрельба вниз
-        //   dx = 0;
-    }
-
-    w = h = 15;
-    p1life = true;
-    p2life = true;
-    life = true;
 
     // Загрузка текстуры пули
-    textureBull.loadFromFile("resourse/background/bullet.png");
+    try{
+        textureBull.loadFromFile("resourse/background/bullet.png");
+    }catch (...){
+        std::cout<<"Not found png"<<std::endl;
+    }
     spriteBull.setTexture(textureBull);
 }
 
@@ -68,12 +73,9 @@ void Bullet::update(float time, int x1, int y1, int x2, int y2, Card &card) {
             p2life = false;
         }
     }
-
-    // Установка позиции пули
-
 }
 
 // Отрисовка пули
-void Bullet::drawb(RenderWindow &window) {
+void Bullet::drawBullet(RenderWindow &window) {
     window.draw(spriteBull);
 }

@@ -22,12 +22,11 @@ using namespace sf;
 //Отрисовка итога, кто выиграл, финальное окно
 void gameOver(RenderWindow &window, Player &player1, Player &player2) {
     window.clear();
-    bool flag = true;
 
     Texture texture;
     Sprite sprite;
 
-    while (window.isOpen() && flag) {
+    while (window.isOpen()) {
         Event event2;
         while (window.pollEvent(event2)) {
             if (event2.type == Event::Closed)
@@ -52,14 +51,14 @@ void gameOver(RenderWindow &window, Player &player1, Player &player2) {
 
         //выход на главное меню
         if (Keyboard::isKeyPressed(Keyboard::P)) {
-            window.clear();
-            flag = false;
+            return;
         }
     }
 }
 
 // Функция перехода к игре
-void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &card, Environment& backGround, Environment& wall) {
+void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &card, Environment &backGround,
+               Environment &wall) {
     window.clear();
 
     std::vector<Bullet *> bullets;
@@ -72,8 +71,10 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
     }
 
     //очки
-    Score score1(fonts, Config::MENU_GAME_SIZE_SCORE, Color::Green, Config::MENU_GAME_SCORE1_POSITION_X, Config::MENU_GAME_SCORE1_POSITION_Y); //Первый игрок, красный
-    Score score2(fonts, Config::MENU_GAME_SIZE_SCORE, Color::Red,Config::MENU_GAME_SCORE2_POSITION_X, Config::MENU_GAME_SCORE2_POSITION_Y); //Первый игрок, красный
+    Score score1(fonts, Config::MENU_GAME_SIZE_SCORE, Color::Green, Config::MENU_GAME_SCORE1_POSITION_X,
+                 Config::MENU_GAME_SCORE1_POSITION_Y); //Первый игрок, красный
+    Score score2(fonts, Config::MENU_GAME_SIZE_SCORE, Color::Red, Config::MENU_GAME_SCORE2_POSITION_X,
+                 Config::MENU_GAME_SCORE2_POSITION_Y); //Первый игрок, красный
 
 
     player1.setState(2);
@@ -188,13 +189,10 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
         //----------------------------------------------------
 
 
-
-        //Закрытие программы через Escape
+        //Выход на главное меню
         if (Keyboard::isKeyPressed(Keyboard::Escape)) {
-            window.close();
+            return;
         }
-
-
 
         //#обновление состояния пуль в игре, а также проверку жизни игроков и пуль
 
@@ -275,7 +273,7 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
         }
 //        //# Отрисовка пуль
         for (it = bullets.begin(); it != bullets.end(); it++) {
-            (*it)->drawb(window);
+            (*it)->drawBullet(window);
         }
 
         //# Отрисовка игроков
@@ -346,7 +344,7 @@ void settingGame(RenderWindow &window, Environment &backGround, Environment &wal
         window.draw(obstacle);
         window.draw(save);
         window.display();
-        if (passSave){
+        if (passSave) {
             break;
         }
     }
@@ -411,7 +409,7 @@ int main() {
 
 
 
-    RenderWindow windows(VideoMode(Config::SCREEN_WIDTH,Config::SCREEN_HEIGHT), Config::nameGame); // Игровое окно
+    RenderWindow windows(VideoMode(Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT), Config::nameGame); // Игровое окно
 
 
     // Устанавливаем фон для графического окна // Создаём прямоугольник
@@ -437,11 +435,12 @@ int main() {
 
     // Название пунктов меню
 
-    String name_menu[]{Config::MENU_GAME, Config::MENU_SETTING, Config::MENU_ABOUT,Config::MENU_EXIT};
+    String name_menu[]{Config::MENU_GAME, Config::MENU_SETTING, Config::MENU_ABOUT, Config::MENU_EXIT};
 
     // Объект игровое меню
 
-    game::GameMenu mymenu(windows, Config::MENU_X, Config::MENU_Y, Config::MENU_INDEX, name_menu, Config::MENU_SIZE_FONT,
+    game::GameMenu mymenu(windows, Config::MENU_X, Config::MENU_Y, Config::MENU_INDEX, name_menu,
+                          Config::MENU_SIZE_FONT,
                           Config::MENU_FONT_STEP);
     // Установка цвета элементов пунктов меню
     mymenu.setColorTextMenu(Color(237, 147, 0), Color::Red, Color::Black);

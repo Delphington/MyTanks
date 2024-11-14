@@ -10,6 +10,11 @@ public:
     static const float SCREEN_WIDTH;
     static const float SCREEN_HEIGHT;
 
+
+    // Размер пули
+    const static float BULLET_HEIGHT;
+    const static float BULLET_WIDTH;
+
     //-------------------------------
     static const int DEFAULT_SCORE;
     static const int P1_DEFAULT_LOCATE_X;

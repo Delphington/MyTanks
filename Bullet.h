@@ -1,5 +1,8 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
+#include "Config.h"
+
 using namespace sf;
 
 class Card; // Предварительное объявление класса Card
@@ -19,5 +22,5 @@ public:
     Bullet(int X, int Y, int direction, int player); // Конструктор
 
     void update(float time, int x1, int y1, int x2, int y2, Card &card); // Обновление позиции и проверка столкновений
-    void drawb(RenderWindow &window); // Отрисовка пули
+    void drawBullet(RenderWindow &window); // Отрисовка пули
 };

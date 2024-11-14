@@ -6,6 +6,10 @@ const std::string Config::nameGame = "MyTanks";
 const float Config::SCREEN_WIDTH = 1600;
 const float Config::SCREEN_HEIGHT = 900;
 
+// Размер пули
+const float Config::BULLET_HEIGHT = 15;
+const float Config::BULLET_WIDTH = 15;
+
 const int Config::DEFAULT_SCORE = 0;
 const int Config::P1_DEFAULT_LOCATE_X = 100;
 const int Config::P1_DEFAULT_LOCATE_Y = 400;

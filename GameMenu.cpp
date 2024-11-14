@@ -1,4 +1,5 @@
 #include "GameMenu.h"
+
 // метод настройки текстовых объектов пунктов игрового меню
 void game::GameMenu::setInitText(sf::Text& text, sf::String str, float xpos, float ypos){
     text.setFont(font);                 // шрифт

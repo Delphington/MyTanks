@@ -39,9 +39,6 @@ void Player::setScore(int score) {
 // Метод для перемещения спрайта
 void Player::move(float dx, float dy) {
     sprite.move(dx, dy);
-    //
-//        x += dx; // Обновляем координаты игрока
-//        y += dy;
 }
 
 // Метод для установки позиции спрайта

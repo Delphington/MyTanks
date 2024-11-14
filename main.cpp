@@ -100,12 +100,12 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
             } else if (event.type == Event::KeyPressed) {//обработка клавиш
                 //Стрельба первого танка
                 if (event.key.code == Keyboard::V) {
-                    bullets.push_back(new Bullet(player1.getSprite().getPosition().x + 43,
-                                                 player1.getSprite().getPosition().y + 43, player1.getState(), 1));
+                    bullets.push_back(new Bullet(player1.getSprite().getPosition().x + 45,
+                                                 player1.getSprite().getPosition().y + 45, player1.getState(), 1));
                 } else if (event.key.code == Keyboard::L) {
                     //стрельба второго танка
-                    bullets.push_back(new Bullet(player2.getSprite().getPosition().x + 43,
-                                                 player2.getSprite().getPosition().y + 43, player2.getState(), 2));
+                    bullets.push_back(new Bullet(player2.getSprite().getPosition().x + 45,
+                                                 player2.getSprite().getPosition().y + 45, player2.getState(), 2));
                 }
             }
         }

@@ -1,20 +1,12 @@
 CMakeFiles/MyTanks.dir/Bullet.cpp.obj: \
  D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Bullet.cpp \
- D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Bullet.h \
- D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Graphics.hpp \
- D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Window.hpp \
- D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System.hpp \
- D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Config.hpp \
- D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Clock.hpp \
- D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Export.hpp \
- D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Time.hpp \
- D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Err.hpp \
- C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl_config.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
@@ -148,6 +140,17 @@ CMakeFiles/MyTanks.dir/Bullet.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Bullet.h \
+ D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Graphics.hpp \
+ D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Window.hpp \
+ D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System.hpp \
+ D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Config.hpp \
+ D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Clock.hpp \
+ D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Export.hpp \
+ D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Time.hpp \
+ D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Err.hpp \
  D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/FileInputStream.hpp \
  D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/InputStream.hpp \
  D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/NonCopyable.hpp \
@@ -248,4 +251,5 @@ CMakeFiles/MyTanks.dir/Bullet.cpp.obj: \
  D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Graphics/Sprite.hpp \
  D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Graphics/Text.hpp \
  D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Graphics/VertexBuffer.hpp \
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Config.h \
  D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Card.h

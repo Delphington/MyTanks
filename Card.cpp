@@ -6,9 +6,10 @@ void Card::setInitialization() {
         for (int j = 0; j < WIDTH; j++) {
             if (i == 0 || j == 0 || i == HEIGHT - 1 || j == WIDTH - 1) {
                 //установка счета
-                if((i ==0 && j ==14) ||  (i ==0 && j ==17)){
+                if ((i == 0 && j == 14) || (i == 0 && j == 17)) {
                     card[i][j] = '0';
-                }else{
+                } else {
+                    //установка идентификатора стены
                     card[i][j] = 'X';
                 }
             } else {
@@ -23,12 +24,10 @@ Card::Card() {
     setInitialization(); // Инициализация при создании объекта
 }
 
-// Получение высоты
 const int Card::getHeight() {
     return HEIGHT;
 }
 
-// Получение ширины
 const int Card::getWidth() {
     return WIDTH;
 }

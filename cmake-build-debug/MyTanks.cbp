@@ -127,9 +127,6 @@
 		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Player.h">
 			<Option target="MyTanks"/>
 		</Unit>
-		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/SRV.cpp">
-			<Option target="MyTanks"/>
-		</Unit>
 		<Unit filename="D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.cpp">
 			<Option target="MyTanks"/>
 		</Unit>

@@ -43,13 +43,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 31,
+				"line" : 30,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 27,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
@@ -181,7 +181,7 @@
 			{
 				"command" : 7,
 				"file" : 0,
-				"line" : 29,
+				"line" : 28,
 				"parent" : 0
 			}
 		]
@@ -234,8 +234,7 @@
 				7,
 				8,
 				10,
-				11,
-				12
+				11
 			]
 		}
 	],
@@ -361,8 +360,7 @@
 				7,
 				8,
 				10,
-				11,
-				12
+				11
 			]
 		},
 		{
@@ -438,12 +436,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Bullet.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "SRV.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

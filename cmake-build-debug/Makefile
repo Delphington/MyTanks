@@ -296,30 +296,6 @@ Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/Player.cpp.s
 .PHONY : Player.cpp.s
 
-SRV.obj: SRV.cpp.obj
-.PHONY : SRV.obj
-
-# target to build an object file
-SRV.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/SRV.cpp.obj
-.PHONY : SRV.cpp.obj
-
-SRV.i: SRV.cpp.i
-.PHONY : SRV.i
-
-# target to preprocess a source file
-SRV.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/SRV.cpp.i
-.PHONY : SRV.cpp.i
-
-SRV.s: SRV.cpp.s
-.PHONY : SRV.s
-
-# target to generate assembly for a file
-SRV.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyTanks.dir\build.make CMakeFiles/MyTanks.dir/SRV.cpp.s
-.PHONY : SRV.cpp.s
-
 Score.obj: Score.cpp.obj
 .PHONY : Score.obj
 
@@ -422,9 +398,6 @@ help:
 	@echo ... Player.obj
 	@echo ... Player.i
 	@echo ... Player.s
-	@echo ... SRV.obj
-	@echo ... SRV.i
-	@echo ... SRV.s
 	@echo ... Score.obj
 	@echo ... Score.i
 	@echo ... Score.s

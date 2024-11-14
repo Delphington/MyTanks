@@ -14,7 +14,6 @@ add_executable(MyTanks main.cpp
         Card.cpp
         Bullet.h
         Bullet.cpp
-        SRV.cpp
         redactor.cpp
 )
 

@@ -15,7 +15,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Environment.cpp" "CMakeFiles/MyTanks.dir/Environment.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/Environment.cpp.obj.d"
   "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/GameMenu.cpp" "CMakeFiles/MyTanks.dir/GameMenu.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/GameMenu.cpp.obj.d"
   "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Player.cpp" "CMakeFiles/MyTanks.dir/Player.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/Player.cpp.obj.d"
-  "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/SRV.cpp" "CMakeFiles/MyTanks.dir/SRV.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/SRV.cpp.obj.d"
   "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.cpp" "CMakeFiles/MyTanks.dir/Score.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/Score.cpp.obj.d"
   "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/main.cpp" "CMakeFiles/MyTanks.dir/main.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/main.cpp.obj.d"
   "D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/redactor.cpp" "CMakeFiles/MyTanks.dir/redactor.cpp.obj" "gcc" "CMakeFiles/MyTanks.dir/redactor.cpp.obj.d"

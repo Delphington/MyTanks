@@ -1108,8 +1108,6 @@ CMakeFiles/MyTanks.dir/Player.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyT
   D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/Window/WindowStyle.hpp \
   D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Player.h
 
-CMakeFiles/MyTanks.dir/SRV.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/SRV.cpp
-
 CMakeFiles/MyTanks.dir/Score.cpp.obj: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/Score.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
@@ -2105,8 +2103,6 @@ D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/String.inl:
 D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Thread.hpp:
 
 D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/Thread.inl:
-
-D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/SRV.cpp:
 
 D:/_DELPGINGTON/University/Sem_3/course/SFML/include/SFML/System/ThreadLocal.hpp:
 

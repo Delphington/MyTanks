@@ -9,6 +9,6 @@ CMake Deprecation Warning:
 
 
 -- Found SFML 2.6.1 in D:/_DELPGINGTON/University/Sem_3/course/SFML/lib/cmake/SFML
--- Configuring done (0.1s)
+-- Configuring done (0.2s)
 -- Generating done (0.0s)
 -- Build files have been written to: D:/_DELPGINGTON/University/Sem_3/Musp/MyTanks/cmake-build-debug

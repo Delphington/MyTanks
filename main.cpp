@@ -75,7 +75,7 @@ void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
     std::vector<Bullet *>::iterator it;
 
     Card card;
-    if(red.get_y() == 1)
+    if (red.get_y() == 1)
         card = red.get_Card();
 
     //RenderWindow window(VideoMode(1600, 900), config.nameGame); // Игровое окно
@@ -186,7 +186,7 @@ void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
             player2.setTextureRect(IntRect(301, 0, 100, 100));         //текстура для анимации
             player2.setState(1); //направление
 
-        }else if (Keyboard::isKeyPressed(Keyboard::Right)) {
+        } else if (Keyboard::isKeyPressed(Keyboard::Right)) {
             if (CollisionUtils::collXR(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
                                        card) == 0) {
 
@@ -195,7 +195,7 @@ void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
             player2.setTextureRect(IntRect(100, 0, 100, 100));
             player2.setState(2); //направление
 
-        }else if (Keyboard::isKeyPressed(Keyboard::Up)) {
+        } else if (Keyboard::isKeyPressed(Keyboard::Up)) {
             if (CollisionUtils::collYU(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
                                        card) == 0) {
                 player2.move(0, -0.1 * time);
@@ -203,7 +203,7 @@ void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
             player2.setTextureRect(IntRect(0, 0, 100, 100));
             player2.setState(3); //направление
 
-        }else if (Keyboard::isKeyPressed(Keyboard::Down)) {
+        } else if (Keyboard::isKeyPressed(Keyboard::Down)) {
             if (CollisionUtils::collYD(player2.getSprite().getPosition().x, player2.getSprite().getPosition().y, ws,
                                        card) == 0) {
                 player2.move(0, 0.1 * time);
@@ -316,32 +316,35 @@ void GamеStart(RenderWindow &window, Player &player1, Player &player2) {
 }
 
 // Функция настройки игры
-void Options(RenderWindow& window) {
-    Config config;
+void settingGame(RenderWindow &window) {
     Environment backGround("resourse/background/ground.png");
     Environment wall("resourse/background/briq.png");
     Card card = red.get_Card();
+
     Font font;
     if (!font.loadFromFile("resourse/Arial.ttf")) return;
+
     sf::Text sr("save", font);
-    sr.setPosition(0,0);
+    sr.setPosition(0, 0);
     sr.setFillColor(sf::Color::Black);
-    sf::RectangleShape but(sf::Vector2f(0,0));
-    but.setSize(sf::Vector2f(100,50));
+    sf::RectangleShape but(sf::Vector2f(0, 0));
+    but.setSize(sf::Vector2f(100, 50));
     bool flag = false;
-    while(window.isOpen()){
+    while (window.isOpen()) {
         Event event;
         sf::Vector2i mouse = sf::Mouse::getPosition(window);
-        while(window.pollEvent(event)){
-            if(event.type == Event::Closed)
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed)
                 window.close();
-            if(event.type == Event::MouseButtonPressed){
-                if(event.mouseButton.button == Mouse::Left){
+            if (event.type == Event::MouseButtonPressed) {
+                if (event.mouseButton.button == Mouse::Left) {
                     Vector2i pos;
                     pos = Mouse::getPosition(window);
-                    if(card.getItemCard(pos.y/50, pos.x/50) == ' ')card.setItemCard(pos.y/50,pos.x/50, 'X');
-                    else if(card.getItemCard(pos.y/50, pos.x/50) == 'X' && pos.y/50 != 0 && pos.x/50 != 0) card.setItemCard(pos.y/50, pos.x/50, ' ');
-                }if(but.getGlobalBounds().contains(mouse.x, mouse.y)){
+                    if (card.getItemCard(pos.y / 50, pos.x / 50) == ' ')card.setItemCard(pos.y / 50, pos.x / 50, 'X');
+                    else if (card.getItemCard(pos.y / 50, pos.x / 50) == 'X' && pos.y / 50 != 0 && pos.x / 50 != 0)
+                        card.setItemCard(pos.y / 50, pos.x / 50, ' ');
+                }
+                if (but.getGlobalBounds().contains(mouse.x, mouse.y)) {
                     flag = true;
                 }
             }
@@ -362,46 +365,47 @@ void Options(RenderWindow& window) {
         window.draw(but);
         window.draw(sr);
         window.display();
-        if(flag)
+        if (flag)
             break;
     }
-    if(flag) red.setCard(card);
-    for(int i = 0;i < 18;i++){
-        for(int j = 0;j < 32;j++)
-            std::cout << card.getItemCard(i,j);
+    if (flag) red.setCard(card);
+    for (int i = 0; i < 18; i++) {
+        for (int j = 0; j < 32; j++)
+            std::cout << card.getItemCard(i, j);
         std::cout << "\n";
     }
 
 }
 
 // Функция с описанием игры
-void About_Game(RenderWindow &window, Player &player1, Player &player2) {
-    std::cout << "AAAAA\n";
+void aboutGame(RenderWindow &window) {
     window.clear();
-    Font font;
-    if (!font.loadFromFile("resourse/Arial.ttf")) return ;
-    Text Titul;
-    Titul.setFont(font);
     Texture textr;
-    textr.loadFromFile("resourse/213.png");
+    try {
+        textr.loadFromFile("resourse/Menu/menuAbout.png");
+    } catch (...) {
+        cout << "Not found" << endl;
+    }
+
     Sprite sprt;
     sprt.setTexture(textr);
-    int flag = 0;
-    while(window.isOpen()){
+    bool flag = false;
+    while (window.isOpen()) {
         sf::Event event;
-        while(window.pollEvent(event)){
-            if(event.type == Event::Closed)
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed)
                 window.close();
             if (Keyboard::isKeyPressed(Keyboard::Escape)) {
-                flag = 1;
+                flag = true;
             }
         }
-        if(flag) break;
+        if (flag) {
+            break;
+        }
         window.clear();
         window.draw(sprt);
         window.display();
     }
-
 }
 
 // функция настройки текста
@@ -417,14 +421,17 @@ void InitText(Text &mtext, float xpos, float ypos, String str, int size_font,
 
 
 int main() {
+
+
     Config config;
     //TODO: ------------------------------------
-    Player player1(100, 400, 0);
+    Player player1(config.P1_DEFAULT_LOCATE_X, config.P1_DEFAULT_LOCATE_Y, config.DEFAULT_SCORE);
     player1.setInitialization("resourse/tank2.png",
                               IntRect(100, 0, 100, 100));
 
 
-    Player player2(1300, 400, 0); //Инициализация игрока который по клавишам
+    Player player2(config.P2_DEFAULT_LOCATE_X, config.P2_DEFAULT_LOCATE_Y,
+                   config.DEFAULT_SCORE); //Инициализация игрока который по клавишам
     player2.setInitialization("resourse/tank1.png",
                               IntRect(300, 0, 100, 100));
 
@@ -434,7 +441,7 @@ int main() {
 
 
 
-    RenderWindow windows(VideoMode(1600, 900), config.nameGame); // Игровое окно
+    RenderWindow windows(VideoMode(config.SCREEN_WIGHT, config.SCREEN_HEIGHT), config.nameGame); // Игровое окно
 
 
     // Устанавливаем фон для графического окна // Создаём прямоугольник
@@ -442,24 +449,29 @@ int main() {
     // Загружаем в прямоугольник текстуру с изображением menu9.jpg
     Texture texture_window;
     if (!texture_window.loadFromFile(
-            "resourse/Menu/menu9.png")) {
+            "resourse/Menu/menuHome.png")) {
         return 4;
     }
     background.setTexture(&texture_window);
 
     // Устанавливаем шрифт для названия игры
     Font font;
-    if (!font.loadFromFile("resourse/Arial.ttf")) return 5;
+    if (!font.loadFromFile("resourse/Arial.ttf")) {
+        return 5;
+    }
     Text Titul;
     Titul.setFont(font);
     // Текст с названием игры
     // InitText(Titul, config.SCREEN_WIGHT/3, config.SCREEN_HEIGHT/10, config.nameGame, 150, Color(237, 147, 0), 3);
 
     // Название пунктов меню
-    String name_menu[]{L"Старт", L"Настройки", L"О игре", L"Выход"};
+
+    String name_menu[]{config.MENU_START, config.MENU_SETTING, config.MENU_ABOUT, config.MENU_EXIT};
 
     // Объект игровое меню
-    game::GameMenu mymenu(windows, 750, 250, 4, name_menu, 100, 120);
+
+    game::GameMenu mymenu(windows, config.MENU_X, config.MENU_Y, config.MENU_INDEX, name_menu, config.MENU_SIZE_FONT,
+                          config.MENU_FONT_STEP);
     // Установка цвета элементов пунктов меню
     mymenu.setColorTextMenu(Color(237, 147, 0), Color::Red, Color::Black);
     // выравнивание по центру пунктов меню
@@ -496,10 +508,10 @@ int main() {
                             GamеStart(windows, player1, player2);
                             break;
                         case 1:
-                            Options(windows);
+                            settingGame(windows);
                             break;
                         case 2:
-                            About_Game(windows, player1, player2);
+                            aboutGame(windows);
                             break;
                         case 3: //Выход
                             windows.close();

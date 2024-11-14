@@ -13,8 +13,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/MyTanks.dir/GameMenu.cpp.obj.d"
   "CMakeFiles/MyTanks.dir/Player.cpp.obj"
   "CMakeFiles/MyTanks.dir/Player.cpp.obj.d"
-  "CMakeFiles/MyTanks.dir/SRV.cpp.obj"
-  "CMakeFiles/MyTanks.dir/SRV.cpp.obj.d"
   "CMakeFiles/MyTanks.dir/Score.cpp.obj"
   "CMakeFiles/MyTanks.dir/Score.cpp.obj.d"
   "CMakeFiles/MyTanks.dir/main.cpp.obj"

@@ -1,5 +1,6 @@
 CMakeFiles/MyTanks.dir/Config.cpp.obj: \
  D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Config.cpp \
+ D:\_DELPGINGTON\University\Sem_3\Musp\MyTanks\Config.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \

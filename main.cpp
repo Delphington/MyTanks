@@ -58,49 +58,24 @@ void gameOver(RenderWindow &window, Player &player1, Player &player2) {
     }
 }
 
-
-// функция настройки текста
-void InitText(Text &mtext, float xpos, float ypos, String str, int size_font = 60,
-              Color menu_text_color = Color::White, int bord = 0, Color border_color = Color::Black);
-
 // Функция перехода к игре
-void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &card) {
+void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &card, Environment& backGround, Environment& wall) {
     window.clear();
-
-
-
 
     std::vector<Bullet *> bullets;
     std::vector<Bullet *>::iterator it;
 
-    //  Card card;
-//    if (red.get_y() == 1)
-//        card = red.get_Card();
-
-    //RenderWindow window(VideoMode(1600, 900), config.nameGame); // Игровое окно
-
+    //Шрифт
     Font fonts;
     if (!fonts.loadFromFile("resourse/Arial.ttf")) {
-        // Обработка ошибки загрузки шрифта
         cerr << "dont found font";
     }
 
-
-//  ### Создание объектов счетов
-    int position_1_x = 862;
-    int position_1_y = 0;
-
-    int position_2_x = 712;
-    int position_2_y = 0;
-
-    const unsigned int SIZE_OF_SCORE = 50;
-
-    Score score1(fonts, SIZE_OF_SCORE, Color::Green, position_1_x, position_1_y); //Первый игрок, красный
-    Score score2(fonts, SIZE_OF_SCORE, Color::Red, position_2_x, position_2_y); //Первый игрок, красный
+    //очки
+    Score score1(fonts, Config::MENU_GAME_SIZE_SCORE, Color::Green, Config::MENU_GAME_SCORE1_POSITION_X, Config::MENU_GAME_SCORE1_POSITION_Y); //Первый игрок, красный
+    Score score2(fonts, Config::MENU_GAME_SIZE_SCORE, Color::Red,Config::MENU_GAME_SCORE2_POSITION_X, Config::MENU_GAME_SCORE2_POSITION_Y); //Первый игрок, красный
 
 
-    Environment backGround("resourse/background/ground.png");
-    Environment wall("resourse/background/briq.png");
     player1.setState(2);
     player2.setState(1);
     bool endgame = false;
@@ -108,7 +83,7 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
     Clock clock;
 
     int ws = 100;
-    while (window.isOpen() && endgame == false) {
+    while (window.isOpen() && !endgame) {
         //Возвращаем время, после вызова/создания объекта
         float time = clock.getElapsedTime().asMicroseconds();
         clock.restart();
@@ -121,7 +96,7 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed) {
                 window.close(); //Закрываем окно при нажатии на крестик
-            } else if (event.type == Event::KeyPressed) {//обратботка клавиш
+            } else if (event.type == Event::KeyPressed) {//обработка клавиш
                 //Стрельба первого танка
                 if (event.key.code == Keyboard::V) {
                     bullets.push_back(new Bullet(player1.getSprite().getPosition().x + 43,
@@ -327,7 +302,6 @@ void settingGame(RenderWindow &window, Environment &backGround, Environment &wal
     save.setPosition(0, 0);
     save.setFillColor(sf::Color::Black);
 
-
     sf::RectangleShape obstacle(sf::Vector2f(0, 0));
     obstacle.setSize(sf::Vector2f(100, 50));
 
@@ -463,7 +437,7 @@ int main() {
 
     // Название пунктов меню
 
-    String name_menu[]{Config::MENU_START, Config::MENU_SETTING, Config::MENU_ABOUT,Config::MENU_EXIT};
+    String name_menu[]{Config::MENU_GAME, Config::MENU_SETTING, Config::MENU_ABOUT,Config::MENU_EXIT};
 
     // Объект игровое меню
 
@@ -507,7 +481,7 @@ int main() {
                         case 0:
                             player1.setScore(0);
                             player2.setScore(0);
-                            GameStart(windows, player1, player2, card);
+                            GameStart(windows, player1, player2, card, backGroundGame, wallGame);
                             break;
                         case 1:
                             settingGame(windows, backGroundGame, wallGame, card);

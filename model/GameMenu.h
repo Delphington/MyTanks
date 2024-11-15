@@ -3,7 +3,6 @@
 #include <SFML/Graphics.hpp>
 
 namespace game {
-
     class GameMenu {
         float menu_X;                   // Координаты меню по X
         float menu_Y;                    // Координаты меню по Y

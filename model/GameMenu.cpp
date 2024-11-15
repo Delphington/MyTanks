@@ -33,7 +33,7 @@ game::GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy,
                          int index, sf::String name[], int sizeFont, int step)
         :mywindow(window), menu_X(menux), menu_Y(menuy), size_font(sizeFont), menu_Step(step){
     // Загрузка шрифта
-    if (!font.loadFromFile("resourse/Arial.ttf")) exit(32);
+    if (!font.loadFromFile("resourse/setting/Arial.ttf")) exit(32);
     max_menu = index; // Количество єлементов меню
     mainMenu = new sf::Text[max_menu];     // Динамический массив пунктов меню
     // Выстраиваем элементы меню

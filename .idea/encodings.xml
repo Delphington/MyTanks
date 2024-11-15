@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/Arial.ttf" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/background/briq.png" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/background/bullet.png" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/background/ground.png" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/p1won.png" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/p2won.png" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/tank1.png" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/tank2.png" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/players/p1won.png" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/players/p1won.png" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/players/p2won.png" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/players/p2won.png" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/players/tank1.png" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/players/tank1.png" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/players/tank2.png" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/players/tank2.png" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/setting/Arial.ttf" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/resourse/setting/Arial.ttf" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/resourse/Arial.ttf" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/resourse/background/briq.png" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/resourse/background/bullet.png" charset="windows-1251" />

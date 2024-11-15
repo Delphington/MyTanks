@@ -38,11 +38,11 @@ void gameOver(RenderWindow &window, Player &player1, Player &player2) {
 
         if (player2.getScore() > player1.getScore()) {
             if (!texture.loadFromFile(
-                    "resourse/p2won.png")) { ; // Обработка ошибки загрузки текстуры
+                    "resourse/players/p2won.png")) { ; // Обработка ошибки загрузки текстуры
             }
         } else {
             if (!texture.loadFromFile(
-                    "resourse/p1won.png")) { ; // Обработка ошибки загрузки текстуры
+                    "resourse/players/p1won.png")) { ; // Обработка ошибки загрузки текстуры
             }
         }
         sprite.setTexture(texture);
@@ -56,6 +56,15 @@ void gameOver(RenderWindow &window, Player &player1, Player &player2) {
     }
 }
 
+
+void reset(Player &p1, Player &p2, std::vector<Bullet *> &bullets) {
+    p1.spriteSetPosition(100, 400);
+    p1.setTextureRect(IntRect(100, 0, 100, 100));
+    p2.spriteSetPosition(1400, 400);
+    p2.setTextureRect(IntRect(300, 0, 100, 100));
+    bullets.clear();
+}
+
 // Функция перехода к игре
 void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &card, Environment &backGround,
                Environment &wall) {
@@ -66,7 +75,7 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
 
     //Шрифт
     Font fonts;
-    if (!fonts.loadFromFile("resourse/Arial.ttf")) {
+    if (!fonts.loadFromFile("resourse/setting/Arial.ttf")) {
         cerr << "dont found font";
     }
 
@@ -84,8 +93,11 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
     Clock clock;
 
     int ws = 100;
+
+    //--------------------------------------------------------------
+
     while (window.isOpen() && !endgame) {
-        //Возвращаем время, после вызова/создания объекта
+        //Возвращаем время, после вызова/создания объекта с момента последнего сброса
         float time = clock.getElapsedTime().asMicroseconds();
         clock.restart();
         time /= 500;
@@ -122,7 +134,7 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
                                        card) == 0) {
                 player1.move(-0.1 * time, 0);
             }
-            player1.setTextureRect(IntRect(301, 0, 100, 100));
+            player1.setTextureRect(IntRect(300, 0, 100, 100));
             player1.setState(1); //Направление
 
         } else if (Keyboard::isKeyPressed(Keyboard::D)) {
@@ -194,27 +206,23 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
             return;
         }
 
-        //#обновление состояния пуль в игре, а также проверку жизни игроков и пуль
 
-
-        //#Обновление всех пуль лежащие в векторе
-
-
-
-        //#проверка Игрока 1
+        //#проверка Игроков
         for (it = bullets.begin(); it != bullets.end();) {
             Bullet *b = *it;
             if (b->p1life == false) {  //#Игрок умер
                 player1.setScore(player1.getScore() + 1);
                 if (player1.getScore() > 4) {
                     endgame = true;
-                    //#закнчиваем игру
                 }
-                it = bullets.erase(it);   //#удаляем пулю из вектора
-                player2.spriteSetPosition(1400, 400);
-                player1.spriteSetPosition(100, 400);
-                bullets.clear();
-                delete b;
+                reset(player1, player2, bullets);
+                break;
+            } else if (b->p2life == false) {
+                player2.setScore(player2.getScore() + 1);  //увеличение счета
+                if (player2.getScore() > 4) {
+                    endgame = true;
+                }
+                reset(player1, player2, bullets);
                 break;
             } else {
                 it++;
@@ -222,32 +230,13 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
         }
 
 
-
-        //#проверка игрока 2
-
-        for (it = bullets.begin(); it != bullets.end();) {//Проверка жизни игрока 2
-            Bullet *b = *it;
-            if (b->p2life == false) {
-                player2.setScore(player2.getScore() + 1);  //увеличение счета
-                if (player2.getScore() > 4) {
-                    endgame = true;
-                }
-                it = bullets.erase(it);
-                player2.spriteSetPosition(1400, 400);
-                player1.spriteSetPosition(100, 400);
-                delete b;
-                bullets.clear();
-                break;
-            } else it++;
-        }
-
         //#Проверка пуль живы ли они
         for (it = bullets.begin(); it != bullets.end();) {
             Bullet *b = *it;
             if (b->life == false) {
                 it = bullets.erase(it);
                 delete b;
-            } else it++;
+            } else { it++; }
         }
 
 
@@ -279,12 +268,12 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
         //# Отрисовка игроков
         window.draw(player2.getSprite());
         window.draw(player1.getSprite());
-        //#  отрисовка счета
+        //# отрисовка счета
         window.draw(score1.getScoreText());
         window.draw(score2.getScoreText());
         window.display(); //# Отображение
     }
-    card.setInitialization();
+    card.setInitialization(); //очистка поля можно сказать
     gameOver(window, player1, player2);
 }
 
@@ -292,7 +281,7 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
 void settingGame(RenderWindow &window, Environment &backGround, Environment &wall, Card &card1) {
 
     Font font;
-    if (!font.loadFromFile("resourse/Arial.ttf")) {
+    if (!font.loadFromFile("resourse/setting/Arial.ttf")) {
         return;
     }
 
@@ -394,13 +383,13 @@ int main() {
 
     //TODO: ------------------------------------
     Player player1(Config::P1_DEFAULT_LOCATE_X, Config::P1_DEFAULT_LOCATE_Y, Config::DEFAULT_SCORE);
-    player1.setInitialization("resourse/tank2.png",
+    player1.setInitialization("resourse/players/tank2.png",
                               IntRect(100, 0, 100, 100));
 
 
     Player player2(Config::P2_DEFAULT_LOCATE_X, Config::P2_DEFAULT_LOCATE_Y,
                    Config::DEFAULT_SCORE); //Инициализация игрока который по клавишам
-    player2.setInitialization("resourse/tank1.png",
+    player2.setInitialization("resourse/players/tank1.png",
                               IntRect(300, 0, 100, 100));
 
 //TODO: ------------------------------------
@@ -424,7 +413,7 @@ int main() {
 
     // Устанавливаем шрифт для названия игры
     Font font;
-    if (!font.loadFromFile("resourse/Arial.ttf")) {
+    if (!font.loadFromFile("resourse/setting/Arial.ttf")) {
         return 5;
     }
 

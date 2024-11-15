@@ -1,11 +1,12 @@
 #include "CollisionUtils.h"
 
 // Коллизия при движении влево по OX
+// w = 100
 bool CollisionUtils::collXL(int dx, int dy, int w, Card& card) {
     if(card.getItemCard(dy/50, (dx - w - 10)/50 + 2) != 'X'
     && card.getItemCard((dy + 100)/50, (dx - w - 10)/50 + 2) != 'X'
     && card.getItemCard((dy + 50)/50, (dx - w - 10)/50 + 2) != 'X'
-       && (dx -w + 90)/50 != 0)
+       && (dx - w + 90)/50 != 0)
         return false;
     return true;
 }

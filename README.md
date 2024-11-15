@@ -10,6 +10,7 @@
 # Примеры игры
 ![2024-11-15 22-45-25_converted](https://github.com/user-attachments/assets/0ce5b6f4-a3f0-42fe-bd35-210fc5f9e95f)
 
+![2024-11-15 22-48-35_converted](https://github.com/user-attachments/assets/cda56018-9c2e-4096-a01a-a2fbb7ae3d36)
 
 
 ## *Settings*

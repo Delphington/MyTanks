@@ -4,9 +4,6 @@
 
 class CollisionUtils {
 public:
-    // Размер клетки
-    static const int CELL_SIZE = 50;
-
     // Коллизия при движении влево по OX
     static bool collXL(int dx, int dy, int w, Card& card);
 

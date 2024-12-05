@@ -66,7 +66,7 @@ void reset(Player &p1, Player &p2, std::vector<Bullet *> &bullets) {
 }
 
 // Функция перехода к игре
-void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &card, Environment &backGround,
+void gameStart(RenderWindow &window, Player &player1, Player &player2, Card &card, Environment &backGround,
                Environment &wall) {
     window.clear();
 
@@ -241,8 +241,8 @@ void GameStart(RenderWindow &window, Player &player1, Player &player2, Card &car
 
 
         //#изменение счета
-        score1.setString(to_string(player2.getScore()));
-        score2.setString(to_string(player1.getScore()));
+        score1.setScoreText(to_string(player2.getScore()));
+        score2.setScoreText(to_string(player1.getScore()));
 
 
         //#Очистка перед отрисовкой нового кадра
@@ -434,7 +434,7 @@ int main() {
     // Установка цвета элементов пунктов меню
     mymenu.setColorTextMenu(Color(237, 147, 0), Color::Red, Color::Black);
     // выравнивание по центру пунктов меню
-    mymenu.AlignMenu(2);
+    mymenu.alignMenu(2);
 
     Environment backGroundGame("resourse/background/ground.png");
     Environment wallGame("resourse/background/briq.png");
@@ -469,7 +469,7 @@ int main() {
                         case 0:
                             player1.setScore(0);
                             player2.setScore(0);
-                            GameStart(windows, player1, player2, card, backGroundGame, wallGame);
+                            gameStart(windows, player1, player2, card, backGroundGame, wallGame);
                             break;
                         case 1:
                             settingGame(windows, backGroundGame, wallGame, card);

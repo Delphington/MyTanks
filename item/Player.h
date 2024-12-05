@@ -3,7 +3,7 @@
 
 class Player {
 private:
-    float x, y;             // Позиция игрока
+    int x, y;             // Позиция игрока
     int score;              // Очки игрока
     int state;              // Состояние игрока, направление
     sf::Texture texture;    // Текстура игрока

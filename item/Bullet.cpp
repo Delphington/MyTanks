@@ -6,14 +6,14 @@
 Bullet::Bullet(int X, int Y, int direction, int player)
         : dx(0),
           dy(0),
-          w(Config::BULLET_WIDTH),
-          h(Config::BULLET_HEIGHT),
+          width(Config::BULLET_WIDTH),
+          height(Config::BULLET_HEIGHT),
           p1life(true),
           p2life(true),
           life(true),
           x(X),
           y(Y),
-          pl(player){
+          player(player){
 
 // Определение направления
     switch (direction) {
@@ -47,8 +47,8 @@ void Bullet::update(float time, int x1, int y1, int x2, int y2, Card &card) {
     x += dx * time; // Смена координат
     y += dy * time;
     spriteBull.setPosition(x, y);
-    for (int i = y / 50; i < (y + h) / 50; i++) {
-        for (int j = x / 50; j < (x + w) / 50; j++) {
+    for (int i = y / 50; i < (y + height) / 50; i++) {
+        for (int j = x / 50; j < (x + width) / 50; j++) {
             if (card.getItemCard(i, j) == 'X') {
                 // Столкновение с препятствием: пуля умирает
                 dx = 0;
@@ -59,7 +59,7 @@ void Bullet::update(float time, int x1, int y1, int x2, int y2, Card &card) {
     }
 
     // Попадение в первого игрока
-    if (pl == 1) {
+    if (player == 1) {
         if (x > x1 && y > y1 && x < (x1 + 100) && y < (y1 + 100)) {
             life = false;
             p1life = false;
@@ -67,7 +67,7 @@ void Bullet::update(float time, int x1, int y1, int x2, int y2, Card &card) {
     }
 
     // Попадение во второго игрока
-    if (pl == 2) {
+    if (player == 2) {
         if (x > x2 && y > y2 && x < (x2 + 100) && y < (y2 + 100)) {
             life = false;
             p2life = false;

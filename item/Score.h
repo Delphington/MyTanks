@@ -9,17 +9,14 @@ class Score {
 private:
     Text scoreText;
     Font font;
-    float x, y;
+    int x, y;
 
 public:
     // Конструктор
     Score(const Font &font, unsigned int size, const Color &color, float x, float y);
 
     // Установка строки текста
-    void setString(const string &str);
-
-    // Установка позиции текста
-    void setPosition(float x, float y);
+    void setScoreText(const string &str);
 
     // Получение текста счета
     const Text &getScoreText() const;

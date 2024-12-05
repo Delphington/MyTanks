@@ -4,18 +4,18 @@
 
 namespace game {
     class GameMenu {
-        float menu_X;                   // Координаты меню по X
-        float menu_Y;                    // Координаты меню по Y
-        int menu_Step;                  // Расстояние между пунктами меню
-        int max_menu;                   // Максимальное количество пунктов меню
-        int size_font;                  // Размер шрифта
+        float menuX;                   // Координаты меню по X
+        float menuY;                   // Координаты меню по Y
+        int menuStep;                  // Расстояние между пунктами меню
+        int maxMenu;                   // Максимальное количество пунктов меню
+        int sizeFont;                  // Размер шрифта
         int mainMenuSelected;           // Номер текущего пункта меню
         sf::Font font;                  // Шрифт меню
         // Динамический массив текстовых объектов названий пунктов меню
         sf::Text *mainMenu;
-        sf::Color menu_text_color = sf::Color::White;    // Цвет пунктов меню
-        sf::Color chose_text_color = sf::Color::Yellow;  // Цвет выбора пункта меню
-        sf::Color border_color = sf::Color::Black;       // Цвет обводки текста пунктов меню
+        sf::Color menuTextColor = sf::Color::White;    // Цвет пунктов меню
+        sf::Color choseTextColor = sf::Color::Yellow;  // Цвет выбора пункта меню
+        sf::Color borderColor = sf::Color::Black;       // Цвет обводки текста пунктов меню
 
         // Настройка текста пунктов меню
         // Параметры: ссылка на текстовый объект, текст, координаты текста
@@ -44,7 +44,7 @@ namespace game {
         void setColorTextMenu(sf::Color menColor, sf::Color ChoColor,
                               sf::Color BordColor);
 
-        void AlignMenu(int posx);   // Выравнивание положения меню
+        void alignMenu(int posx);   // Выравнивание положения меню
 
         int getSelectedMenuNumber(){ // Возвращает номер выбранного элемента меню
             return mainMenuSelected;

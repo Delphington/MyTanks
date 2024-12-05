@@ -11,8 +11,8 @@ class Bullet {
 public:
     float x, y; // Начальные координаты
     float dx, dy; // Скорость движения
-    float w, h; // Размеры пули
-    float pl; // Уникальный идентификатор игрока
+    float width, height; // Размеры пули
+    int player; // Уникальный идентификатор игрока
     bool life; // Жива ли пуля
     bool p1life, p2life; // Жизни игроков
 

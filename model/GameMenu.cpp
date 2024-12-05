@@ -3,17 +3,17 @@
 // метод настройки текстовых объектов пунктов игрового меню
 void game::GameMenu::setInitText(sf::Text& text, sf::String str, float xpos, float ypos){
     text.setFont(font);                 // шрифт
-    text.setFillColor(menu_text_color); // цвет
+    text.setFillColor(menuTextColor); // цвет
     text.setString(str);                // текст
-    text.setCharacterSize(size_font);   // размер шрифта
+    text.setCharacterSize(sizeFont);   // размер шрифта
     text.setPosition(xpos, ypos);       // координаты текстового объекта
     text.setOutlineThickness(3);        // толщина контура обводки текста
-    text.setOutlineColor(border_color); // цвет контура обводки текста
+    text.setOutlineColor(borderColor); // цвет контура обводки текста
 }
 // Выравнивание пунктов меню по левому по правому по центру 
-void game::GameMenu::AlignMenu(int posx){
+void game::GameMenu::alignMenu(int posx){
     float nullx = 0;
-    for (int i = 0; i < max_menu; i++) {
+    for (int i = 0; i < maxMenu; i++) {
         switch (posx){
             case 0:
                 nullx = 0; // выравнивание по правому краю от установленных координат
@@ -31,62 +31,62 @@ void game::GameMenu::AlignMenu(int posx){
 // Конструктор
 game::GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy,
                          int index, sf::String name[], int sizeFont, int step)
-        :mywindow(window), menu_X(menux), menu_Y(menuy), size_font(sizeFont), menu_Step(step){
+        :mywindow(window), menuX(menux), menuY(menuy), sizeFont(sizeFont), menuStep(step){
     // Загрузка шрифта
     if (!font.loadFromFile("resourse/setting/Arial.ttf")) exit(32);
-    max_menu = index; // Количество єлементов меню
-    mainMenu = new sf::Text[max_menu];     // Динамический массив пунктов меню
+    maxMenu = index; // Количество єлементов меню
+    mainMenu = new sf::Text[maxMenu];     // Динамический массив пунктов меню
     // Выстраиваем элементы меню
-    for (int i = 0, ypos = menu_Y; i < max_menu; i++, ypos += menu_Step) setInitText(mainMenu[i], name[i], menu_X, ypos);
+    for (int i = 0, ypos = menuY; i < maxMenu; i++, ypos += menuStep) setInitText(mainMenu[i], name[i], menuX, ypos);
     mainMenuSelected = 0; // Задаём начальное положения выбраного пункта меню
     // цвет выбраного пункта меню
-    mainMenu[mainMenuSelected].setFillColor(chose_text_color);
+    mainMenu[mainMenuSelected].setFillColor(choseTextColor);
 }
 // перемещение выбора меню вверх
 void game::GameMenu::MoveUp(){
     mainMenuSelected--;
     // подсвечиваем выбранный пункт меню
     if (mainMenuSelected >= 0) {
-        mainMenu[mainMenuSelected].setFillColor(chose_text_color);
-        mainMenu[mainMenuSelected + 1].setFillColor(menu_text_color);
+        mainMenu[mainMenuSelected].setFillColor(choseTextColor);
+        mainMenu[mainMenuSelected + 1].setFillColor(menuTextColor);
     }
     else{
-        mainMenu[0].setFillColor(menu_text_color);
-        mainMenuSelected = max_menu - 1;
-        mainMenu[mainMenuSelected].setFillColor(chose_text_color);
+        mainMenu[0].setFillColor(menuTextColor);
+        mainMenuSelected = maxMenu - 1;
+        mainMenu[mainMenuSelected].setFillColor(choseTextColor);
     }
 }
 // перемещение выбора меню вниз
 void game::GameMenu::MoveDown(){
     mainMenuSelected++;
 // подсвечиваем выбранный пункт меню
-    if (mainMenuSelected < max_menu) {
-        mainMenu[mainMenuSelected - 1].setFillColor(menu_text_color);
-        mainMenu[mainMenuSelected].setFillColor(chose_text_color);
+    if (mainMenuSelected < maxMenu) {
+        mainMenu[mainMenuSelected - 1].setFillColor(menuTextColor);
+        mainMenu[mainMenuSelected].setFillColor(choseTextColor);
     }
     else{
-        mainMenu[max_menu - 1].setFillColor(menu_text_color);
+        mainMenu[maxMenu - 1].setFillColor(menuTextColor);
         mainMenuSelected = 0;
-        mainMenu[mainMenuSelected].setFillColor(chose_text_color);
+        mainMenu[mainMenuSelected].setFillColor(choseTextColor);
     }
 
 }
 // рисуем элементы меню в графическом окне
 void game::GameMenu::draw(){
     // перебираем для отрисовки существующие текстовые объекты пунктов меню
-    for (int i = 0; i < max_menu; i++) mywindow.draw(mainMenu[i]);
+    for (int i = 0; i < maxMenu; i++) mywindow.draw(mainMenu[i]);
 }
 // назначение цвета элементам пунктов меню
 void game::GameMenu::setColorTextMenu(sf::Color menColor, sf::Color ChoColor, sf::Color BordColor)
 {
-    menu_text_color = menColor;   // цвет пунктов меню
-    chose_text_color = ChoColor; // цвет выбраного пункта меню
-    border_color = BordColor;    // цвет контура пунктов меню
+    menuTextColor = menColor;   // цвет пунктов меню
+    choseTextColor = ChoColor; // цвет выбраного пункта меню
+    borderColor = BordColor;    // цвет контура пунктов меню
 
-    for (int i = 0; i < max_menu; i++) {
-        mainMenu[i].setFillColor(menu_text_color);
-        mainMenu[i].setOutlineColor(border_color);
+    for (int i = 0; i < maxMenu; i++) {
+        mainMenu[i].setFillColor(menuTextColor);
+        mainMenu[i].setOutlineColor(borderColor);
     }
 
-    mainMenu[mainMenuSelected].setFillColor(chose_text_color);
+    mainMenu[mainMenuSelected].setFillColor(choseTextColor);
 }

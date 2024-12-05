@@ -9,13 +9,8 @@ Score::Score(const Font &font, unsigned int size, const Color &color, float x, f
 }
 
 // Установка строки текста
-void Score::setString(const string &str) {
+void Score::setScoreText(const string &str) {
     scoreText.setString(str);
-}
-
-// Установка позиции текста
-void Score::setPosition(float x, float y) {
-    scoreText.setPosition(x, y);
 }
 
 // Получение текста счета
